@@ -51,11 +51,11 @@ class AuthController extends Controller
 
             if (Auth::user()->role === 'admin') {
                 return redirect()
-                ->route('admin.visa.index')
+                ->route('admin.china.visa.index')
                 ->with('success','Login successful');
             }
 
-            return redirect('/admin/visa-requests');
+            return redirect('/admin/china-visa');
         }
 
         return back()->with('error', 'Invalid email or password');

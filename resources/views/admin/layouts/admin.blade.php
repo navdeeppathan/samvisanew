@@ -1006,7 +1006,7 @@
         <nav class="sidebar-nav">
 
             <div class="nav-item">
-                <a href="{{ route('admin.visa.index') }}" class="nav-link {{ Request::is('admin/visa-requests*') ? 'active' : '' }}" >
+                {{-- <a href="{{ route('admin.visa.index') }}" class="nav-link {{ Request::is('admin/visa-requests*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1014,7 +1014,69 @@
                     </svg>
                     </span>
                     <span class="nav-text">Visa Requests</span>
+                </a> --}}
+
+                <a href="{{ route('admin.china.visa.index') }}" class="nav-link {{ Request::is('admin/china-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">China Visa Requests</span>
                 </a>
+
+                <a href="{{ route('admin.europe.visa.index') }}" class="nav-link {{ Request::is('admin/europe-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Europe Visa Requests</span>
+                </a>
+
+                <a href="{{ route('admin.ireland.visa.index') }}" class="nav-link {{ Request::is('admin/ireland-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Ireland Visa Requests</span>
+                </a>
+
+                <a href="{{ route('admin.morocco.visa.index') }}" class="nav-link {{ Request::is('admin/morocco-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Morocco Visa Requests</span>
+                </a>
+
+                <a href="{{ route('admin.turkey.visa.index') }}" class="nav-link {{ Request::is('admin/turkey-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Turkey Visa Requests</span>
+                </a>
+
+                <a href="{{ route('admin.dubai.visa.index') }}" class="nav-link {{ Request::is('admin/dubai-visa*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Dubai Visa Requests</span>
+                </a>
+
+
             </div>
              
 
