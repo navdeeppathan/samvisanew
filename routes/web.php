@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\BulkEmailController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\EmailTemplateController;
+use App\Http\Controllers\Admin\SmtpAccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VisaRequestController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +23,10 @@ use App\Http\Controllers\Admin\VisaRequestController as AdminVisaController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/pricing', function () {
+    return view('pricing');
+})->name('pricing');
 
 Route::get('/china-visa-request', function () {
     return view('china');
@@ -43,7 +51,12 @@ Route::get('/dubai-visa-request', function () {
     return view('dubai');
 });
 
+Route::get('/seo-optimization', function () {
+    return view('seo-schema');
+});
+
 use App\Http\Controllers\ChinaVisaController;
+use App\Http\Controllers\CommonController;
 
 Route::post('/visa/china/submit', [ChinaVisaController::class,'store'])
     ->name('visa.china.submit');
@@ -68,6 +81,7 @@ Route::post('/visa/turkey-submit',[TurkeyVisaController::class,'submit'])->name(
 
 
 use App\Http\Controllers\DubaiVisaController;
+use Illuminate\Support\Facades\Mail;
 
 Route::post('/visa/dubai-submit',[DubaiVisaController::class,'submit'])->name('visa.dubai.submit');
 
@@ -118,8 +132,65 @@ Route::post('dubai/application/update/{id}', [DubaiVisaController::class,'update
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+
+
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::get('/test-mail', function () {
+            Mail::to('infoharry99@gmail.com')
+                    ->send(new \App\Mail\BulkMail());
+                return 'Mail sent';
+            });
+        Route::post(
+            '/bulk-emails/test-mail',
+            [App\Http\Controllers\Admin\BulkEmailController::class, 'sendTestMail']
+        )->name('bulk-emails.test-mail');
+    
+        
+        Route::post(
+            '/bulk-emails/{id}/toggle-block',
+            [BulkEmailController::class, 'toggleBlock']
+        )->name('bulk-emails.toggle-block');
+    
+        Route::get('/email-template', [EmailTemplateController::class, 'edit'])
+            ->name('email-template.edit');
+        
+        Route::post('/email-template', [EmailTemplateController::class, 'update'])
+            ->name('email-template.update');
+        
+        Route::post(
+            '/bulk-emails/reset-all',
+            [BulkEmailController::class, 'resetAll']
+        )->name('bulk-emails.reset-all');
+    
+        Route::post(
+            '/bulk-emails/{id}/reset',
+            [BulkEmailController::class, 'resetStatus']
+        )->name('bulk-emails.reset');
+    
+        // Bulk Email Management
+        Route::get('bulk-emails', [BulkEmailController::class, 'indexs'])
+            ->name('admin.bulk-emails.index');
+        Route::get('bulk-emails', [BulkEmailController::class, 'index'])
+            ->name('bulk-emails.index');
+    
+        Route::post('/bulk-emails', [BulkEmailController::class, 'store'])
+            ->name('bulk-emails.store');
+    
+        // SMTP Management
+        Route::get('n/smtp', [SmtpAccountController::class, 'index'])
+            ->name('smtp.index');
+    
+        Route::post('/smtp', [SmtpAccountController::class, 'store'])
+            ->name('smtp.store');
+    
+
+
+
     Route::get('/visa-requests',[AdminVisaController::class,'index'])->name('visa.index');
     Route::delete('/visa-requests/{id}',[AdminVisaController::class,'destroy'])->name('visa.delete');
+
+    Route::get('/all-requests',[CommonController::class,'index'])->name('visa.show.all');
 
     Route::post('/application/{id}/send-correction', [ChinaVisaController::class, 'sendCorrection'])
     ->name('application.send.correction');

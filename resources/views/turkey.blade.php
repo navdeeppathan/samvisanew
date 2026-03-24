@@ -34,14 +34,131 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 .nav-phone{display:flex;align-items:center;gap:7px;color:var(--blue);font-weight:600;font-size:13px;text-decoration:none;}
 
 /* PAGE HEADER */
-.page-header{background:linear-gradient(135deg,#e30a17 0%,#b00d13 50%,#8a0a0f 100%);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
+/* .page-header{background:linear-gradient(135deg,#e30a17 0%,#b00d13 50%,#8a0a0f 100%);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
 .page-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,.08) 1px,transparent 0);background-size:28px 28px;}
 .ph-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
 .ph-flag{font-size:64px;margin-bottom:16px;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));}
 .ph-country{font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-bottom:8px;}
 .ph-title{font-family:var(--font-d);font-size:clamp(32px,5vw,52px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.1;}
 .ph-title em{font-style:italic;color:rgba(255,255,255,.8);}
-.ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;}
+.ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;} */
+
+
+
+.page-header {
+  position: relative;
+  padding: 56px 48px;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+.ph-flag img {
+    height: 50px;
+    object-fit: contain;
+  }
+
+/* SLIDER */
+.ph-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ph-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 20s infinite;
+}
+
+/* TURKEY IMAGES */
+.ph-slide:nth-child(1) {
+  background-image: url('https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b'); /* Istanbul Hagia Sophia */
+  animation-delay: 0s;
+}
+.ph-slide:nth-child(2) {
+  background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee'); /* Cappadocia balloons */
+  animation-delay: 5s;
+}
+.ph-slide:nth-child(3) {
+  background-image: url('https://images.unsplash.com/photo-1524230572899-a752b3835840'); /* Blue Mosque */
+  animation-delay: 10s;
+}
+.ph-slide:nth-child(4) {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* Turkish coast */
+  animation-delay: 15s;
+}
+
+/* ANIMATION */
+@keyframes slideShow {
+  0% { opacity: 0; transform: scale(1.1); }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* TURKEY RED OVERLAY */
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(227,10,23,0.85), rgba(150,0,10,0.75));
+  z-index: 1;
+}
+
+/* DOT PATTERN */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  z-index: 1;
+}
+
+/* CONTENT */
+.ph-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ph-flag {
+  font-size: 64px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.ph-country {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ph-title {
+  font-size: clamp(32px,5vw,52px);
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.ph-title em {
+  font-style: italic;
+  color: rgba(255,255,255,.85);
+}
+
+.ph-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
 
 /* STEP PROGRESS */
 /* .steps-wrap{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:72px;z-index:90;box-shadow:var(--shadow-sm);}
@@ -220,20 +337,43 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 </nav>
 
 <!-- PAGE HEADER -->
-<div class="page-header">
+{{-- <div class="page-header">
   <div class="ph-inner">
     <span class="ph-flag">🇹🇷</span>
     <p class="ph-country">Visit Visa Application</p>
     <h1 class="ph-title">Turkey <em>Visit Visa</em></h1>
     <p class="ph-sub">Complete all sections below. Our team will contact you within 24 hours to confirm your application and guide you through the next steps.</p>
   </div>
+</div> --}}
+
+<div class="page-header">
+
+  <!-- Background Slider -->
+  <div class="ph-bg-slider">
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+  </div>
+
+  <div class="ph-inner">
+     <span class="ph-flag">
+      <img src="{{asset('turkeyflag.svg')}}" alt="" >
+    </span>
+    <p class="ph-country">Visit Visa Application</p>
+    <h1 class="ph-title">Turkey</h1>
+    <p class="ph-sub">
+      Complete all sections below. Our team will contact you within 24 hours to confirm your application and guide you through the next steps.
+    </p>
+  </div>
+
 </div>
 
 <!-- STEP PROGRESS BAR -->
 <div class="steps-wrap">
   <button class="scroll-btn left" onclick="scrollSteps(-200)">‹</button>
 
-  <div class="steps-inner" id="stepsContainer">
+  {{-- <div class="steps-inner" id="stepsContainer">
     <div class="step-pill active" onclick="goToStep(1)" id="sp-1"><div class="step-num">1</div>Personal Info</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(2)" id="sp-2"><div class="step-num">2</div>Home Address</div>
@@ -247,7 +387,33 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
     <div class="step-pill" onclick="goToStep(6)" id="sp-6"><div class="step-num">6</div>UK Immigration</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(7)" id="sp-7"><div class="step-num">7</div>Declaration</div>
+  </div> --}}
+
+  <div class="steps-inner" id="stepsContainer">
+
+  <div class="step-pill active" onclick="goToStep(1)" id="sp-1">
+    <div class="step-num">1</div>Personal Info
   </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(2)" id="sp-2">
+    <div class="step-num">2</div>Address & Family
+  </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(3)" id="sp-3">
+    <div class="step-num">3</div>Travel & Documents
+  </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(4)" id="sp-4">
+    <div class="step-num">4</div>Final Step
+  </div>
+
+</div>
    <button class="scroll-btn right" onclick="scrollSteps(200)">›</button>
 
 </div>
@@ -259,10 +425,11 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 <div class="form-wrap">
   <div>
 
+<div class="form-section active" id="step-1">
   <!-- ═══════════════════════════════════════
        STEP 1 — PERSONAL INFORMATION
   ════════════════════════════════════════ -->
-  <div class="form-section active" id="step-1">
+  {{-- <div class="form-section active" id="step-1"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -315,12 +482,15 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 
       <div class="form-nav"><div></div><button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button></div>
     </div>
-  </div>
+  {{-- </div> --}}
 
+</div>
+  
+<div class="form-section" id="step-2">
   <!-- ═══════════════════════════════════════
        STEP 2 — HOME ADDRESS
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-2">
+  {{-- <div class="form-section" id="step-2"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -343,17 +513,17 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
         <div class="fl"><label class="lbl">Country <span class="req">*</span></label><input type="text" name="home_country" class="fi" value="United Kingdom" required/></div>
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════
        STEP 3 — FAMILY DETAILS
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-3">
+  {{-- <div class="form-section" id="step-3"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -381,16 +551,19 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button>
-        <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
 
+</div>
+  
+<div class="form-section" id="step-3">
   <!-- ═══════════════════════════════════════
        STEP 4 — TRAVEL DETAILS
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-4">
+  {{-- <div class="form-section" id="step-4"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -426,17 +599,17 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
         <div class="fl"><label class="lbl">Accommodation / Host Address in Turkey <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in Turkey" required/></div>
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════
        STEP 5 — DOCUMENTS
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-5">
+  {{-- <div class="form-section" id="step-5"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -518,16 +691,20 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(5)">← Previous</button>
-        <button type="button" class="btn-next" onclick="nextStep(5)">Next Step →</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(5)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
+
+</div>
+  
+<div class="form-section" id="step-4">
 
   <!-- ═══════════════════════════════════════
        STEP 6 — UK IMMIGRATION STATUS
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-6">
+  {{-- <div class="form-section" id="step-6"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -566,17 +743,17 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
         <strong>⚠️ Note:</strong> If you are a British citizen, you may not need a sharecode. Please contact our team on WhatsApp if you are unsure about your immigration status.
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(6)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════
        STEP 7 — DECLARATION & SUBMIT
   ════════════════════════════════════════ -->
-  <div class="form-section" id="step-7">
+  {{-- <div class="form-section" id="step-7"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -616,7 +793,9 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
         </button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
+
+</div>
 
   </div><!-- /main column -->
 
@@ -626,7 +805,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
     <div class="side-card blue-grad">
       <p class="side-title">Application Progress</p>
       <div class="prog-bar"><div class="prog-fill" id="progress-fill" style="width:14%"></div></div>
-      <p class="prog-text" id="progress-text">Step 1 of 7</p>
+      <p class="prog-text" id="progress-text">Step 1 of 4</p>
     </div>
 
     <div class="side-card">
@@ -694,7 +873,7 @@ function scrollSteps(value){
   });
 }  
 let currentStep = 1;
-const totalSteps = 7;
+const totalSteps = 4;
 
 function goToStep(n) {
   document.getElementById('step-' + currentStep)?.classList.remove('active');

@@ -70,6 +70,12 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+       <!-- Summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
+    <!-- DataTables Bootstrap 5 -->
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -1016,7 +1022,37 @@
                     <span class="nav-text">Visa Requests</span>
                 </a> --}}
 
-                <a href="{{ route('admin.china.visa.index') }}" class="nav-link {{ Request::is('admin/china-visa*') ? 'active' : '' }}" >
+                <a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+
+                <a href="{{ route('admin.visa.show.all') }}" class="nav-link {{ Request::is('admin/all-requests*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Visa Requests</span>
+                </a>
+
+                <a href="{{ route('admin.email-template.edit') }}" class="nav-link {{ Request::is('admin/email-template*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6M7 4h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                    </svg>
+                    </span>
+                    <span class="nav-text">Email Template</span>
+                </a>
+
+                {{-- <a href="{{ route('admin.china.visa.index') }}" class="nav-link {{ Request::is('admin/china-visa*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1074,7 +1110,7 @@
                     </svg>
                     </span>
                     <span class="nav-text">Dubai Visa Requests</span>
-                </a>
+                </a> --}}
 
 
             </div>

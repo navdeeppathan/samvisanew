@@ -6,211 +6,329 @@
 <title>Europe (Schengen) Visit Visa Application — SAM Visa Services</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --blue:#1a4aab;--blue-dark:#0f2f7a;--blue-mid:#1e5bc6;--blue-light:#4a7fd4;
-  --blue-pale:#e8f0fb;--blue-faint:#f0f5ff;
-  --gray-dark:#2c3a4a;--gray-mid:#5a6a7a;--gray-light:#8a9aaa;
-  --gray-border:#d4dce6;--gray-bg:#f4f6f9;
-  --white:#ffffff;--white-soft:#fafbfd;
-  --shadow-sm:0 2px 12px rgba(26,74,171,0.08);
-  --shadow-md:0 8px 32px rgba(26,74,171,0.14);
-  --shadow-lg:0 20px 60px rgba(26,74,171,0.18);
-  --shadow-blue:0 8px 32px rgba(26,74,171,0.3);
-  --font-d:'Cormorant Garamond',serif;--font-b:'Jost',sans-serif;
-  --expo:cubic-bezier(0.16,1,0.3,1);--bounce:cubic-bezier(0.34,1.56,0.64,1);
-  --green:#16a34a;--red:#dc2626;--amber:#d97706;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);}
-::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-thumb{background:var(--blue);border-radius:4px;}
+  :root{
+    --blue:#1a4aab;--blue-dark:#0f2f7a;--blue-mid:#1e5bc6;--blue-light:#4a7fd4;
+    --blue-pale:#e8f0fb;--blue-faint:#f0f5ff;
+    --gray-dark:#2c3a4a;--gray-mid:#5a6a7a;--gray-light:#8a9aaa;
+    --gray-border:#d4dce6;--gray-bg:#f4f6f9;
+    --white:#ffffff;--white-soft:#fafbfd;
+    --shadow-sm:0 2px 12px rgba(26,74,171,0.08);
+    --shadow-md:0 8px 32px rgba(26,74,171,0.14);
+    --shadow-lg:0 20px 60px rgba(26,74,171,0.18);
+    --shadow-blue:0 8px 32px rgba(26,74,171,0.3);
+    --font-d:'Cormorant Garamond',serif;--font-b:'Jost',sans-serif;
+    --expo:cubic-bezier(0.16,1,0.3,1);--bounce:cubic-bezier(0.34,1.56,0.64,1);
+    --green:#16a34a;--red:#dc2626;--amber:#d97706;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);}
+  ::-webkit-scrollbar{width:5px;}
+  ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:4px;}
 
-/* NAV */
-#navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--gray-border),var(--shadow-sm);padding:0 48px;}
-.nav-inner{max-width:1200px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo img{height:50px;object-fit:contain;}
-.nav-back{display:inline-flex;align-items:center;gap:8px;color:var(--gray-mid);text-decoration:none;font-size:13px;font-weight:500;transition:color .3s;}
-.nav-back:hover{color:var(--blue);}
-.nav-phone{display:flex;align-items:center;gap:7px;color:var(--blue);font-weight:600;font-size:13px;text-decoration:none;}
+  /* NAV */
+  #navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--gray-border),var(--shadow-sm);padding:0 48px;}
+  .nav-inner{max-width:1200px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo img{height:50px;object-fit:contain;}
+  .nav-back{display:inline-flex;align-items:center;gap:8px;color:var(--gray-mid);text-decoration:none;font-size:13px;font-weight:500;transition:color .3s;}
+  .nav-back:hover{color:var(--blue);}
+  .nav-phone{display:flex;align-items:center;gap:7px;color:var(--blue);font-weight:600;font-size:13px;text-decoration:none;}
 
-/* PAGE HEADER */
-.page-header{background:linear-gradient(135deg,#003399 0%,#003fa6 50%,#0055cc 100%);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
-.page-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,.08) 1px,transparent 0);background-size:28px 28px;}
-.ph-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
-.ph-flag{font-size:64px;margin-bottom:16px;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));}
-.ph-country{font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-bottom:8px;}
-.ph-title{font-family:var(--font-d);font-size:clamp(32px,5vw,52px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.1;}
-.ph-title em{font-style:italic;color:rgba(255,255,255,.8);}
-.ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;}
+  /* PAGE HEADER */
+  /* .page-header{background:linear-gradient(135deg,#003399 0%,#003fa6 50%,#0055cc 100%);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
+  .page-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,.08) 1px,transparent 0);background-size:28px 28px;}
+  .ph-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+  .ph-flag{font-size:64px;margin-bottom:16px;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));}
+  .ph-country{font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-bottom:8px;}
+  .ph-title{font-family:var(--font-d);font-size:clamp(32px,5vw,52px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.1;}
+  .ph-title em{font-style:italic;color:rgba(255,255,255,.8);}
+  .ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;} */
 
-/* STEP PROGRESS */
-/* .steps-wrap{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:72px;z-index:90;box-shadow:var(--shadow-sm);} */
-/* .steps-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;} */
-.steps-wrap{
-  background:var(--white);
-  border-bottom:1px solid var(--gray-border);
-  position:sticky;
-  top:72px;
-  z-index:90;
-  box-shadow:var(--shadow-sm);
-  display:flex;
-  align-items:center;
-}
+  .page-header {
+    position: relative;
+    padding: 56px 48px;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+  }
 
-.steps-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 10px;
-  display:flex;
-  align-items:center;
-  overflow-x:auto;
-  scrollbar-width:none;
-  scroll-behavior:smooth;
-}
+  /* SLIDER */
+  .ph-bg-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
 
-.steps-inner::-webkit-scrollbar{
-  display:none;
-}
+  .ph-flag img {
+      height: 50px;
+      object-fit: contain;
+  }
 
-/* IMPORTANT */
-.step-pill{
-  flex:0 0 auto;
-}
+  .ph-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideShow 20s infinite;
+  }
 
-/* scroll buttons */
-.scroll-btn{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  border:none;
-  background:white;
-  box-shadow:0 2px 8px rgba(0,0,0,0.15);
-  cursor:pointer;
-  font-size:22px;
-}
+  /* EUROPE IMAGES */
+  .ph-slide:nth-child(1) {
+    background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34'); /* Eiffel Tower */
+    animation-delay: 0s;
+  }
+  .ph-slide:nth-child(2) {
+    background-image: url('https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba'); /* Rome Colosseum */
+    animation-delay: 5s;
+  }
+  .ph-slide:nth-child(3) {
+    background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470'); /* Swiss Alps */
+    animation-delay: 10s;
+  }
+  .ph-slide:nth-child(4) {
+    background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7'); /* European city street/business */
+    animation-delay: 15s;
+  }
 
-.scroll-btn.left{
-  margin-left:10px;
-}
+  /* ANIMATION */
+  @keyframes slideShow {
+    0% { opacity: 0; transform: scale(1.1); }
+    5% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; transform: scale(1); }
+  }
 
-.scroll-btn.right{
-  margin-right:10px;
-}
-/* .steps-inner::-webkit-scrollbar{display:none;} */
-.step-pill{display:flex;align-items:center;gap:10px;padding:16px 20px;white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent;transition:border-color .3s,color .3s;color:var(--gray-light);font-size:12px;font-weight:600;flex-shrink:0;}
-.step-pill.active{border-bottom-color:var(--blue);color:var(--blue);}
-.step-pill.done{border-bottom-color:var(--green);color:var(--green);}
-.step-num{width:24px;height:24px;border-radius:50%;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:background .3s,color .3s;}
-.step-pill.active .step-num{background:var(--blue);color:var(--white);}
-.step-pill.done .step-num{background:var(--green);color:var(--white);}
-.step-connector{width:32px;height:1px;background:var(--gray-border);flex-shrink:0;}
+  /* EUROPE BLUE OVERLAY */
+  .page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,51,153,0.85), rgba(0,63,166,0.75), rgba(0,85,204,0.65));
+    z-index: 1;
+  }
 
-/* LAYOUT */
-.form-wrap{max-width:1200px;margin:0 auto;padding:40px 48px 80px;display:grid;grid-template-columns:1fr 330px;gap:32px;align-items:start;}
-.form-section{background:var(--white);border:1.5px solid var(--gray-border);border-radius:20px;overflow:hidden;display:none;}
-.form-section.active{display:block;}
+  /* DOT PATTERN */
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,.08) 1px, transparent 0);
+    background-size: 28px 28px;
+    z-index: 1;
+  }
 
-/* SECTION HEADER */
-.fs-header{padding:28px 36px;border-bottom:1px solid var(--gray-border);background:var(--blue-faint);display:flex;align-items:center;gap:16px;}
-.fs-icon{width:48px;height:48px;border-radius:12px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.fs-icon svg{color:var(--white);}
-.fs-title{font-family:var(--font-d);font-size:22px;font-weight:700;color:var(--blue-dark);}
-.fs-sub{font-size:12px;color:var(--gray-mid);margin-top:2px;}
-.fs-body{padding:36px;}
+  /* CONTENT */
+  .ph-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-/* GRID */
-.fg{display:grid;gap:20px;margin-bottom:20px;}
-.fg-2{grid-template-columns:1fr 1fr;}
-.fg-3{grid-template-columns:1fr 1fr 1fr;}
-.fg-1{grid-template-columns:1fr;}
-.fl{display:flex;flex-direction:column;gap:6px;}
+  .ph-flag {
+    font-size: 64px;
+    margin-bottom: 16px;
+    display: block;
+  }
 
-/* LABELS */
-.lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--blue-dark);text-transform:uppercase;display:flex;align-items:center;gap:5px;}
-.req{color:var(--red);font-size:13px;}
-.opt{display:inline-flex;align-items:center;gap:4px;background:#dcfce7;color:var(--green);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-left:4px;}
 
-/* INPUTS */
-.fi,.fs-el,.ft{background:var(--white-soft);border:1.5px solid var(--gray-border);border-radius:10px;padding:12px 16px;color:var(--gray-dark);font-family:var(--font-b);font-size:13px;outline:none;width:100%;transition:border-color .3s,box-shadow .3s,background .3s;}
-.fi::placeholder,.ft::placeholder{color:var(--gray-light);}
-.fi:focus,.fs-el:focus,.ft:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(26,74,171,.1);background:var(--white);}
-.fs-el{appearance:none;cursor:pointer;}
-.ft{resize:vertical;min-height:90px;line-height:1.6;}
 
-/* RADIO */
-.radio-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;}
-.radio-opt{display:flex;align-items:center;gap:8px;cursor:pointer;padding:10px 18px;border-radius:10px;border:1.5px solid var(--gray-border);font-size:13px;font-weight:500;transition:border-color .3s,background .3s;}
-.radio-opt:has(input:checked){border-color:var(--blue);background:var(--blue-faint);color:var(--blue);}
-.radio-opt input{accent-color:var(--blue);}
+  .ph-country {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,.6);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
 
-/* CONDITIONAL */
-.cond{display:none;margin-top:16px;padding:20px;background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.15);border-radius:12px;}
-.cond.show{display:block;}
+  .ph-title {
+    font-size: clamp(32px,5vw,52px);
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
 
-/* FILE UPLOAD */
-.file-zone{border:2px dashed var(--gray-border);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;background:var(--white-soft);}
-.file-zone:hover,.file-zone.dragover{border-color:var(--blue);background:var(--blue-faint);}
-.file-zone input{display:none;}
-.fz-icon{font-size:28px;margin-bottom:8px;}
-.fz-title{font-size:13px;font-weight:600;color:var(--gray-dark);margin-bottom:4px;}
-.fz-sub{font-size:11px;color:var(--gray-light);}
-.fz-sub em{color:var(--blue);font-style:normal;font-weight:600;}
-.file-preview{display:flex;align-items:center;justify-content:space-between;background:var(--blue-faint);border:1px solid rgba(26,74,171,.2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:12px;font-weight:600;color:var(--blue-dark);}
-.file-preview button{background:none;border:none;color:var(--gray-light);cursor:pointer;font-size:16px;}
-.file-preview button:hover{color:var(--red);}
+  .ph-title em {
+    font-style: italic;
+    color: rgba(255,255,255,.85);
+  }
 
-/* DIVIDERS */
-.form-div{margin:28px 0;border:none;border-top:1px solid var(--gray-border);}
-.sec-heading{font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--blue-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--blue-faint);display:flex;align-items:center;gap:10px;}
+  .ph-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,.75);
+    line-height: 1.7;
+  }
 
-/* INFO BOXES */
-.info-box{padding:16px 20px;border-radius:12px;font-size:12px;line-height:1.7;margin-bottom:20px;}
-.info-box.blue{background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.2);color:var(--blue-dark);}
-.info-box.amber{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
-.info-box.red{background:#fef2f2;border:1.5px solid #fecaca;color:#991b1b;}
-.info-box strong{font-weight:700;}
+  /* STEP PROGRESS */
+  /* .steps-wrap{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:72px;z-index:90;box-shadow:var(--shadow-sm);} */
+  /* .steps-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;} */
+  .steps-wrap{
+    background:var(--white);
+    border-bottom:1px solid var(--gray-border);
+    position:sticky;
+    top:72px;
+    z-index:90;
+    box-shadow:var(--shadow-sm);
+    display:flex;
+    align-items:center;
+  }
 
-/* SHARECODE INPUT */
-.sharecode-wrap{position:relative;}
-.sharecode-wrap .fi{letter-spacing:1px;font-weight:600;text-transform:uppercase;}
-.sharecode-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:var(--blue);pointer-events:none;}
-.sharecode-input{padding-left:30px!important;}
+  .steps-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 10px;
+    display:flex;
+    align-items:center;
+    overflow-x:auto;
+    scrollbar-width:none;
+    scroll-behavior:smooth;
+  }
 
-/* NAV BUTTONS */
-.form-nav{display:flex;align-items:center;justify-content:space-between;margin-top:32px;padding-top:24px;border-top:1px solid var(--gray-border);}
-.btn-prev{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--gray-mid);font-family:var(--font-b);font-weight:600;font-size:13px;padding:13px 24px;border-radius:10px;border:1.5px solid var(--gray-border);cursor:pointer;transition:border-color .3s,color .3s;}
-.btn-prev:hover{border-color:var(--blue);color:var(--blue);}
-.btn-next{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue-mid),var(--blue-dark));color:var(--white);font-family:var(--font-b);font-weight:700;font-size:13px;padding:13px 28px;border-radius:10px;border:none;cursor:pointer;box-shadow:var(--shadow-blue);transition:transform .25s var(--bounce),box-shadow .25s;}
-.btn-next:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(26,74,171,.4);}
-.btn-submit{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#16a34a,#15803d);color:var(--white);font-family:var(--font-b);font-weight:700;font-size:13px;padding:14px 36px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(22,163,74,.3);transition:transform .25s var(--bounce),box-shadow .25s;}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(22,163,74,.4);}
+  .steps-inner::-webkit-scrollbar{
+    display:none;
+  }
 
-/* SIDEBAR */
-.sidebar{display:flex;flex-direction:column;gap:20px;}
-.side-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm);}
-.side-card.blue-grad{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-color:transparent;}
-.side-title{font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--blue-dark);margin-bottom:16px;}
-.side-card.blue-grad .side-title{color:var(--white);}
-.req-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.req-list li{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.6;}
-.req-badge{min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px;}
-.req-badge.r{background:#fee2e2;color:var(--red);}
-.req-badge.g{background:#dcfce7;color:var(--green);}
-.req-list li span:last-child{color:var(--gray-mid);}
-.prog-bar{background:rgba(255,255,255,.2);border-radius:10px;height:6px;margin-top:16px;overflow:hidden;}
-.prog-fill{background:var(--white);border-radius:10px;height:100%;transition:width .5s var(--expo);}
-.prog-text{font-size:11px;color:rgba(255,255,255,.7);margin-top:8px;text-align:center;}
-.contact-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--gray-mid);margin-bottom:10px;}
-.contact-item svg{color:var(--blue);flex-shrink:0;}
-.contact-item a{color:var(--blue);text-decoration:none;font-weight:600;}
-.country-link{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-mid);text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid var(--gray-border);transition:all .3s;margin-bottom:6px;}
-.country-link:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-faint);}
-.country-link:last-child{margin-bottom:0;}
+  /* IMPORTANT */
+  .step-pill{
+    flex:0 0 auto;
+  }
 
-@media(max-width:1000px){.form-wrap{grid-template-columns:1fr;padding:24px;}.sidebar{order:-1;}}
-@media(max-width:700px){#navbar{padding:0 16px;}.page-header{padding:40px 20px;}.steps-inner{padding:0 16px;}.fg-2,.fg-3{grid-template-columns:1fr;}}
-@media(max-width:500px){.form-wrap{padding:16px;}.fs-body{padding:20px;}.fs-header{padding:20px;}}
+  /* scroll buttons */
+  .scroll-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    cursor:pointer;
+    font-size:22px;
+  }
+
+  .scroll-btn.left{
+    margin-left:10px;
+  }
+
+  .scroll-btn.right{
+    margin-right:10px;
+  }
+  /* .steps-inner::-webkit-scrollbar{display:none;} */
+  .step-pill{display:flex;align-items:center;gap:10px;padding:16px 20px;white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent;transition:border-color .3s,color .3s;color:var(--gray-light);font-size:12px;font-weight:600;flex-shrink:0;}
+  .step-pill.active{border-bottom-color:var(--blue);color:var(--blue);}
+  .step-pill.done{border-bottom-color:var(--green);color:var(--green);}
+  .step-num{width:24px;height:24px;border-radius:50%;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:background .3s,color .3s;}
+  .step-pill.active .step-num{background:var(--blue);color:var(--white);}
+  .step-pill.done .step-num{background:var(--green);color:var(--white);}
+  .step-connector{width:32px;height:1px;background:var(--gray-border);flex-shrink:0;}
+
+  /* LAYOUT */
+  .form-wrap{max-width:1200px;margin:0 auto;padding:40px 48px 80px;display:grid;grid-template-columns:1fr 330px;gap:32px;align-items:start;}
+  .form-section{background:var(--white);border:1.5px solid var(--gray-border);border-radius:20px;overflow:hidden;display:none;}
+  .form-section.active{display:block;}
+
+  /* SECTION HEADER */
+  .fs-header{padding:28px 36px;border-bottom:1px solid var(--gray-border);background:var(--blue-faint);display:flex;align-items:center;gap:16px;}
+  .fs-icon{width:48px;height:48px;border-radius:12px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .fs-icon svg{color:var(--white);}
+  .fs-title{font-family:var(--font-d);font-size:22px;font-weight:700;color:var(--blue-dark);}
+  .fs-sub{font-size:12px;color:var(--gray-mid);margin-top:2px;}
+  .fs-body{padding:36px;}
+
+  /* GRID */
+  .fg{display:grid;gap:20px;margin-bottom:20px;}
+  .fg-2{grid-template-columns:1fr 1fr;}
+  .fg-3{grid-template-columns:1fr 1fr 1fr;}
+  .fg-1{grid-template-columns:1fr;}
+  .fl{display:flex;flex-direction:column;gap:6px;}
+
+  /* LABELS */
+  .lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--blue-dark);text-transform:uppercase;display:flex;align-items:center;gap:5px;}
+  .req{color:var(--red);font-size:13px;}
+  .opt{display:inline-flex;align-items:center;gap:4px;background:#dcfce7;color:var(--green);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-left:4px;}
+
+  /* INPUTS */
+  .fi,.fs-el,.ft{background:var(--white-soft);border:1.5px solid var(--gray-border);border-radius:10px;padding:12px 16px;color:var(--gray-dark);font-family:var(--font-b);font-size:13px;outline:none;width:100%;transition:border-color .3s,box-shadow .3s,background .3s;}
+  .fi::placeholder,.ft::placeholder{color:var(--gray-light);}
+  .fi:focus,.fs-el:focus,.ft:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(26,74,171,.1);background:var(--white);}
+  .fs-el{appearance:none;cursor:pointer;}
+  .ft{resize:vertical;min-height:90px;line-height:1.6;}
+
+  /* RADIO */
+  .radio-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;}
+  .radio-opt{display:flex;align-items:center;gap:8px;cursor:pointer;padding:10px 18px;border-radius:10px;border:1.5px solid var(--gray-border);font-size:13px;font-weight:500;transition:border-color .3s,background .3s;}
+  .radio-opt:has(input:checked){border-color:var(--blue);background:var(--blue-faint);color:var(--blue);}
+  .radio-opt input{accent-color:var(--blue);}
+
+  /* CONDITIONAL */
+  .cond{display:none;margin-top:16px;padding:20px;background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.15);border-radius:12px;}
+  .cond.show{display:block;}
+
+  /* FILE UPLOAD */
+  .file-zone{border:2px dashed var(--gray-border);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;background:var(--white-soft);}
+  .file-zone:hover,.file-zone.dragover{border-color:var(--blue);background:var(--blue-faint);}
+  .file-zone input{display:none;}
+  .fz-icon{font-size:28px;margin-bottom:8px;}
+  .fz-title{font-size:13px;font-weight:600;color:var(--gray-dark);margin-bottom:4px;}
+  .fz-sub{font-size:11px;color:var(--gray-light);}
+  .fz-sub em{color:var(--blue);font-style:normal;font-weight:600;}
+  .file-preview{display:flex;align-items:center;justify-content:space-between;background:var(--blue-faint);border:1px solid rgba(26,74,171,.2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:12px;font-weight:600;color:var(--blue-dark);}
+  .file-preview button{background:none;border:none;color:var(--gray-light);cursor:pointer;font-size:16px;}
+  .file-preview button:hover{color:var(--red);}
+
+  /* DIVIDERS */
+  .form-div{margin:28px 0;border:none;border-top:1px solid var(--gray-border);}
+  .sec-heading{font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--blue-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--blue-faint);display:flex;align-items:center;gap:10px;}
+
+  /* INFO BOXES */
+  .info-box{padding:16px 20px;border-radius:12px;font-size:12px;line-height:1.7;margin-bottom:20px;}
+  .info-box.blue{background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.2);color:var(--blue-dark);}
+  .info-box.amber{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
+  .info-box.red{background:#fef2f2;border:1.5px solid #fecaca;color:#991b1b;}
+  .info-box strong{font-weight:700;}
+
+  /* SHARECODE INPUT */
+  .sharecode-wrap{position:relative;}
+  .sharecode-wrap .fi{letter-spacing:1px;font-weight:600;text-transform:uppercase;}
+  .sharecode-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:var(--blue);pointer-events:none;}
+  .sharecode-input{padding-left:30px!important;}
+
+  /* NAV BUTTONS */
+  .form-nav{display:flex;align-items:center;justify-content:space-between;margin-top:32px;padding-top:24px;border-top:1px solid var(--gray-border);}
+  .btn-prev{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--gray-mid);font-family:var(--font-b);font-weight:600;font-size:13px;padding:13px 24px;border-radius:10px;border:1.5px solid var(--gray-border);cursor:pointer;transition:border-color .3s,color .3s;}
+  .btn-prev:hover{border-color:var(--blue);color:var(--blue);}
+  .btn-next{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue-mid),var(--blue-dark));color:var(--white);font-family:var(--font-b);font-weight:700;font-size:13px;padding:13px 28px;border-radius:10px;border:none;cursor:pointer;box-shadow:var(--shadow-blue);transition:transform .25s var(--bounce),box-shadow .25s;}
+  .btn-next:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(26,74,171,.4);}
+  .btn-submit{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#16a34a,#15803d);color:var(--white);font-family:var(--font-b);font-weight:700;font-size:13px;padding:14px 36px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(22,163,74,.3);transition:transform .25s var(--bounce),box-shadow .25s;}
+  .btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(22,163,74,.4);}
+
+  /* SIDEBAR */
+  .sidebar{display:flex;flex-direction:column;gap:20px;}
+  .side-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm);}
+  .side-card.blue-grad{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-color:transparent;}
+  .side-title{font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--blue-dark);margin-bottom:16px;}
+  .side-card.blue-grad .side-title{color:var(--white);}
+  .req-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .req-list li{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.6;}
+  .req-badge{min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px;}
+  .req-badge.r{background:#fee2e2;color:var(--red);}
+  .req-badge.g{background:#dcfce7;color:var(--green);}
+  .req-list li span:last-child{color:var(--gray-mid);}
+  .prog-bar{background:rgba(255,255,255,.2);border-radius:10px;height:6px;margin-top:16px;overflow:hidden;}
+  .prog-fill{background:var(--white);border-radius:10px;height:100%;transition:width .5s var(--expo);}
+  .prog-text{font-size:11px;color:rgba(255,255,255,.7);margin-top:8px;text-align:center;}
+  .contact-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--gray-mid);margin-bottom:10px;}
+  .contact-item svg{color:var(--blue);flex-shrink:0;}
+  .contact-item a{color:var(--blue);text-decoration:none;font-weight:600;}
+  .country-link{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-mid);text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid var(--gray-border);transition:all .3s;margin-bottom:6px;}
+  .country-link:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-faint);}
+  .country-link:last-child{margin-bottom:0;}
+
+  @media(max-width:1000px){.form-wrap{grid-template-columns:1fr;padding:24px;}.sidebar{order:-1;}}
+  @media(max-width:700px){#navbar{padding:0 16px;}.page-header{padding:40px 20px;}.steps-inner{padding:0 16px;}.fg-2,.fg-3{grid-template-columns:1fr;}}
+  @media(max-width:500px){.form-wrap{padding:16px;}.fs-body{padding:20px;}.fs-header{padding:20px;}}
 </style>
 </head>
 <body>
@@ -230,20 +348,43 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 </nav>
 
 <!-- PAGE HEADER -->
-<div class="page-header">
+{{-- <div class="page-header">
   <div class="ph-inner">
     <span class="ph-flag">🇪🇺</span>
     <p class="ph-country">Visit Visa Application</p>
     <h1 class="ph-title">Europe (Schengen) <em>Visit Visa</em></h1>
     <p class="ph-sub">Complete all sections below. Our team will contact you within 24 hours with a personalised document checklist and next steps.</p>
   </div>
+</div> --}}
+
+<div class="page-header">
+
+  <!-- Background Slider -->
+  <div class="ph-bg-slider">
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+  </div>
+
+  <div class="ph-inner">
+    <span class="ph-flag">
+      <img src="{{asset('europeflag.avif')}}" alt="" >
+    </span>
+    <p class="ph-country">Visit Visa Application</p>
+    <h1 class="ph-title">Europe (Schengen)</h1>
+    <p class="ph-sub">
+      Complete all sections below. Our team will contact you within 24 hours with a personalised document checklist and next steps.
+    </p>
+  </div>
+
 </div>
 
 <!-- STEP PROGRESS BAR -->
 <div class="steps-wrap">
     <button class="scroll-btn left" onclick="scrollSteps(-200)">‹</button>
 
-  <div class="steps-inner" id="stepsContainer">
+  {{-- <div class="steps-inner" id="stepsContainer">
     <div class="step-pill active" onclick="goToStep(1)" id="sp-1"><div class="step-num">1</div>Personal Info</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(2)" id="sp-2"><div class="step-num">2</div>Home Address</div>
@@ -257,7 +398,32 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
     <div class="step-pill" onclick="goToStep(6)" id="sp-6"><div class="step-num">6</div>Documents</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(7)" id="sp-7"><div class="step-num">7</div>Declaration</div>
+  </div> --}}
+  <div class="steps-inner" id="stepsContainer">
+
+  <div class="step-pill active" onclick="goToStep(1)" id="sp-1">
+    <div class="step-num">1</div>Personal & Address
   </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(2)" id="sp-2">
+    <div class="step-num">2</div>Employment & Travel
+  </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(3)" id="sp-3">
+    <div class="step-num">3</div>EU & Documents
+  </div>
+
+  <div class="step-connector"></div>
+
+  <div class="step-pill" onclick="goToStep(4)" id="sp-4">
+    <div class="step-num">4</div>Declaration
+  </div>
+
+</div>
    <button class="scroll-btn right" onclick="scrollSteps(200)">›</button>
 
 </div>
@@ -271,10 +437,11 @@ method="POST" enctype="multipart/form-data">
 <div class="form-wrap">
   <div>
 
+<div class="form-section active" id="step-1">
   <!-- ═══════════════════════════════════════════
        STEP 1 — PERSONAL INFORMATION
   ════════════════════════════════════════════ -->
-  <div class="form-section active" id="step-1">
+  {{-- <div class="form-section active" id="step-1"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -355,17 +522,17 @@ method="POST" enctype="multipart/form-data">
         </div>
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <div></div>
         <button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════════
        STEP 2 — HOME ADDRESS
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-2">
+  {{-- <div class="form-section" id="step-2"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -404,16 +571,19 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button>
-        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
 
+</div>  
+
+<div class="form-section" id="step-2">
   <!-- ═══════════════════════════════════════════
        STEP 3 — EMPLOYMENT
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-3">
+  {{-- <div class="form-section" id="step-3"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
@@ -475,17 +645,17 @@ method="POST" enctype="multipart/form-data">
         </div>
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════════
        STEP 4 — TRAVEL DETAILS
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-4">
+  {{-- <div class="form-section" id="step-4"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -552,16 +722,21 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
-        <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
+
+</div>  
+
+
+<div class="form-section" id="step-3">
 
   <!-- ═══════════════════════════════════════════
        STEP 5 — EU CONNECTION & IMMIGRATION
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-5">
+  {{-- <div class="form-section" id="step-5"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -667,17 +842,17 @@ method="POST" enctype="multipart/form-data">
         </div>
       </div>
 
-      <div class="form-nav">
+      {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(5)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(5)">Next Step →</button>
-      </div>
+      </div> --}}
     </div>
-  </div>
+  {{-- </div> --}}
 
   <!-- ═══════════════════════════════════════════
        STEP 6 — DOCUMENTS
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-6">
+  {{-- <div class="form-section" id="step-6"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -732,16 +907,20 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button>
-        <button type="button" class="btn-next" onclick="nextStep(6)">Next Step →</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
+
+</div>  
+
+<div class="form-section" id="step-4">
 
   <!-- ═══════════════════════════════════════════
        STEP 7 — DECLARATION & SUBMIT
   ════════════════════════════════════════════ -->
-  <div class="form-section" id="step-7">
+  {{-- <div class="form-section" id="step-7"> --}}
     <div class="fs-header">
       <div class="fs-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -778,14 +957,16 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <div class="form-nav">
-        <button type="button" class="btn-prev" onclick="prevStep(7)">← Previous</button>
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(7)">← Previous</button> --}}
         <button type="submit" class="btn-submit">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           Submit Application
         </button>
       </div>
     </div>
-  </div>
+  {{-- </div> --}}
+
+</div>  
 
   </div><!-- /main form column -->
 
@@ -798,7 +979,7 @@ method="POST" enctype="multipart/form-data">
     <div class="side-card blue-grad">
       <p class="side-title">Application Progress</p>
       <div class="prog-bar"><div class="prog-fill" id="progress-fill" style="width:14%"></div></div>
-      <p class="prog-text" id="progress-text">Step 1 of 7</p>
+      <p class="prog-text" id="progress-text">Step 1 of 4</p>
     </div>
 
     <!-- DOCUMENT CHECKLIST -->
@@ -871,7 +1052,7 @@ function scrollSteps(value){
   });
 }
 let currentStep = 1;
-const totalSteps = 7;
+const totalSteps = 4;
 
 function goToStep(n) {
   // Hide current section

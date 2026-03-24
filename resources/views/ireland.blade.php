@@ -30,14 +30,130 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 .nav-back{display:inline-flex;align-items:center;gap:8px;color:var(--gray-mid);text-decoration:none;font-size:13px;font-weight:500;transition:color .3s;}
 .nav-back:hover{color:var(--blue);}
 .nav-phone{display:flex;align-items:center;gap:7px;color:var(--blue);font-weight:600;font-size:13px;text-decoration:none;}
-.page-header{background:linear-gradient(135deg,#169b62,#006837);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
+/* .page-header{background:linear-gradient(135deg,#169b62,#006837);padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
 .page-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,.08) 1px,transparent 0);background-size:28px 28px;}
 .ph-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
 .ph-flag{font-size:64px;margin-bottom:16px;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));}
 .ph-country{font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-bottom:8px;}
 .ph-title{font-family:var(--font-d);font-size:clamp(32px,5vw,52px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.1;}
 .ph-title em{font-style:italic;color:rgba(255,255,255,.8);}
-.ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;}
+.ph-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;} */
+
+
+.page-header {
+  position: relative;
+  padding: 56px 48px;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* SLIDER */
+.ph-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ph-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 20s infinite;
+}
+
+/* IRELAND IMAGES */
+.ph-slide:nth-child(1) {
+  background-image: url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e'); /* Cliffs of Moher */
+  animation-delay: 0s;
+}
+.ph-slide:nth-child(2) {
+  background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b84a5b6b'); /* Irish countryside */
+  animation-delay: 5s;
+}
+.ph-slide:nth-child(3) {
+  background-image: url('https://images.unsplash.com/photo-1504609813442-a8924e83f76e'); /* Dublin city */
+  animation-delay: 10s;
+}
+.ph-slide:nth-child(4) {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); /* Castle / nature */
+  animation-delay: 15s;
+}
+
+/* ANIMATION */
+@keyframes slideShow {
+  0% { opacity: 0; transform: scale(1.1); }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* IRELAND GREEN OVERLAY */
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(22,155,98,0.85), rgba(0,104,55,0.75));
+  z-index: 1;
+}
+
+/* DOT PATTERN */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  z-index: 1;
+}
+
+/* CONTENT */
+.ph-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ph-flag img {
+    height: 50px;
+    object-fit: contain;
+  }
+.ph-flag {
+  font-size: 64px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.ph-country {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ph-title {
+  font-size: clamp(32px,5vw,52px);
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.ph-title em {
+  font-style: italic;
+  color: rgba(255,255,255,.85);
+}
+
+.ph-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
 /* .steps-wrap{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:72px;z-index:90;box-shadow:var(--shadow-sm);}
 .steps-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;}
 .steps-inner::-webkit-scrollbar{display:none;} */
@@ -190,19 +306,42 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   </div>
 </nav>
 
-<div class="page-header">
+{{-- <div class="page-header">
   <div class="ph-inner">
     <span class="ph-flag">🇮🇪</span>
     <p class="ph-country">Visit Visa Application</p>
     <h1 class="ph-title">Ireland <em>Visit Visa</em></h1>
     <p class="ph-sub">Complete all sections carefully. Our team will contact you within 24 hours to confirm and guide you through the next steps.</p>
   </div>
+</div> --}}
+
+<div class="page-header">
+
+  <!-- Background Slider -->
+  <div class="ph-bg-slider">
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+    <div class="ph-slide"></div>
+  </div>
+
+  <div class="ph-inner">
+     <span class="ph-flag">
+      <img src="{{asset('irelandflag.png')}}" alt="" >
+    </span>
+    <p class="ph-country">Visit Visa Application</p>
+    <h1 class="ph-title">Ireland</h1>
+    <p class="ph-sub">
+      Complete all sections carefully. Our team will contact you within 24 hours to confirm and guide you through the next steps.
+    </p>
+  </div>
+
 </div>
 
 <div class="steps-wrap">
   <button class="scroll-btn left" onclick="scrollSteps(-200)">‹</button>
 
-  <div class="steps-inner" id="stepsContainer">
+  {{-- <div class="steps-inner" id="stepsContainer">
     <div class="step-pill active" onclick="goToStep(1)" id="sp-1"><div class="step-num">1</div>Personal Info</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(2)" id="sp-2"><div class="step-num">2</div>Home Address</div>
@@ -218,6 +357,32 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
     <div class="step-pill" onclick="goToStep(7)" id="sp-7"><div class="step-num">7</div>UK Immigration</div>
     <div class="step-connector"></div>
     <div class="step-pill" onclick="goToStep(8)" id="sp-8"><div class="step-num">8</div>Declaration</div>
+  </div> --}}
+
+  <div class="steps-inner" id="stepsContainer">
+
+    <div class="step-pill active" onclick="goToStep(1)" id="sp-1">
+      <div class="step-num">1</div>Personal & Passport
+    </div>
+
+    <div class="step-connector"></div>
+
+    <div class="step-pill" onclick="goToStep(2)" id="sp-2">
+      <div class="step-num">2</div>Address & Employment
+    </div>
+
+    <div class="step-connector"></div>
+
+    <div class="step-pill" onclick="goToStep(3)" id="sp-3">
+      <div class="step-num">3</div>Travel & History
+    </div>
+
+    <div class="step-connector"></div>
+
+    <div class="step-pill" onclick="goToStep(4)" id="sp-4">
+      <div class="step-num">4</div>Final Review
+    </div>
+
   </div>
 
   <button class="scroll-btn right" onclick="scrollSteps(200)">›</button>
@@ -230,360 +395,373 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 <div class="form-wrap">
 <div>
 
-<!-- STEP 1: PERSONAL INFO + PASSPORTS -->
 <div class="form-section active" id="step-1">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-    <div><p class="fs-title">Personal Information</p><p class="fs-sub">Your details as they appear in your passport, plus passport upload and previous passport history.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">Surname <span class="req">*</span></label><input type="text" name="surname" class="fi" placeholder="e.g. SMITH" required/></div>
-      <div class="fl"><label class="lbl">First Name <span class="req">*</span></label><input type="text" name="first_name" class="fi" placeholder="e.g. JOHN" required/></div>
-      <div class="fl"><label class="lbl">Middle Name</label><input type="text" name="middle_name" class="fi" placeholder="If applicable"/></div>
+  <!-- STEP 1: PERSONAL INFO + PASSPORTS -->
+  {{-- <div class="form-section active" id="step-1"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div><p class="fs-title">Personal Information</p><p class="fs-sub">Your details as they appear in your passport, plus passport upload and previous passport history.</p></div>
     </div>
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">Date of Birth <span class="req">*</span></label><input type="date" name="dob" class="fi" required/></div>
-      <div class="fl"><label class="lbl">Nationality <span class="req">*</span></label><input type="text" name="nationality" class="fi" placeholder="e.g. Nigerian" required/></div>
-      <div class="fl"><label class="lbl">Country of Birth <span class="req">*</span></label><input type="text" name="country_of_birth" class="fi" placeholder="e.g. Nigeria" required/></div>
-    </div>
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Phone Number <span class="req">*</span></label><input type="tel" name="mobile_phone" class="fi" placeholder="+44 7000 000000" required/></div>
-      <div class="fl"><label class="lbl">Email Address <span class="req">*</span></label><input type="email" name="email" class="fi" placeholder="john@example.com" required/></div>
-    </div>
-
-    <p class="sec-heading">🛂 Current Passport Details</p>
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">Passport Number <span class="req">*</span></label><input type="text" name="passport_number" class="fi" placeholder="Passport number" required/></div>
-      <div class="fl"><label class="lbl">Issue Date <span class="req">*</span></label><input type="date" name="passport_issue" class="fi" required/></div>
-      <div class="fl"><label class="lbl">Expiry Date <span class="req">*</span></label><input type="date" name="passport_expiry" class="fi" required/></div>
-    </div>
-    <div class="fl">
-      <label class="lbl">Upload Passport Scan (bio data page) <span class="req">*</span></label>
-      <div class="file-zone" onclick="triggerFile('passport_scan')">
-        <input type="file" id="passport_scan" name="passport_scan" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-ps')" required/>
-        <div class="fz-icon">🛂</div><p class="fz-title">Click to upload current passport scan</p><p class="fz-sub">JPEG or PDF · <em>Mandatory — must be attached</em></p>
+    <div class="fs-body">
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">Surname <span class="req">*</span></label><input type="text" name="surname" class="fi" placeholder="e.g. SMITH" required/></div>
+        <div class="fl"><label class="lbl">First Name <span class="req">*</span></label><input type="text" name="first_name" class="fi" placeholder="e.g. JOHN" required/></div>
+        <div class="fl"><label class="lbl">Middle Name</label><input type="text" name="middle_name" class="fi" placeholder="If applicable"/></div>
       </div>
-      <div id="prev-ps"></div>
-    </div>
-
-    <hr class="form-div"/>
-    <p class="sec-heading">📖 Previous Passport Details <span style="font-size:13px;font-weight:400;color:var(--gray-light);">(up to 2 expired passports)</span></p>
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">Previous Passport Number</label><input type="text" name="prev_passport_number" class="fi" placeholder="e.g. 123456789"/></div>
-      <div class="fl"><label class="lbl">Issue Date</label><input type="date" name="prev_passport_issue" class="fi"/></div>
-      <div class="fl"><label class="lbl">Expiry Date</label><input type="date" name="prev_passport_expiry" class="fi"/></div>
-    </div>
-    <div class="fl">
-      <label class="lbl">Upload 1st Expired Passport <span class="opt">Optional</span></label>
-      <div class="file-zone" onclick="triggerFile('prev_passport_1')">
-        <input type="file" id="prev_passport_1" name="prev_passport_1" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp1')"/>
-        <div class="fz-icon">📘</div><p class="fz-title">Upload 1st expired passport</p><p class="fz-sub">JPEG or PDF</p>
-      </div><div id="prev-pp1"></div>
-    </div>
-    <div class="fl" style="margin-top:16px;">
-      <label class="lbl">Upload 2nd Expired Passport <span class="opt">Optional</span></label>
-      <div class="file-zone" onclick="triggerFile('prev_passport_2')">
-        <input type="file" id="prev_passport_2" name="prev_passport_2" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp2')"/>
-        <div class="fz-icon">📗</div><p class="fz-title">Upload 2nd expired passport</p><p class="fz-sub">JPEG or PDF</p>
-      </div><div id="prev-pp2"></div>
-    </div>
-
-    <div class="form-nav"><div></div><button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button></div>
-  </div>
-</div>
-
-<!-- STEP 2: HOME ADDRESS -->
-<div class="form-section" id="step-2">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-    <div><p class="fs-title">Home Address</p><p class="fs-sub">Your current UK residential address and duration of residency.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Door Number <span class="req">*</span></label><input type="text" name="home_door" class="fi" placeholder="e.g. 42" required/></div>
-      <div class="fl"><label class="lbl">Street <span class="req">*</span></label><input type="text" name="home_street" class="fi" placeholder="e.g. Baker Street" required/></div>
-    </div>
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">City <span class="req">*</span></label><input type="text" name="home_city" class="fi" placeholder="e.g. London" required/></div>
-      <div class="fl"><label class="lbl">Postcode <span class="req">*</span></label><input type="text" name="home_postcode" class="fi" placeholder="e.g. SW1A 1AA" required/></div>
-      <div class="fl"><label class="lbl">Country <span class="req">*</span></label><input type="text" name="home_country" class="fi" value="United Kingdom" required/></div>
-    </div>
-    <div class="fg fg-1">
-      <div class="fl">
-        <label class="lbl">Length of Residency in UK — Living in UK Since <span class="req">*</span></label>
-        <p class="hint">Enter the date you first arrived / settled in the United Kingdom</p>
-        <input type="date" name="uk_residency_since" class="fi" required/>
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">Date of Birth <span class="req">*</span></label><input type="date" name="dob" class="fi" required/></div>
+        <div class="fl"><label class="lbl">Nationality <span class="req">*</span></label><input type="text" name="nationality" class="fi" placeholder="e.g. Nigerian" required/></div>
+        <div class="fl"><label class="lbl">Country of Birth <span class="req">*</span></label><input type="text" name="country_of_birth" class="fi" placeholder="e.g. Nigeria" required/></div>
       </div>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
-    </div>
-  </div>
-</div>
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Phone Number <span class="req">*</span></label><input type="tel" name="mobile_phone" class="fi" placeholder="+44 7000 000000" required/></div>
+        <div class="fl"><label class="lbl">Email Address <span class="req">*</span></label><input type="email" name="email" class="fi" placeholder="john@example.com" required/></div>
+      </div>
 
-<!-- STEP 3: EMPLOYMENT -->
-<div class="form-section" id="step-3">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-    <div><p class="fs-title">Current Employment</p><p class="fs-sub">Your employer details, job role and duration of employment.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Current Employer / Company Name <span class="req">*</span></label><input type="text" name="company_name" class="fi" placeholder="e.g. NHS Trust, Acme Ltd" required/></div>
-      <div class="fl"><label class="lbl">Occupation <span class="req">*</span></label><input type="text" name="occupation" class="fi" placeholder="e.g. Nurse, Teacher, Driver" required/></div>
-    </div>
-    <div class="fg fg-1">
-      <div class="fl"><label class="lbl">Position / Job Title Held <span class="req">*</span></label><input type="text" name="job_title" class="fi" placeholder="e.g. Senior Nurse, Class Teacher, Delivery Driver" required/></div>
-    </div>
-    <p class="sec-heading">🏢 Employer Address</p>
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Door Number <span class="req">*</span></label><input type="text" name="work_door" class="fi" placeholder="Door / unit number" required/></div>
-      <div class="fl"><label class="lbl">Street <span class="req">*</span></label><input type="text" name="work_street" class="fi" placeholder="Street name" required/></div>
-    </div>
-    <div class="fg fg-3">
-      <div class="fl"><label class="lbl">City <span class="req">*</span></label><input type="text" name="work_city" class="fi" placeholder="City" required/></div>
-      <div class="fl"><label class="lbl">Postcode <span class="req">*</span></label><input type="text" name="work_postcode" class="fi" placeholder="Postcode" required/></div>
-      <div class="fl"><label class="lbl">Country <span class="req">*</span></label><input type="text" name="work_country" class="fi" value="United Kingdom" required/></div>
-    </div>
-    <p class="sec-heading">📅 Duration of Employment</p>
-    <div class="fg fg-2">
-      <div class="fl">
-        <label class="lbl">Start Date <span class="req">*</span></label>
-        <input type="date" name="employment_start" class="fi" required/>
+      <p class="sec-heading">🛂 Current Passport Details</p>
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">Passport Number <span class="req">*</span></label><input type="text" name="passport_number" class="fi" placeholder="Passport number" required/></div>
+        <div class="fl"><label class="lbl">Issue Date <span class="req">*</span></label><input type="date" name="passport_issue" class="fi" required/></div>
+        <div class="fl"><label class="lbl">Expiry Date <span class="req">*</span></label><input type="date" name="passport_expiry" class="fi" required/></div>
       </div>
       <div class="fl">
-        <label class="lbl">Finish Date <span class="opt">If no longer employed</span></label>
-        <input type="date" name="employment_end" class="fi"/>
-        <p class="hint">Leave blank if currently still employed here</p>
-      </div>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
-    </div>
-  </div>
-</div>
-
-<!-- STEP 4: TRAVEL DETAILS -->
-<div class="form-section" id="step-4">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-    <div><p class="fs-title">Travel Details</p><p class="fs-sub">Your planned Ireland trip dates and accommodation.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Departure Date <span class="req">*</span></label><input type="date" name="departure_date" class="fi" required/></div>
-      <div class="fl"><label class="lbl">Return Date <span class="req">*</span></label><input type="date" name="return_date" class="fi" required/></div>
-    </div>
-    <div class="fg fg-2">
-      <div class="fl"><label class="lbl">Cities to Visit in Ireland <span class="req">*</span></label><input type="text" name="destination_city" class="fi" placeholder="e.g. Dublin, Cork, Galway" required/></div>
-      <div class="fl"><label class="lbl">Purpose of Visit <span class="req">*</span></label>
-        <select name="visit_purpose" class="fs-el" required>
-          <option value="" disabled selected>Select purpose…</option>
-          <option>Tourism / Sightseeing</option>
-          <option>Visiting Family</option>
-          <option>Visiting Friends</option>
-          <option>Medical</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <div class="fg fg-1">
-      <div class="fl"><label class="lbl">Accommodation / Host Address in Ireland <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in Ireland" required/></div>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
-    </div>
-  </div>
-</div>
-
-<!-- STEP 5: VISA HISTORY -->
-<div class="form-section" id="step-5">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-    <div><p class="fs-title">Ireland Visa History</p><p class="fs-sub">Your previous Ireland visa applications and any refusals.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-1">
-      <div class="fl">
-        <label class="lbl">Have you applied for an Ireland visa before? <span class="req">*</span></label>
-        <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="applied_before" value="yes" onchange="toggle('applied-cond','yes')"/> Yes</label>
-          <label class="radio-opt"><input type="radio" name="applied_before" value="no" onchange="toggle('applied-cond','no')" checked/> No</label>
+        <label class="lbl">Upload Passport Scan (bio data page) <span class="req">*</span></label>
+        <div class="file-zone" onclick="triggerFile('passport_scan')">
+          <input type="file" id="passport_scan" name="passport_scan" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-ps')" required/>
+          <div class="fz-icon">🛂</div><p class="fz-title">Click to upload current passport scan</p><p class="fz-sub">JPEG or PDF · <em>Mandatory — must be attached</em></p>
         </div>
-        <div class="cond" id="applied-cond">
-          <div class="fg fg-2" style="margin-bottom:0;">
-            <div class="fl"><label class="lbl">Date of Previous Application <span class="req">*</span></label><input type="date" name="prev_application_date" class="fi"/><p class="hint">Date you submitted the previous application</p></div>
-            <div class="fl"><label class="lbl">Country Where Applied <span class="req">*</span></label><input type="text" name="prev_application_country" class="fi" placeholder="e.g. United Kingdom"/></div>
+        <div id="prev-ps"></div>
+      </div>
+
+      <hr class="form-div"/>
+      <p class="sec-heading">📖 Previous Passport Details <span style="font-size:13px;font-weight:400;color:var(--gray-light);">(up to 2 expired passports)</span></p>
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">Previous Passport Number</label><input type="text" name="prev_passport_number" class="fi" placeholder="e.g. 123456789"/></div>
+        <div class="fl"><label class="lbl">Issue Date</label><input type="date" name="prev_passport_issue" class="fi"/></div>
+        <div class="fl"><label class="lbl">Expiry Date</label><input type="date" name="prev_passport_expiry" class="fi"/></div>
+      </div>
+      <div class="fl">
+        <label class="lbl">Upload 1st Expired Passport <span class="opt">Optional</span></label>
+        <div class="file-zone" onclick="triggerFile('prev_passport_1')">
+          <input type="file" id="prev_passport_1" name="prev_passport_1" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp1')"/>
+          <div class="fz-icon">📘</div><p class="fz-title">Upload 1st expired passport</p><p class="fz-sub">JPEG or PDF</p>
+        </div><div id="prev-pp1"></div>
+      </div>
+      <div class="fl" style="margin-top:16px;">
+        <label class="lbl">Upload 2nd Expired Passport <span class="opt">Optional</span></label>
+        <div class="file-zone" onclick="triggerFile('prev_passport_2')">
+          <input type="file" id="prev_passport_2" name="prev_passport_2" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp2')"/>
+          <div class="fz-icon">📗</div><p class="fz-title">Upload 2nd expired passport</p><p class="fz-sub">JPEG or PDF</p>
+        </div><div id="prev-pp2"></div>
+      </div>
+
+      <div class="form-nav"><div></div><button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button></div>
+    </div>
+  {{-- </div> --}}
+
+</div>
+
+<div class="form-section" id="step-2">
+  <!-- STEP 2: HOME ADDRESS -->
+  {{-- <div class="form-section" id="step-2"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div><p class="fs-title">Home Address</p><p class="fs-sub">Your current UK residential address and duration of residency.</p></div>
+    </div>
+    <div class="fs-body">
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Door Number <span class="req">*</span></label><input type="text" name="home_door" class="fi" placeholder="e.g. 42" required/></div>
+        <div class="fl"><label class="lbl">Street <span class="req">*</span></label><input type="text" name="home_street" class="fi" placeholder="e.g. Baker Street" required/></div>
+      </div>
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">City <span class="req">*</span></label><input type="text" name="home_city" class="fi" placeholder="e.g. London" required/></div>
+        <div class="fl"><label class="lbl">Postcode <span class="req">*</span></label><input type="text" name="home_postcode" class="fi" placeholder="e.g. SW1A 1AA" required/></div>
+        <div class="fl"><label class="lbl">Country <span class="req">*</span></label><input type="text" name="home_country" class="fi" value="United Kingdom" required/></div>
+      </div>
+      <div class="fg fg-1">
+        <div class="fl">
+          <label class="lbl">Length of Residency in UK — Living in UK Since <span class="req">*</span></label>
+          <p class="hint">Enter the date you first arrived / settled in the United Kingdom</p>
+          <input type="date" name="uk_residency_since" class="fi" required/>
+        </div>
+      </div>
+      {{-- <div class="form-nav">
+        <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button>
+        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
+      </div> --}}
+    </div>
+  {{-- </div> --}}
+
+  <!-- STEP 3: EMPLOYMENT -->
+  {{-- <div class="form-section" id="step-3"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div><p class="fs-title">Current Employment</p><p class="fs-sub">Your employer details, job role and duration of employment.</p></div>
+    </div>
+    <div class="fs-body">
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Current Employer / Company Name <span class="req">*</span></label><input type="text" name="company_name" class="fi" placeholder="e.g. NHS Trust, Acme Ltd" required/></div>
+        <div class="fl"><label class="lbl">Occupation <span class="req">*</span></label><input type="text" name="occupation" class="fi" placeholder="e.g. Nurse, Teacher, Driver" required/></div>
+      </div>
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Position / Job Title Held <span class="req">*</span></label><input type="text" name="job_title" class="fi" placeholder="e.g. Senior Nurse, Class Teacher, Delivery Driver" required/></div>
+      </div>
+      <p class="sec-heading">🏢 Employer Address</p>
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Door Number <span class="req">*</span></label><input type="text" name="work_door" class="fi" placeholder="Door / unit number" required/></div>
+        <div class="fl"><label class="lbl">Street <span class="req">*</span></label><input type="text" name="work_street" class="fi" placeholder="Street name" required/></div>
+      </div>
+      <div class="fg fg-3">
+        <div class="fl"><label class="lbl">City <span class="req">*</span></label><input type="text" name="work_city" class="fi" placeholder="City" required/></div>
+        <div class="fl"><label class="lbl">Postcode <span class="req">*</span></label><input type="text" name="work_postcode" class="fi" placeholder="Postcode" required/></div>
+        <div class="fl"><label class="lbl">Country <span class="req">*</span></label><input type="text" name="work_country" class="fi" value="United Kingdom" required/></div>
+      </div>
+      <p class="sec-heading">📅 Duration of Employment</p>
+      <div class="fg fg-2">
+        <div class="fl">
+          <label class="lbl">Start Date <span class="req">*</span></label>
+          <input type="date" name="employment_start" class="fi" required/>
+        </div>
+        <div class="fl">
+          <label class="lbl">Finish Date <span class="opt">If no longer employed</span></label>
+          <input type="date" name="employment_end" class="fi"/>
+          <p class="hint">Leave blank if currently still employed here</p>
+        </div>
+      </div>
+      <div class="form-nav">
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
+      </div>
+    </div>
+  {{-- </div> --}}
+
+</div>
+
+<div class="form-section" id="step-3">
+  <!-- STEP 4: TRAVEL DETAILS -->
+  {{-- <div class="form-section" id="step-4"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><p class="fs-title">Travel Details</p><p class="fs-sub">Your planned Ireland trip dates and accommodation.</p></div>
+    </div>
+    <div class="fs-body">
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Departure Date <span class="req">*</span></label><input type="date" name="departure_date" class="fi" required/></div>
+        <div class="fl"><label class="lbl">Return Date <span class="req">*</span></label><input type="date" name="return_date" class="fi" required/></div>
+      </div>
+      <div class="fg fg-2">
+        <div class="fl"><label class="lbl">Cities to Visit in Ireland <span class="req">*</span></label><input type="text" name="destination_city" class="fi" placeholder="e.g. Dublin, Cork, Galway" required/></div>
+        <div class="fl"><label class="lbl">Purpose of Visit <span class="req">*</span></label>
+          <select name="visit_purpose" class="fs-el" required>
+            <option value="" disabled selected>Select purpose…</option>
+            <option>Tourism / Sightseeing</option>
+            <option>Visiting Family</option>
+            <option>Visiting Friends</option>
+            <option>Medical</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Accommodation / Host Address in Ireland <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in Ireland" required/></div>
+      </div>
+      {{-- <div class="form-nav">
+        <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
+        <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
+      </div> --}}
+    </div>
+  {{-- </div> --}}
+
+  <!-- STEP 5: VISA HISTORY -->
+  {{-- <div class="form-section" id="step-5"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><p class="fs-title">Ireland Visa History</p><p class="fs-sub">Your previous Ireland visa applications and any refusals.</p></div>
+    </div>
+    <div class="fs-body">
+      <div class="fg fg-1">
+        <div class="fl">
+          <label class="lbl">Have you applied for an Ireland visa before? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="applied_before" value="yes" onchange="toggle('applied-cond','yes')"/> Yes</label>
+            <label class="radio-opt"><input type="radio" name="applied_before" value="no" onchange="toggle('applied-cond','no')" checked/> No</label>
+          </div>
+          <div class="cond" id="applied-cond">
+            <div class="fg fg-2" style="margin-bottom:0;">
+              <div class="fl"><label class="lbl">Date of Previous Application <span class="req">*</span></label><input type="date" name="prev_application_date" class="fi"/><p class="hint">Date you submitted the previous application</p></div>
+              <div class="fl"><label class="lbl">Country Where Applied <span class="req">*</span></label><input type="text" name="prev_application_country" class="fi" placeholder="e.g. United Kingdom"/></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="form-div"/>
+
+        <div class="fl">
+          <label class="lbl">Have you ever been refused an Ireland visa? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="refused_before" value="yes" onchange="toggle('refused-cond','yes')"/> Yes</label>
+            <label class="radio-opt"><input type="radio" name="refused_before" value="no" onchange="toggle('refused-cond','no')" checked/> No</label>
+          </div>
+          <div class="cond" id="refused-cond">
+            <div class="fg fg-2" style="margin-bottom:16px;">
+              <div class="fl"><label class="lbl">Date of Refusal <span class="req">*</span></label><input type="date" name="refused_date" class="fi"/></div>
+              <div class="fl"><label class="lbl">Country Where Applied <span class="req">*</span></label><input type="text" name="refused_country" class="fi" placeholder="e.g. United Kingdom"/></div>
+            </div>
+            <div class="fl"><label class="lbl">Reason for Refusal (if known)</label><textarea name="refused_reason" class="ft" placeholder="Please provide any details you know about why the visa was refused…"></textarea></div>
+          </div>
+        </div>
+      </div>
+      {{-- <div class="form-nav">
+        <button type="button" class="btn-prev" onclick="prevStep(5)">← Previous</button>
+        <button type="button" class="btn-next" onclick="nextStep(5)">Next Step →</button>
+      </div> --}}
+    </div>
+  {{-- </div> --}}
+
+  <!-- STEP 6: FAMILY & DOCUMENTS -->
+  {{-- <div class="form-section" id="step-6"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div><p class="fs-title">Family &amp; Supporting Documents</p><p class="fs-sub">Spouse and children's passports if applicable, plus optional financial documents.</p></div>
+    </div>
+    <div class="fs-body">
+      <p class="sec-heading">💍 Marital Status</p>
+      <div class="fg fg-1">
+        <div class="fl">
+          <label class="lbl">Are you married? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="is_married" value="yes" onchange="toggle('spouse-cond','yes')"/> Yes — Married</label>
+            <label class="radio-opt"><input type="radio" name="is_married" value="no" onchange="toggle('spouse-cond','no')" checked/> No — Single / Other</label>
+          </div>
+          <div class="cond" id="spouse-cond">
+            <div class="info-box green" style="margin-bottom:16px;"><strong>📋 Spouse's passport is required.</strong> Please upload a clear scan of the bio data page.</div>
+            <div class="fg fg-2" style="margin-bottom:16px;">
+              <div class="fl"><label class="lbl">Spouse's Full Name <span class="req">*</span></label><input type="text" name="spouse_name" class="fi" placeholder="Spouse's full name"/></div>
+              <div class="fl"><label class="lbl">Spouse's Date of Birth</label><input type="date" name="spouse_dob" class="fi"/></div>
+            </div>
+            <div class="fl">
+              <label class="lbl">Upload Spouse's Passport <span class="req">*</span></label>
+              <div class="file-zone" onclick="triggerFile('spouse_passport')">
+                <input type="file" id="spouse_passport" name="spouse_passport" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-spp')"/>
+                <div class="fz-icon">💑</div><p class="fz-title">Upload spouse's passport scan</p><p class="fz-sub">JPEG or PDF · Bio data page · <em>Required if married</em></p>
+              </div><div id="prev-spp"></div>
+            </div>
           </div>
         </div>
       </div>
 
       <hr class="form-div"/>
-
-      <div class="fl">
-        <label class="lbl">Have you ever been refused an Ireland visa? <span class="req">*</span></label>
-        <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="refused_before" value="yes" onchange="toggle('refused-cond','yes')"/> Yes</label>
-          <label class="radio-opt"><input type="radio" name="refused_before" value="no" onchange="toggle('refused-cond','no')" checked/> No</label>
-        </div>
-        <div class="cond" id="refused-cond">
-          <div class="fg fg-2" style="margin-bottom:16px;">
-            <div class="fl"><label class="lbl">Date of Refusal <span class="req">*</span></label><input type="date" name="refused_date" class="fi"/></div>
-            <div class="fl"><label class="lbl">Country Where Applied <span class="req">*</span></label><input type="text" name="refused_country" class="fi" placeholder="e.g. United Kingdom"/></div>
+      <p class="sec-heading">👶 Children</p>
+      <div class="fg fg-1">
+        <div class="fl">
+          <label class="lbl">Do you have children? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="has_children" value="yes" onchange="toggle('children-cond','yes')"/> Yes</label>
+            <label class="radio-opt"><input type="radio" name="has_children" value="no" onchange="toggle('children-cond','no')" checked/> No</label>
           </div>
-          <div class="fl"><label class="lbl">Reason for Refusal (if known)</label><textarea name="refused_reason" class="ft" placeholder="Please provide any details you know about why the visa was refused…"></textarea></div>
-        </div>
-      </div>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(5)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(5)">Next Step →</button>
-    </div>
-  </div>
-</div>
-
-<!-- STEP 6: FAMILY & DOCUMENTS -->
-<div class="form-section" id="step-6">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-    <div><p class="fs-title">Family &amp; Supporting Documents</p><p class="fs-sub">Spouse and children's passports if applicable, plus optional financial documents.</p></div>
-  </div>
-  <div class="fs-body">
-    <p class="sec-heading">💍 Marital Status</p>
-    <div class="fg fg-1">
-      <div class="fl">
-        <label class="lbl">Are you married? <span class="req">*</span></label>
-        <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="is_married" value="yes" onchange="toggle('spouse-cond','yes')"/> Yes — Married</label>
-          <label class="radio-opt"><input type="radio" name="is_married" value="no" onchange="toggle('spouse-cond','no')" checked/> No — Single / Other</label>
-        </div>
-        <div class="cond" id="spouse-cond">
-          <div class="info-box green" style="margin-bottom:16px;"><strong>📋 Spouse's passport is required.</strong> Please upload a clear scan of the bio data page.</div>
-          <div class="fg fg-2" style="margin-bottom:16px;">
-            <div class="fl"><label class="lbl">Spouse's Full Name <span class="req">*</span></label><input type="text" name="spouse_name" class="fi" placeholder="Spouse's full name"/></div>
-            <div class="fl"><label class="lbl">Spouse's Date of Birth</label><input type="date" name="spouse_dob" class="fi"/></div>
-          </div>
-          <div class="fl">
-            <label class="lbl">Upload Spouse's Passport <span class="req">*</span></label>
-            <div class="file-zone" onclick="triggerFile('spouse_passport')">
-              <input type="file" id="spouse_passport" name="spouse_passport" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-spp')"/>
-              <div class="fz-icon">💑</div><p class="fz-title">Upload spouse's passport scan</p><p class="fz-sub">JPEG or PDF · Bio data page · <em>Required if married</em></p>
-            </div><div id="prev-spp"></div>
+          <div class="cond" id="children-cond">
+            <div class="info-box green" style="margin-bottom:16px;"><strong>📋 Please upload your children's passports</strong> — one file per child or all together if they share a travel document.</div>
+            <div class="fl">
+              <label class="lbl">Number of Children <span class="req">*</span></label>
+              <input type="number" name="num_children" class="fi" placeholder="e.g. 2" min="1" max="15"/>
+            </div>
+            <div class="fl" style="margin-top:16px;">
+              <label class="lbl">Upload Children's Passports <span class="req">*</span></label>
+              <div class="file-zone" onclick="triggerFile('children_passports')">
+                <input type="file" id="children_passports" name="children_passports[]" accept=".jpg,.jpeg,.pdf" multiple onchange="showFile(this,'prev-chp')"/>
+                <div class="fz-icon">👦</div><p class="fz-title">Upload children's passports</p><p class="fz-sub">JPEG or PDF · Select multiple files if needed · <em>Required if Yes</em></p>
+              </div><div id="prev-chp"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <hr class="form-div"/>
-    <p class="sec-heading">👶 Children</p>
-    <div class="fg fg-1">
+      <hr class="form-div"/>
+      <p class="sec-heading">🟢 Optional Financial Documents</p>
+      <div class="info-box blue">These documents are not mandatory but will significantly strengthen your application.</div>
       <div class="fl">
-        <label class="lbl">Do you have children? <span class="req">*</span></label>
-        <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="has_children" value="yes" onchange="toggle('children-cond','yes')"/> Yes</label>
-          <label class="radio-opt"><input type="radio" name="has_children" value="no" onchange="toggle('children-cond','no')" checked/> No</label>
-        </div>
-        <div class="cond" id="children-cond">
-          <div class="info-box green" style="margin-bottom:16px;"><strong>📋 Please upload your children's passports</strong> — one file per child or all together if they share a travel document.</div>
-          <div class="fl">
-            <label class="lbl">Number of Children <span class="req">*</span></label>
-            <input type="number" name="num_children" class="fi" placeholder="e.g. 2" min="1" max="15"/>
-          </div>
-          <div class="fl" style="margin-top:16px;">
-            <label class="lbl">Upload Children's Passports <span class="req">*</span></label>
-            <div class="file-zone" onclick="triggerFile('children_passports')">
-              <input type="file" id="children_passports" name="children_passports[]" accept=".jpg,.jpeg,.pdf" multiple onchange="showFile(this,'prev-chp')"/>
-              <div class="fz-icon">👦</div><p class="fz-title">Upload children's passports</p><p class="fz-sub">JPEG or PDF · Select multiple files if needed · <em>Required if Yes</em></p>
-            </div><div id="prev-chp"></div>
-          </div>
-        </div>
+        <label class="lbl">3 Months Bank Statements <span class="opt">Optional</span></label>
+        <div class="file-zone" onclick="triggerFile('bank_statements')">
+          <input type="file" id="bank_statements" name="bank_statements" accept=".pdf" onchange="showFile(this,'prev-bs')"/>
+          <div class="fz-icon">🏦</div><p class="fz-title">Upload bank statements</p><p class="fz-sub">PDF only · Last 3 months</p>
+        </div><div id="prev-bs"></div>
+      </div>
+      <div class="fl" style="margin-top:16px;">
+        <label class="lbl">3 Months Payslips <span class="opt">Optional</span></label>
+        <div class="file-zone" onclick="triggerFile('payslips')">
+          <input type="file" id="payslips" name="payslips" accept=".pdf" onchange="showFile(this,'prev-py')"/>
+          <div class="fz-icon">💷</div><p class="fz-title">Upload payslips</p><p class="fz-sub">PDF only · Last 3 months</p>
+        </div><div id="prev-py"></div>
+      </div>
+
+      <div class="form-nav">
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button> --}}
+        <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
       </div>
     </div>
+  {{-- </div> --}}
 
-    <hr class="form-div"/>
-    <p class="sec-heading">🟢 Optional Financial Documents</p>
-    <div class="info-box blue">These documents are not mandatory but will significantly strengthen your application.</div>
-    <div class="fl">
-      <label class="lbl">3 Months Bank Statements <span class="opt">Optional</span></label>
-      <div class="file-zone" onclick="triggerFile('bank_statements')">
-        <input type="file" id="bank_statements" name="bank_statements" accept=".pdf" onchange="showFile(this,'prev-bs')"/>
-        <div class="fz-icon">🏦</div><p class="fz-title">Upload bank statements</p><p class="fz-sub">PDF only · Last 3 months</p>
-      </div><div id="prev-bs"></div>
-    </div>
-    <div class="fl" style="margin-top:16px;">
-      <label class="lbl">3 Months Payslips <span class="opt">Optional</span></label>
-      <div class="file-zone" onclick="triggerFile('payslips')">
-        <input type="file" id="payslips" name="payslips" accept=".pdf" onchange="showFile(this,'prev-py')"/>
-        <div class="fz-icon">💷</div><p class="fz-title">Upload payslips</p><p class="fz-sub">PDF only · Last 3 months</p>
-      </div><div id="prev-py"></div>
-    </div>
-
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(6)">Next Step →</button>
-    </div>
-  </div>
 </div>
 
-<!-- STEP 7: UK IMMIGRATION -->
-<div class="form-section" id="step-7">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-    <div><p class="fs-title">UK Immigration Status</p><p class="fs-sub">Your UK eVisa sharecode — required by the Irish embassy to verify your status.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="info-box blue">
-      <strong>🇬🇧 What is a UK eVisa Sharecode?</strong><br/>
-      The Irish embassy requires proof of your UK immigration status. Your sharecode allows them to verify your leave to remain, BRP, or eVisa online. It always <strong>starts with the letter S</strong>.<br/><br/>
-      Find your sharecode by logging in at <strong>gov.uk/view-prove-immigration-status</strong>
+<div class="form-section" id="step-4">
+  <!-- STEP 7: UK IMMIGRATION -->
+  {{-- <div class="form-section" id="step-7"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><p class="fs-title">UK Immigration Status</p><p class="fs-sub">Your UK eVisa sharecode — required by the Irish embassy to verify your status.</p></div>
     </div>
-    <div class="fg fg-1">
-      <div class="fl">
-        <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
-        <div class="sharecode-wrap">
-          <span class="sharecode-prefix">S</span>
-          <input type="text" name="uk_sharecode" class="fi sharecode-input" placeholder="Enter your sharecode (starts with S)" required oninput="this.value = this.value.toUpperCase();"/>
+    <div class="fs-body">
+      <div class="info-box blue">
+        <strong>🇬🇧 What is a UK eVisa Sharecode?</strong><br/>
+        The Irish embassy requires proof of your UK immigration status. Your sharecode allows them to verify your leave to remain, BRP, or eVisa online. It always <strong>starts with the letter S</strong>.<br/><br/>
+        Find your sharecode by logging in at <strong>gov.uk/view-prove-immigration-status</strong>
+      </div>
+      <div class="fg fg-1">
+        <div class="fl">
+          <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
+          <div class="sharecode-wrap">
+            <span class="sharecode-prefix">S</span>
+            <input type="text" name="uk_sharecode" class="fi sharecode-input" placeholder="Enter your sharecode (starts with S)" required oninput="this.value = this.value.toUpperCase();"/>
+          </div>
+          <p class="hint">Your full sharecode including the S prefix — e.g. S123-456-789</p>
         </div>
-        <p class="hint">Your full sharecode including the S prefix — e.g. S123-456-789</p>
+      </div>
+      <div class="info-box amber">
+        <strong>⚠️ Note:</strong> If you are a British or Irish passport holder, you may not need a sharecode. Contact our team on WhatsApp if you're unsure.
+      </div>
+      {{-- <div class="form-nav">
+        <button type="button" class="btn-prev" onclick="prevStep(7)">← Previous</button>
+        <button type="button" class="btn-next" onclick="nextStep(7)">Next Step →</button>
+      </div> --}}
+    </div>
+  {{-- </div> --}}
+
+  <!-- STEP 8: DECLARATION -->
+  {{-- <div class="form-section" id="step-8"> --}}
+    <div class="fs-header">
+      <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div><p class="fs-title">Final Declaration</p><p class="fs-sub">Review and confirm before submitting your application.</p></div>
+    </div>
+    <div class="fs-body">
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Additional Notes / Message <span class="opt">Optional</span></label><textarea name="message" class="ft" style="min-height:120px;" placeholder="Any additional information you'd like our visa team to know — special circumstances, questions, or anything else relevant…"></textarea></div>
+      </div>
+      <div style="padding:20px;background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.2);border-radius:12px;margin-top:4px;">
+        <label style="display:flex;align-items:flex-start;gap:14px;cursor:pointer;">
+          <input type="checkbox" name="declaration_confirm" required style="margin-top:3px;accent-color:var(--blue);width:18px;height:18px;flex-shrink:0;"/>
+          <span style="font-size:13px;color:var(--blue-dark);line-height:1.7;font-weight:500;">I confirm that all information and documents provided in this application are genuine, true, and accurate. I understand that providing false information may result in visa refusal or a ban on future applications.</span>
+        </label>
+      </div>
+      <div class="info-box amber" style="margin-top:16px;"><strong>🔒 Data Privacy:</strong> Your information is handled securely in accordance with GDPR and our ICO registration. We will never share your personal data with third parties without your explicit consent.</div>
+      <div class="form-nav">
+        {{-- <button type="button" class="btn-prev" onclick="prevStep(8)">← Previous</button> --}}
+        <button type="submit" class="btn-submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Submit Application</button>
       </div>
     </div>
-    <div class="info-box amber">
-      <strong>⚠️ Note:</strong> If you are a British or Irish passport holder, you may not need a sharecode. Contact our team on WhatsApp if you're unsure.
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(7)">← Previous</button>
-      <button type="button" class="btn-next" onclick="nextStep(7)">Next Step →</button>
-    </div>
-  </div>
+  {{-- </div> --}}
+
 </div>
 
-<!-- STEP 8: DECLARATION -->
-<div class="form-section" id="step-8">
-  <div class="fs-header">
-    <div class="fs-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <div><p class="fs-title">Final Declaration</p><p class="fs-sub">Review and confirm before submitting your application.</p></div>
-  </div>
-  <div class="fs-body">
-    <div class="fg fg-1">
-      <div class="fl"><label class="lbl">Additional Notes / Message <span class="opt">Optional</span></label><textarea name="message" class="ft" style="min-height:120px;" placeholder="Any additional information you'd like our visa team to know — special circumstances, questions, or anything else relevant…"></textarea></div>
-    </div>
-    <div style="padding:20px;background:var(--blue-faint);border:1.5px solid rgba(26,74,171,.2);border-radius:12px;margin-top:4px;">
-      <label style="display:flex;align-items:flex-start;gap:14px;cursor:pointer;">
-        <input type="checkbox" name="declaration_confirm" required style="margin-top:3px;accent-color:var(--blue);width:18px;height:18px;flex-shrink:0;"/>
-        <span style="font-size:13px;color:var(--blue-dark);line-height:1.7;font-weight:500;">I confirm that all information and documents provided in this application are genuine, true, and accurate. I understand that providing false information may result in visa refusal or a ban on future applications.</span>
-      </label>
-    </div>
-    <div class="info-box amber" style="margin-top:16px;"><strong>🔒 Data Privacy:</strong> Your information is handled securely in accordance with GDPR and our ICO registration. We will never share your personal data with third parties without your explicit consent.</div>
-    <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="prevStep(8)">← Previous</button>
-      <button type="submit" class="btn-submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Submit Application</button>
-    </div>
-  </div>
-</div>
 
 </div><!-- /main column -->
 
@@ -592,7 +770,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   <div class="side-card blue-grad">
     <p class="side-title">Application Progress</p>
     <div class="prog-bar"><div class="prog-fill" id="progress-fill" style="width:12.5%"></div></div>
-    <p class="prog-text" id="progress-text">Step 1 of 8</p>
+    <p class="prog-text" id="progress-text">Step 1 of 4</p>
   </div>
   <div class="side-card">
     <p class="side-title">📋 Document Checklist</p>
@@ -645,7 +823,7 @@ function scrollSteps(value){
   });
 }
 let currentStep = 1;
-const totalSteps = 8;
+const totalSteps = 4;
 function goToStep(n) {
   document.getElementById('step-'+currentStep)?.classList.remove('active');
   document.getElementById('sp-'+currentStep)?.classList.remove('active');

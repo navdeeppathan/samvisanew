@@ -18,6 +18,59 @@ class VisaRequestController extends Controller
         return view('admin.visarequests.index',compact('requests'));
     }
 
+    public function index()
+    {
+        $applications = collect();
+
+        // China
+        $china = ChinaVisaApplication::latest()->get()->map(function ($item) {
+            $item->country = 'china';
+            return $item;
+        });
+
+        // Dubai
+        $dubai = DubaiVisa::latest()->get()->map(function ($item) {
+            $item->country = 'dubai';
+            return $item;
+        });
+
+        // Europe
+        $europe = EuropeVisaApplication::latest()->get()->map(function ($item) {
+            $item->country = 'europe';
+            return $item;
+        });
+
+        // Ireland
+        $ireland = IrelandVisa::latest()->get()->map(function ($item) {
+            $item->country = 'ireland';
+            return $item;
+        });
+
+        // Morocco
+        $morocco = MoroccoVisa::latest()->get()->map(function ($item) {
+            $item->country = 'morocco';
+            return $item;
+        });
+
+        // Turkey
+        $turkey = TurkeyVisa::latest()->get()->map(function ($item) {
+            $item->country = 'turkey';
+            return $item;
+        });
+
+        // Merge all
+        $applications = $applications
+            ->merge($china)
+            ->merge($dubai)
+            ->merge($europe)
+            ->merge($ireland)
+            ->merge($morocco)
+            ->merge($turkey)
+            ->sortByDesc('created_at');
+
+        return view('admin.common.index', compact('applications'));
+    }
+
 
     // delete request
     public function destroy($id)

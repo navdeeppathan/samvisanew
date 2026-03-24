@@ -286,6 +286,35 @@
     .h-btns{flex-direction:column;}.cta-btns{flex-direction:column;align-items:center;}
     }
 </style>
+<style>
+  .hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
+
+/* overlay for readability */
+.hero-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+}
+</style>
 </head>
 <body>
 
@@ -303,9 +332,11 @@
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="#countries">Apply by Country</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="/seo-optimization">SEO</a></li>
       <li><a href="tel:+447879175585" class="nav-phone">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
         +44 7879 175585</a></li>
@@ -314,6 +345,8 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <a href="#services" onclick="toggleMobile()">Services</a>
+    <a href="/pricing" onclick="toggleMobile()">Pricing</a>
+
     <a href="#process" onclick="toggleMobile()">How It Works</a>
     <a href="#countries" onclick="toggleMobile()">Apply by Country</a>
     <a href="#testimonials" onclick="toggleMobile()">Reviews</a>
@@ -323,6 +356,11 @@
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-slider">
+  <img src="{{asset('b2.png')}}" class="slide active"/>
+  <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="slide"/>
+  <img src="{{asset('b1.png')}}" class="slide"/>
+</div>
   <div class="h-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
   <div class="h-grid" aria-hidden="true"></div>
   <svg class="h-globe" viewBox="0 0 200 200" fill="none" aria-hidden="true">
@@ -376,6 +414,17 @@
   </div>
   <div class="scroll-hint" aria-hidden="true"><div class="s-mouse"><div class="s-dot"></div></div><span>Scroll</span></div>
 </section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".hero-slider .slide");
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }, 4000); // change every 4 sec
+</script>
 
 <!-- STATS -->
 <div id="stats">

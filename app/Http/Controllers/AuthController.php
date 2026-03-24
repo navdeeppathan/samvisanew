@@ -42,7 +42,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-   public function login(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
@@ -51,11 +51,11 @@ class AuthController extends Controller
 
             if (Auth::user()->role === 'admin') {
                 return redirect()
-                ->route('admin.china.visa.index')
+                ->route('admin.visa.show.all')
                 ->with('success','Login successful');
             }
 
-            return redirect('/admin/china-visa');
+            return redirect('/admin/all-requests');
         }
 
         return back()->with('error', 'Invalid email or password');
