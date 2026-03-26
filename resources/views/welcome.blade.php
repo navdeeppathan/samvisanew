@@ -6,71 +6,171 @@
 <title>SAM Visa Services — London, UK</title>
 
 
-<!-- PRIMARY SEO -->
-<title>SAM Visa Services London — UK Visit Visa Experts | Fast, Reliable</title>
-<meta name="description" content="Professional visit visa services from London. Trusted by 5,000+ clients since 2010. Expert guidance for China, Europe, Ireland, Morocco, Turkey & UAE. ICO Registered. 98% success rate.">
-<meta name="keywords" content="visa services London, UK visit visa, China visa UK, Schengen visa London, Ireland visa, Morocco visa, Turkey visa, Dubai UAE visa">
-<meta name="author" content="SAM Visa Services">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="theme-color" content="#0f2f7a">
-
-<!-- GEO (Optional but good for local SEO) -->
-<meta name="geo.region" content="GB-ENG">
-<meta name="geo.placename" content="London, United Kingdom">
-<meta name="geo.position" content="51.5074;-0.1278">
-<meta name="ICBM" content="51.5074, -0.1278">
-
-<!-- CANONICAL -->
-<link rel="canonical" href="https://samvisauk.com/">
-<link rel="alternate" hreflang="en-gb" href="https://samvisauk.com/">
-<link rel="alternate" hreflang="x-default" href="https://samvisauk.com/">
-
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://samvisauk.com/">
-<meta property="og:title" content="SAM Visa Services — Expert UK Visit Visa Services from London">
-<meta property="og:description" content="Trusted visit visa services since 2010. Fast, reliable expert guidance for China, Europe, Ireland, Morocco, Turkey and UAE. 98% success rate.">
-<meta property="og:image" content="https://samvisauk.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SAM Visa Services — UK Visit Visa Experts, London">
-<meta property="og:site_name" content="SAM Visa Services">
-<meta property="og:locale" content="en_GB">
-
-<!-- TWITTER -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@samvisauk">
-<meta name="twitter:creator" content="@samvisauk">
-<meta name="twitter:title" content="SAM Visa Services — Expert UK Visit Visa Services from London">
-<meta name="twitter:description" content="Trusted visit visa services since 2010. China, Europe, Ireland, Morocco, Turkey, UAE. 98% success rate.">
-<meta name="twitter:image" content="https://samvisauk.com/og-image.jpg">
-<meta name="twitter:image:alt" content="SAM Visa Services London">
-
-<!-- JSON-LD (IMPORTANT) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SAM Visa Services",
-  "url": "https://samvisauk.com",
-  "logo": "https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png",
-  "description": "Professional visit visa services from London since 2010. Trusted by 5,000+ clients. 98% success rate.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "England",
-    "addressCountry": "GB"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+44-7879-175585",
-    "contactType": "customer service",
-    "areaServed": "GB",
-    "availableLanguage": "English"
+ {{-- ═══ CHARSET & VIEWPORT ═══ --}}
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ 
+  {{-- ═══ PRIMARY META TAGS ═══ --}}
+  <title>@yield('title', 'SAM Visa Services London — UK Visit Visa Experts | Fast, Reliable')</title>
+  <meta name="description"   content="@yield('meta_description', 'Professional visit visa services from London. Trusted by 5,000+ clients since 2010. Expert guidance for China, Europe, Ireland, Morocco, Turkey & UAE. ICO Registered. 98% success rate.')"/>
+  <meta name="keywords"      content="@yield('meta_keywords',    'visa services London, UK visit visa, China visa UK, Schengen visa London, Ireland visa, Morocco visa, Turkey visa, Dubai UAE visa, ICO registered visa agent, SAM visa')"/>
+  <meta name="author"        content="SAM Visa Services"/>
+  <meta name="robots"        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="theme-color"   content="#0f2f7a"/>
+  <meta name="language"      content="English"/>
+  <meta name="revisit-after" content="7 days"/>
+ 
+  {{-- ═══ GEO META ═══ --}}
+  <meta name="geo.region"    content="GB-ENG"/>
+  <meta name="geo.placename" content="London, United Kingdom"/>
+  <meta name="geo.position"  content="51.4613;-0.1156"/>
+  <meta name="ICBM"          content="51.4613, -0.1156"/>
+ 
+  {{-- ═══ CANONICAL & HREFLANG ═══ --}}
+  <link rel="canonical"   href="{{ url()->current() }}"/>
+  <link rel="alternate"   hreflang="en-gb"     href="{{ url()->current() }}"/>
+  <link rel="alternate"   hreflang="x-default" href="{{ url()->current() }}"/>
+ 
+  {{-- ═══ OPEN GRAPH (Facebook / LinkedIn / WhatsApp) ═══ --}}
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="{{ url()->current() }}"/>
+  <meta property="og:site_name"   content="SAM Visa Services"/>
+  <meta property="og:locale"      content="en_GB"/>
+  <meta property="og:title"       content="@yield('og_title',       'SAM Visa Services — Expert UK Visit Visa Services from London')"/>
+  <meta property="og:description" content="@yield('og_description', 'Trusted visit visa services since 2010. Fast, reliable expert guidance for China, Europe, Ireland, Morocco, Turkey and UAE from London. 98% success rate. ICO Registered.')"/>
+  <meta property="og:image"       content="@yield('og_image',       asset('images/og-image.jpg'))"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt"   content="@yield('og_image_alt',   'SAM Visa Services — UK Visit Visa Experts, London')"/>
+ 
+  {{-- ═══ TWITTER / X CARDS ═══ --}}
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:site"        content="@samvisauk"/>
+  <meta name="twitter:creator"     content="@samvisauk"/>
+  <meta name="twitter:title"       content="@yield('twitter_title',       'SAM Visa Services — Expert UK Visit Visa Services from London')"/>
+  <meta name="twitter:description" content="@yield('twitter_description', 'Trusted visit visa services since 2010. China, Europe, Ireland, Morocco, Turkey, UAE. ICO Registered. 98% success rate.')"/>
+  <meta name="twitter:image"       content="@yield('og_image', asset('images/og-image.jpg'))"/>
+  <meta name="twitter:image:alt"   content="SAM Visa Services London"/>
+ 
+  {{-- ═══ FAVICON ═══ --}}
+  <link rel="icon"             type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+  <link rel="icon"             type="image/png"    sizes="32x32"  href="{{ asset('favicon-32x32.png') }}"/>
+  <link rel="icon"             type="image/png"    sizes="16x16"  href="{{ asset('favicon-16x16.png') }}"/>
+  <link rel="apple-touch-icon" sizes="180x180"                    href="{{ asset('apple-touch-icon.png') }}"/>
+  <link rel="manifest"         href="{{ asset('site.webmanifest') }}"/>
+ 
+  {{-- ═══ FONTS ═══ --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+ 
+  {{-- ═══ CSS / VITE ═══ --}}
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  {{-- Or if not using Vite:
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
+  --}}
+ 
+  {{-- ═══ JSON-LD — ORGANIZATION (Global — every page) ═══ --}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://samvisauk.com/#organization",
+    "name": "SAM Visa Services",
+    "legalName": "SAM Visa Services Ltd",
+    "url": "https://samvisauk.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png",
+      "width": 200,
+      "height": 100
+    },
+    "image": "https://samvisauk.com/og-image.jpg",
+    "description": "Professional visit visa services from London since 2010. Trusted by 5,000+ clients. ICO Registered. 98% success rate.",
+    "foundingDate": "2010",
+    "areaServed": ["GB", "United Kingdom"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Brixton",
+      "addressLocality": "London",
+      "addressRegion": "England",
+      "addressCountry": "GB"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+44-7879-175585",
+      "contactType": "customer service",
+      "areaServed": "GB",
+      "availableLanguage": "English",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    }],
+    "sameAs": [
+      "https://www.facebook.com/samvisauk",
+      "https://www.instagram.com/samvisauk",
+      "https://wa.me/447879175585"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "reviewCount": "5000"
+    }
   }
-}
-</script>
-
+  </script>
+ 
+  {{-- ═══ JSON-LD — LOCAL BUSINESS (Global — every page) ═══ --}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://samvisauk.com/#localbusiness",
+    "name": "SAM Visa Services",
+    "image": "https://samvisauk.com/og-image.jpg",
+    "url": "https://samvisauk.com",
+    "telephone": "+44-7879-175585",
+    "priceRange": "££",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Bank Transfer, Card",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Brixton",
+      "addressLocality": "London",
+      "addressRegion": "England",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.4613,
+      "longitude": -0.1156
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "17:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "5000",
+      "bestRating": "5"
+    },
+    "hasMap": "https://maps.google.com/?q=SAM+Visa+Services+London"
+  }
+  </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
