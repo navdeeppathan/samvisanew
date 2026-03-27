@@ -142,8 +142,11 @@ class MoroccoVisaController extends Controller
             $data['payslips'] = 'uploads/morocco/docs/'.$name;
         }
 
-        MoroccoVisa::create($data);
+        // MoroccoVisa::create($data);
 
-        return redirect()->route('home')->with('success','Application submitted successfully');
+        // return redirect()->route('home')->with('success','Application submitted successfully');
+        $application = MoroccoVisa::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }

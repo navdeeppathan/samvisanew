@@ -145,8 +145,12 @@ class EuropeVisaController extends Controller
             $data['eu_relation_passport'] = 'uploads/visa/europe/eu_relation/'.$name;
         }
 
-        EuropeVisaApplication::create($data);
+        // EuropeVisaApplication::create($data);
 
-        return redirect()->route('home')->with('success','Application submitted successfully.');
+        // return redirect()->route('home')->with('success','Application submitted successfully.');
+
+        $application = EuropeVisaApplication::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }

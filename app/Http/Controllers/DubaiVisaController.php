@@ -143,8 +143,11 @@ class DubaiVisaController extends Controller
             $data['payslips'] = 'uploads/dubai/docs/'.$name;
         }
 
-        DubaiVisa::create($data);
+        // DubaiVisa::create($data);
 
-        return redirect()->route('home')->with('success','Dubai visa application submitted successfully');
+        // return redirect()->route('home')->with('success','Dubai visa application submitted successfully');
+        $application = DubaiVisa::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }

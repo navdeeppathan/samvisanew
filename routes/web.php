@@ -20,6 +20,16 @@ use App\Http\Controllers\Admin\VisaRequestController as AdminVisaController;
 |
 */
 
+use App\Http\Controllers\PaymentController;
+
+Route::get('/payment/checkout/{id}', [PaymentController::class, 'checkout'])->name('payment.checkout');
+
+Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+Route::post('/stripe/webhook', [PaymentController::class, 'webhook']);
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');

@@ -162,8 +162,11 @@ class IrelandVisaController extends Controller
             $data['children_passports'] = json_encode($files);
         }
 
-        IrelandVisa::create($data);
+        // IrelandVisa::create($data);
 
-        return redirect()->route('home')->with('success', 'Application Submitted Successfully');
+        // return redirect()->route('home')->with('success', 'Application Submitted Successfully');
+        $application = IrelandVisa::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }

@@ -170,8 +170,11 @@ class ChinaVisaController extends Controller
             $data['prev_visa'] = 'uploads/oldvisa/'.$name;
         }
 
-        ChinaVisaApplication::create($data);
+        // ChinaVisaApplication::create($data);
 
-        return redirect()->route('home')->with('success','Application submitted');
+        // return redirect()->route('home')->with('success','Application submitted');
+        $application = ChinaVisaApplication::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }

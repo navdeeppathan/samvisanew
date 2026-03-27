@@ -142,8 +142,11 @@ class TurkeyVisaController extends Controller
             $data['payslips'] = 'uploads/turkey/docs/'.$name;
         }
 
-        TurkeyVisa::create($data);
+        // TurkeyVisa::create($data);
 
-        return redirect()->route('home')->with('success','Turkey visa application submitted successfully');
+        // return redirect()->route('home')->with('success','Turkey visa application submitted successfully');
+        $application = TurkeyVisa::create($data);
+
+        return redirect()->route('payment.checkout', $application->id);
     }
 }
