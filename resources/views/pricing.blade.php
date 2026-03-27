@@ -413,30 +413,44 @@
 <!-- COUNTRY TABS -->
 <div class="country-tabs-wrap">
   <div class="country-tabs">
-    <button class="ctab active" onclick="showCountry('overview')" id="tab-overview"><span>🌍</span>All Countries</button>
-    <button class="ctab" onclick="showCountry('china')" id="tab-china">
+    <button class="ctab active"
+     onclick="showCountry('overview')" 
+     id="tab-overview"><span>🌍</span>All Countries</button>
+    <button class="ctab" 
+    {{-- onclick="showCountry('china')"  --}}
+    id="tab-china">
       <span class="ctab-flag">
         <img src="{{asset('chinaflag.webp')}}" alt="">
       </span>China</button>
-    <button class="ctab" onclick="showCountry('europe')" id="tab-europe">
+    <button class="ctab" 
+    {{-- onclick="showCountry('europe')"  --}}
+    id="tab-europe">
       <span class="ctab-flag">
         <img src="{{asset('europeflag.avif')}}" alt="">
       </span>
       Europe</button>
-    <button class="ctab" onclick="showCountry('ireland')" id="tab-ireland">
+    <button class="ctab"
+     {{-- onclick="showCountry('ireland')"  --}}
+     id="tab-ireland">
       <span class="ctab-flag">
         <img src="{{asset('irelandflag.png')}}" alt="">
       </span>Ireland</button>
-    <button class="ctab" onclick="showCountry('morocco')" id="tab-morocco">
+    <button class="ctab"
+     {{-- onclick="showCountry('morocco')" --}}
+      id="tab-morocco">
       <span class="ctab-flag">
         <img src="{{asset('moroccoflag.jpg')}}" alt="">
       </span>
       Morocco</button>
-    <button class="ctab" onclick="showCountry('turkey')" id="tab-turkey">
+    <button class="ctab" 
+    {{-- onclick="showCountry('turkey')"  --}}
+    id="tab-turkey">
       <span class="ctab-flag">
         <img src="{{asset('turkeyflag.svg')}}" alt="">
       </span>Turkey</button>
-    <button class="ctab" onclick="showCountry('dubai')" id="tab-dubai">
+    <button class="ctab" 
+    {{-- onclick="showCountry('dubai')"  --}}
+    id="tab-dubai">
       <span class="ctab-flag">
         <img src="{{asset('dubaiflag.svg')}}" alt="">
       </span>UAE / Dubai</button>
@@ -462,7 +476,8 @@
               <th>Visa Type</th>
               <th>Processing</th>
               <th>Our Service Fee</th>
-              <th></th>
+              <th>Ambassy Fee</th>
+              <th>Appointment Fee</th>
             </tr>
           </thead>
           <tbody>
@@ -470,56 +485,110 @@
               <td><span class="ot-flag">
                 <img src="{{asset('chinaflag.webp')}}" alt="">
               </span><span class="ot-country">China</span><div class="ot-type">Visit Visa</div></td>
-              <td><span class="ot-badge popular">Most Detail</span></td>
+              <td><span class="ot-badge popular">Tourist</span></td>
               <td style="color:var(--gray-mid)">10–15 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£99</span></td>
-              <td><a href="#" onclick="showCountry('china');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('china');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
               <td>
               <span class="ot-flag">
                 <img src="{{asset('europeflag.avif')}}" alt="">  
               </span><span class="ot-country">Europe (Schengen)</span><div class="ot-type">Schengen Visit Visa</div></td>
-              <td><span class="ot-badge standard">Standard</span></td>
+              <td><span class="ot-badge popular
+                {{-- standard --}}
+                ">Tourist</span></td>
               <td style="color:var(--gray-mid)">15–20 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£89</span></td>
-              <td><a href="#" onclick="showCountry('europe');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('europe');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
               <td><span class="ot-flag">
                   <img src="{{asset('irelandflag.png')}}" alt="">  
               </span><span class="ot-country">Ireland</span><div class="ot-type">Irish Visit Visa</div></td>
-              <td><span class="ot-badge standard">Standard</span></td>
+              <td><span class="ot-badge popular
+                {{-- standard --}}
+                ">Tourist</span></td>
               <td style="color:var(--gray-mid)">8–12 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£79</span></td>
-              <td><a href="#" onclick="showCountry('ireland');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('ireland');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
               <td><span class="ot-flag">
                 <img src="{{asset('moroccoflag.jpg')}}" alt=""> 
               </span><span class="ot-country">Morocco</span><div class="ot-type">Visit Visa</div></td>
-              <td><span class="ot-badge standard">Standard</span></td>
+              <td><span class="ot-badge popular
+                {{-- standard --}}
+                ">Tourist</span></td>
               <td style="color:var(--gray-mid)">5–8 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£69</span></td>
-              <td><a href="#" onclick="showCountry('morocco');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('morocco');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
               <td><span class="ot-flag">
                   <img src="{{asset('turkeyflag.svg')}}" alt="">
               </span><span class="ot-country">Turkey</span><div class="ot-type">Tourist Visa / eVisa</div></td>
-              <td><span class="ot-badge popular">Popular</span></td>
+              <td><span class="ot-badge popular">Tourist</span></td>
               <td style="color:var(--gray-mid)">3–5 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£59</span></td>
-              <td><a href="#" onclick="showCountry('turkey');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('turkey');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
               <td><span class="ot-flag">
                 <img src="{{asset('dubaiflag.svg')}}" alt="">
               </span><span class="ot-country">UAE / Dubai</span><div class="ot-type">Tourist Visa</div></td>
-              <td><span class="ot-badge popular">Popular</span></td>
+              <td><span class="ot-badge popular">Tourist</span></td>
               <td style="color:var(--gray-mid)">3–5 working days</td>
-              <td><span class="ot-from">from</span><span class="ot-price">£69</span></td>
-              <td><a href="#" onclick="showCountry('dubai');return false;" class="ot-apply">View →</a></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              <td>
+                {{-- <span class="ot-from">from</span> --}}
+                <span class="ot-price">£85</span></td>
+              {{-- <td><a href="#" onclick="showCountry('dubai');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
           </tbody>
         </table>

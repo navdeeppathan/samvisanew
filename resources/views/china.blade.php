@@ -317,6 +317,12 @@
   .success-title{font-family:var(--font-d);font-size:36px;font-weight:700;color:var(--blue-dark);margin-bottom:12px;}
   .success-sub{font-size:14px;color:var(--gray-mid);line-height:1.7;max-width:480px;margin:0 auto 32px;}
 
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    transform: none !important;
+  }
   @media(max-width:1000px){.form-wrap{grid-template-columns:1fr;padding:24px;}.sidebar{order:-1;}}
   @media(max-width:700px){#navbar{padding:0 16px;}.page-header{padding:40px 20px;}.steps-inner{padding:0 16px;}.fg-2,.fg-3{grid-template-columns:1fr;}}
   @media(max-width:500px){.form-wrap{padding:16px;}.fs-body{padding:20px;}}
@@ -451,7 +457,7 @@
         </div>
         <div class="fg fg-3">
           <div class="fl"><label class="lbl">City of Birth <span class="req">*</span></label><input type="text" name="city_of_birth" class="fi" placeholder="e.g. London" required/></div>
-          <div class="fl"><label class="lbl">State / Region of Birth <span class="req">*</span></label><input type="text" name="state_of_birth" class="fi" placeholder="e.g. Greater London" required/></div>
+          <div class="fl"><label class="lbl">State / Region of Birth <span class="req">*</span></label><input type="text" name="state_of_birth" class="fi" placeholder="e.g. London" required/></div>
           <div class="fl"><label class="lbl">Country of Birth <span class="req">*</span></label><input type="text" name="country_of_birth" class="fi" placeholder="e.g. United Kingdom" required/></div>
         </div>
         <div class="fg fg-2">
@@ -532,7 +538,7 @@
         </div>
         <div class="form-nav">
           
-          <button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button>
+          <button type="button" class="btn-next" id="next-1" disabled onclick="nextStep(1)">Next Step →</button>
         </div>
       </div>
     
@@ -643,7 +649,7 @@
         
         <div class="form-nav">
           {{-- <button type="button" class="btn-prev" onclick="prevStep()">← Previous</button> --}}
-          <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
+          <button type="button" class="btn-next" id="next-2" disabled onclick="nextStep(2)">Next Step →</button>
         </div>
       </div>
     
@@ -781,7 +787,7 @@
         </div>
         <div class="form-nav">
           {{-- <button type="button" class="btn-prev" onclick="prevStep(2)">← Previous</button> --}}
-          <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
+          <button type="button" class="btn-next" id="next-3" disabled onclick="nextStep(3)">Next Step →</button>
         </div>
       </div>
     
@@ -987,7 +993,7 @@
     <div class="side-card blue">
       <p class="side-title">Application Progress</p>
       <div class="prog-bar"><div class="prog-fill" id="progress-fill" style="width:10%"></div></div>
-      <p class="prog-text" id="progress-text">Step 1 of 10</p>
+      <p class="prog-text" id="progress-text">Step 1 of 4</p>
     </div>
 
     <div class="side-card">
@@ -1035,35 +1041,82 @@ function scrollSteps(value){
 let currentStep = 1;
 const totalSteps = 4;
 
+// function goToStep(n) {
+//   // Hide current
+//   document.getElementById('step-' + currentStep)?.classList.remove('active');
+//   document.getElementById('sp-' + currentStep)?.classList.remove('active');
+
+//   // Update previous steps as done
+//   for (let i = 1; i < n; i++) {
+//     document.getElementById('sp-' + i)?.classList.add('done');
+//     document.getElementById('sp-' + i)?.classList.remove('active');
+//   }
+//   // Remove done from steps >= n
+//   for (let i = n; i <= totalSteps; i++) {
+//     document.getElementById('sp-' + i)?.classList.remove('done');
+//   }
+
+//   currentStep = n;
+//   document.getElementById('step-' + n)?.classList.add('active');
+//   document.getElementById('sp-' + n)?.classList.add('active');
+
+//   // Update progress
+//   const pct = Math.round((n / totalSteps) * 100);
+//   document.getElementById('progress-fill').style.width = pct + '%';
+//   document.getElementById('progress-text').textContent = 'Step ' + n + ' of ' + totalSteps;
+
+//   // Scroll to top of step
+//   document.querySelector('.steps-wrap').scrollIntoView({behavior:'smooth', block:'start'});
+// }
+
 function goToStep(n) {
-  // Hide current
+
+  // 🚫 Prevent jumping ahead if previous step not valid
+  for (let i = 1; i < n; i++) {
+    if (!validateStep(i)) {
+      alert("Please complete Step " + i + " first.");
+      return;
+    }
+  }
+
   document.getElementById('step-' + currentStep)?.classList.remove('active');
   document.getElementById('sp-' + currentStep)?.classList.remove('active');
 
-  // Update previous steps as done
   for (let i = 1; i < n; i++) {
     document.getElementById('sp-' + i)?.classList.add('done');
     document.getElementById('sp-' + i)?.classList.remove('active');
   }
-  // Remove done from steps >= n
+
   for (let i = n; i <= totalSteps; i++) {
     document.getElementById('sp-' + i)?.classList.remove('done');
   }
 
   currentStep = n;
+
   document.getElementById('step-' + n)?.classList.add('active');
   document.getElementById('sp-' + n)?.classList.add('active');
 
-  // Update progress
   const pct = Math.round((n / totalSteps) * 100);
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('progress-text').textContent = 'Step ' + n + ' of ' + totalSteps;
 
-  // Scroll to top of step
-  document.querySelector('.steps-wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  updateNextButton(n);
 }
 
-function nextStep(n) { if (n < totalSteps) goToStep(n + 1); }
+// function nextStep(n) { if (n < totalSteps) goToStep(n + 1); }
+function nextStep(n) {
+  if (!validateStep(n)) {
+    alert("Please fill all required fields before continuing.");
+    return;
+  }
+  // if (!field.value.trim()) {
+  //   field.style.borderColor = "red";
+  // } else {
+  //   field.style.borderColor = "";
+  // }
+  if (n < totalSteps) goToStep(n + 1);
+}
+
 function prevStep(n) { if (n > 1) goToStep(n - 1); }
 
 function toggle(id, val) {
@@ -1101,6 +1154,45 @@ document.querySelectorAll('.file-zone').forEach(zone => {
     }
   });
 });
+
+function validateStep(step) {
+  const section = document.getElementById('step-' + step);
+  if (!section) return false;
+
+  let valid = true;
+
+  // Inputs & Selects
+  const fields = section.querySelectorAll("input[required], select[required], textarea[required]");
+
+  fields.forEach(field => {
+    if (field.type === "radio") {
+      const name = field.name;
+      const checked = section.querySelector(`input[name="${name}"]:checked`);
+      if (!checked) valid = false;
+    } else if (field.type === "file") {
+      if (!field.files.length) valid = false;
+    } else {
+      if (!field.value.trim()) valid = false;
+    }
+  });
+
+  return valid;
+}
+function updateNextButton(step) {
+  const btn = document.getElementById('next-' + step);
+  if (!btn) return;
+
+  btn.disabled = !validateStep(step);
+}
+
+document.querySelectorAll("input, select, textarea").forEach(el => {
+  el.addEventListener("input", () => updateNextButton(currentStep));
+  el.addEventListener("change", () => updateNextButton(currentStep));
+});
+
+window.onload = () => {
+  updateNextButton(1);
+};
 </script>
 </body>
 </html>

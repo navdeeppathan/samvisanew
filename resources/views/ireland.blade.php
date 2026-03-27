@@ -291,6 +291,13 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 .country-link:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-faint);}
 .country-link.current{border-color:var(--blue);color:var(--blue);background:var(--blue-faint);}
 .country-link:last-child{margin-bottom:0;}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  transform: none !important;
+}
 @media(max-width:1000px){.form-wrap{grid-template-columns:1fr;padding:24px;}.sidebar{order:-1;}}
 @media(max-width:700px){#navbar{padding:0 16px;}.page-header{padding:40px 20px;}.steps-inner{padding:0 16px;}.fg-2,.fg-3{grid-template-columns:1fr;}}
 @media(max-width:500px){.form-wrap{padding:16px;}.fs-body{padding:20px;}.fs-header{padding:20px;}}
@@ -455,7 +462,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
         </div><div id="prev-pp2"></div>
       </div>
 
-      <div class="form-nav"><div></div><button type="button" class="btn-next" onclick="nextStep(1)">Next Step →</button></div>
+      <div class="form-nav"><div></div><button type="button" class="btn-next" id="next-1" disabled onclick="nextStep(1)">Next Step →</button></div>
     </div>
   {{-- </div> --}}
 
@@ -530,7 +537,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
       </div>
       <div class="form-nav">
         {{-- <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button> --}}
-        <button type="button" class="btn-next" onclick="nextStep(2)">Next Step →</button>
+        <button type="button" class="btn-next" id="next-2" disabled onclick="nextStep(2)">Next Step →</button>
       </div>
     </div>
   {{-- </div> --}}
@@ -696,7 +703,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 
       <div class="form-nav">
         {{-- <button type="button" class="btn-prev" onclick="prevStep(6)">← Previous</button> --}}
-        <button type="button" class="btn-next" onclick="nextStep(3)">Next Step →</button>
+        <button type="button" class="btn-next" id="next-3" disabled onclick="nextStep(3)">Next Step →</button>
       </div>
     </div>
   {{-- </div> --}}
@@ -824,20 +831,63 @@ function scrollSteps(value){
 }
 let currentStep = 1;
 const totalSteps = 4;
+// function goToStep(n) {
+//   document.getElementById('step-'+currentStep)?.classList.remove('active');
+//   document.getElementById('sp-'+currentStep)?.classList.remove('active');
+//   for(let i=1;i<n;i++){const p=document.getElementById('sp-'+i);if(p){p.classList.add('done');p.classList.remove('active');}}
+//   for(let i=n;i<=totalSteps;i++){document.getElementById('sp-'+i)?.classList.remove('done');}
+//   currentStep=n;
+//   document.getElementById('step-'+n)?.classList.add('active');
+//   document.getElementById('sp-'+n)?.classList.add('active');
+//   const pct=Math.round((n/totalSteps)*100);
+//   document.getElementById('progress-fill').style.width=pct+'%';
+//   document.getElementById('progress-text').textContent='Step '+n+' of '+totalSteps;
+//   document.querySelector('.steps-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+// }
 function goToStep(n) {
-  document.getElementById('step-'+currentStep)?.classList.remove('active');
-  document.getElementById('sp-'+currentStep)?.classList.remove('active');
-  for(let i=1;i<n;i++){const p=document.getElementById('sp-'+i);if(p){p.classList.add('done');p.classList.remove('active');}}
-  for(let i=n;i<=totalSteps;i++){document.getElementById('sp-'+i)?.classList.remove('done');}
-  currentStep=n;
-  document.getElementById('step-'+n)?.classList.add('active');
-  document.getElementById('sp-'+n)?.classList.add('active');
-  const pct=Math.round((n/totalSteps)*100);
-  document.getElementById('progress-fill').style.width=pct+'%';
-  document.getElementById('progress-text').textContent='Step '+n+' of '+totalSteps;
-  document.querySelector('.steps-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+
+  // 🚫 Prevent jumping ahead if previous step not valid
+  for (let i = 1; i < n; i++) {
+    if (!validateStep(i)) {
+      alert("Please complete Step " + i + " first.");
+      return;
+    }
+  }
+
+  document.getElementById('step-' + currentStep)?.classList.remove('active');
+  document.getElementById('sp-' + currentStep)?.classList.remove('active');
+
+  for (let i = 1; i < n; i++) {
+    document.getElementById('sp-' + i)?.classList.add('done');
+    document.getElementById('sp-' + i)?.classList.remove('active');
+  }
+
+  for (let i = n; i <= totalSteps; i++) {
+    document.getElementById('sp-' + i)?.classList.remove('done');
+  }
+
+  currentStep = n;
+
+  document.getElementById('step-' + n)?.classList.add('active');
+  document.getElementById('sp-' + n)?.classList.add('active');
+
+  const pct = Math.round((n / totalSteps) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = 'Step ' + n + ' of ' + totalSteps;
+
+  updateNextButton(n);
 }
-function nextStep(n){if(n<totalSteps)goToStep(n+1);}
+// function nextStep(n){if(n<totalSteps)goToStep(n+1);}
+function nextStep(n) {
+  if (!validateStep(n)) {
+    alert("Please fill all required fields before continuing.");
+    return;
+  }
+  if (n < totalSteps) goToStep(n + 1);
+}
+window.onload = () => {
+  updateNextButton(1);
+};
 function prevStep(n){if(n>1)goToStep(n-1);}
 function toggle(id,val){const el=document.getElementById(id);if(el)el.classList.toggle('show',val==='yes');}
 function triggerFile(id){document.getElementById(id).click();}
@@ -865,6 +915,40 @@ document.querySelectorAll('.file-zone').forEach(zone=>{
     const map={passport_scan:'prev-ps',prev_passport_1:'prev-pp1',prev_passport_2:'prev-pp2',spouse_passport:'prev-spp',children_passports:'prev-chp',bank_statements:'prev-bs',payslips:'prev-py'};
     const pid=map[input.id]||'';if(pid)showFile(input,pid);}catch(err){}
   });
+});
+
+function validateStep(step) {
+  const section = document.getElementById('step-' + step);
+  if (!section) return false;
+
+  let valid = true;
+
+  // Inputs & Selects
+  const fields = section.querySelectorAll("input[required], select[required], textarea[required]");
+
+  fields.forEach(field => {
+    if (field.type === "radio") {
+      const name = field.name;
+      const checked = section.querySelector(`input[name="${name}"]:checked`);
+      if (!checked) valid = false;
+    } else if (field.type === "file") {
+      if (!field.files.length) valid = false;
+    } else {
+      if (!field.value.trim()) valid = false;
+    }
+  });
+
+  return valid;
+}
+function updateNextButton(step) {
+  const btn = document.getElementById('next-' + step);
+  if (!btn) return;
+
+  btn.disabled = !validateStep(step);
+}
+document.querySelectorAll("input, select, textarea").forEach(el => {
+  el.addEventListener("input", () => updateNextButton(currentStep));
+  el.addEventListener("change", () => updateNextButton(currentStep));
 });
 </script>
 </body>
