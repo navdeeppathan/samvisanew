@@ -16,6 +16,7 @@
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Payment Status</th>
                 <th>Country</th>
                 <th>Action</th>
             </tr>
@@ -33,6 +34,13 @@
 
                 <td>{{ $app->email ?? '-' }}</td>
                 <td>{{ $app->mobile_phone ?? '-' }}</td>
+
+                <!-- PAYMENT BADGE -->
+                <td>
+                    <span class="badge bg-info text-dark text-uppercase">
+                        {{ $app->payment_status }}
+                    </span>
+                </td>
 
                 <!-- COUNTRY BADGE -->
                 <td>
