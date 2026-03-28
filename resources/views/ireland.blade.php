@@ -780,18 +780,33 @@ button:disabled {
     <p class="prog-text" id="progress-text">Step 1 of 4</p>
   </div>
   <div class="side-card">
-    <p class="side-title">📋 Document Checklist</p>
+    <p class="side-title">📋 Document Upload</p>
     <ul class="req-list">
       <li><span class="req-badge r">R</span><span>Current passport scan — JPEG/PDF</span></li>
       <li><span class="req-badge r">R</span><span>UK eVisa sharecode — starts with S</span></li>
-      <li><span class="req-badge g">O</span><span>Up to 2 previous expired passports</span></li>
+      {{-- <li><span class="req-badge g">O</span><span>Up to 2 previous expired passports</span></li>
       <li><span class="req-badge g">O</span><span>Spouse's passport (if married)</span></li>
       <li><span class="req-badge g">O</span><span>Children's passports (if applicable)</span></li>
       <li><span class="req-badge g">O</span><span>3 months bank statements — PDF</span></li>
-      <li><span class="req-badge g">O</span><span>3 months payslips — PDF</span></li>
+      <li><span class="req-badge g">O</span><span>3 months payslips — PDF</span></li> --}}
     </ul>
     <p style="font-size:10px;color:var(--gray-light);margin-top:12px;line-height:1.6;"><span style="color:var(--red);font-weight:700;">R</span> = Required &nbsp;·&nbsp; <span style="color:var(--green);font-weight:700;">O</span> = Optional but recommended</p>
   </div>
+
+  <div class="side-card">
+    <p class="side-title">📋 Document Submitted in Embassy</p>
+    <ul class="req-list">
+      <li><span class="req-badge r">R</span><span>Current passport scan — JPEG/PDF</span></li>
+      <li><span class="req-badge r">R</span><span>UK eVisa sharecode — starts with S</span></li>
+      <li><span class="req-badge r">R</span><span>Up to 2 previous expired passports</span></li>
+      <li><span class="req-badge r">R</span><span>Spouse's passport (if married)</span></li>
+      <li><span class="req-badge r">R</span><span>Children's passports (if applicable)</span></li>
+      <li><span class="req-badge r">R</span><span>3 months bank statements — PDF</span></li>
+      <li><span class="req-badge r">R</span><span>3 months payslips — PDF</span></li>
+    </ul>
+    <p style="font-size:10px;color:var(--gray-light);margin-top:12px;line-height:1.6;"><span style="color:var(--red);font-weight:700;">R</span> = Required &nbsp;·&nbsp; <span style="color:var(--green);font-weight:700;">O</span> = Optional but recommended</p>
+  </div>
+
   <div class="side-card">
     <p class="side-title">⚠️ Key Requirements</p>
     <ul class="req-list">
