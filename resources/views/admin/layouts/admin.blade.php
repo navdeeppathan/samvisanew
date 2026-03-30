@@ -16,33 +16,33 @@
 
 <!-- ✅ OPEN GRAPH (Facebook / LinkedIn / WhatsApp) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.tourfybrandise.com/">
+<meta property="og:url" content="https://samvisauk.com/">
 <meta property="og:title" content="Samvisa">
 <meta property="og:description" content="Results-driven marketing and branding agency helping businesses grow.">
-<meta property="og:image" content="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png">
+<meta property="og:image" content="{{asset('logotr.png')}}">
 <meta property="og:site_name" content="Samvisa">
 
 <!-- ✅ TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Samvisa">
 <meta name="twitter:description" content="Marketing and Branding Agency in India">
-<meta name="twitter:image" content="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png">
+<meta name="twitter:image" content="{{asset('logotr.png')}}">
 
 <!-- ✅ CANONICAL -->
-<link rel="canonical" href="https://www.tourfybrandise.com/">
+<link rel="canonical" href="https://samvisauk.com/">
 
   <!-- Favicons -->
   {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
   {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
 
   <!-- Favicon -->
-<link rel="icon" href="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" type="image/jpeg">
-<link rel="apple-touch-icon" href="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png">
+<link rel="icon" href="{{asset('logotr.png')}}" type="image/jpeg">
+<link rel="apple-touch-icon" href="{{asset('logotr.png')}}">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:title" content="Samvisa">
 <meta property="og:description" content="Branding Agency & Digital Solutions">
-<meta property="og:image" content="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png">
+<meta property="og:image" content="{{asset('logotr.png')}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="http://tourfybrandise.infoharry.in/">
@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Samvisa">
 <meta name="twitter:description" content="Travel, Branding & Digital Solutions">
-<meta name="twitter:image" content="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png">
+<meta name="twitter:image" content="{{asset('logotr.png')}}">
 
 
 <meta name="description" content="Samvisa">
@@ -1000,7 +1000,7 @@
                 </svg>
             </div> --}}
             {{-- <span class="brand-name">Samvisa</span> --}}
-            <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" class="sidebar-logo" alt="">
+            <img src="{{asset('logotr.png')}}" class="sidebar-logo" alt="">
             <button class="collapse-btn" onclick="toggleSidebar()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>

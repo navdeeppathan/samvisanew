@@ -333,7 +333,9 @@
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/></a>
+    {{-- <a href="/" class="nav-logo"><img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/></a> --}}
+    <a href="/" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
+
     <a href="/" class="nav-back">← Back to Home</a>
     <a href="tel:+447912649410" class="nav-phone">📞 +44 7912 649410</a>
   </div>

@@ -340,7 +340,7 @@
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/></a>
+    <a href="index.html" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
     <ul class="nav-links">
       <li><a href="/#services">Services</a></li>
       <li><a href="/pricing" class="active">Pricing</a></li>
@@ -1103,7 +1103,7 @@
 <!-- FOOTER -->
 <footer style="background:var(--blue-dark);padding:40px 48px 28px;">
   <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-    <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services" style="height:44px;filter:brightness(0) invert(1);opacity:.7;"/>
+    <img src="{{asset('logotr.png')}}" alt="SAM Visa Services" style="height:44px;filter:brightness(0) invert(1);opacity:.7;"/>
     <p style="font-size:12px;color:rgba(255,255,255,.3);">© 2025 SAM Visa Services · London UK · ICO Registered</p>
     <div style="display:flex;gap:20px;">
       <a href="/" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Home</a>

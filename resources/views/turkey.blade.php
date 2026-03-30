@@ -333,7 +333,7 @@ button:disabled {
 <nav id="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/>
+      <img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/>
     </a>
     <a href="/" class="nav-back">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>

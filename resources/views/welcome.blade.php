@@ -78,7 +78,7 @@
     "url": "https://samvisauk.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png",
+      "url": "{{asset('logo.jpeg')}}",
       "width": 200,
       "height": 100
     },
@@ -435,6 +435,7 @@
     .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;}
     .foot-logo-row{margin-bottom:20px;}
     .foot-logo-row img{height:60px;object-fit:contain;filter:brightness(0) invert(1);opacity:.8;}
+    /* filter:brightness(0) invert(1);opacity:.8; */
     .foot-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:24px;}
     .foot-phone{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:14px;font-weight:600;text-decoration:none;transition:color .3s;}
     .foot-phone:hover{color:var(--white);}
@@ -514,7 +515,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/>
+      <img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -1024,7 +1025,7 @@ function sendToWhatsApp() {
     <div class="foot-grid">
       <div class="reveal from-left">
         <div class="foot-logo-row">
-          <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/>
+          <img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/>
         </div>
         <p class="foot-desc">A professional travel service provider based in London, offering visit visa services since 2010. Registered with the ICO.</p>
         <a href="tel:+447912649410" class="foot-phone">📞 +44 7912 649410</a>

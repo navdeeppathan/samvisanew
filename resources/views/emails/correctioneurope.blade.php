@@ -50,7 +50,7 @@
     <!-- ═══════════════ LOGO HEADER ═══════════════ -->
     <tr>
       <td align="center" style="padding:0 0 28px;">
-        <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png"
+        <img src="{{asset('logotr.png')}}"
              alt="SAM Visa Services"
              width="160"
              style="display:block;width:160px;max-width:160px;height:auto;"/>
@@ -317,7 +317,7 @@
         <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
           <tr>
             <td align="center" style="padding:0 0 12px;">
-              <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png"
+              <img src="{{asset('logotr.png')}}"
                    alt="SAM Visa Services"
                    width="100"
                    style="display:block;width:100px;height:auto;opacity:0.5;"/>

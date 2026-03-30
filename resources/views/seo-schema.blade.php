@@ -179,7 +179,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/></a>
+    <a href="/" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
     <a href="/" class="nav-back">← Back to Home</a>
     <a href="tel:+447912649410" class="nav-phone">📞 +44 7912 649410</a>
   </div>
@@ -404,7 +404,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   <span class="t-key">"url"</span><span class="t-comma">:</span> <span class="t-str">"https://samvisauk.com"</span><span class="t-comma">,</span>
   <span class="t-key">"logo"</span><span class="t-comma">:</span> <span class="t-bracket">{</span>
     <span class="t-key">"@type"</span><span class="t-comma">:</span> <span class="t-str">"ImageObject"</span><span class="t-comma">,</span>
-    <span class="t-key">"url"</span><span class="t-comma">:</span> <span class="t-str">"https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png"</span><span class="t-comma">,</span>
+    <span class="t-key">"url"</span><span class="t-comma">:</span> <span class="t-str">"{{asset('logotr.png')}}"</span><span class="t-comma">,</span>
     <span class="t-key">"width"</span><span class="t-comma">:</span> <span class="t-num">200</span><span class="t-comma">,</span>
     <span class="t-key">"height"</span><span class="t-comma">:</span> <span class="t-num">100</span>
   <span class="t-bracket">}</span><span class="t-comma">,</span>

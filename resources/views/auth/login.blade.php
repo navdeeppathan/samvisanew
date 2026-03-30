@@ -248,7 +248,7 @@ padding:40px 25px;
 
 <div class="login-left">
     <div class="login-logo">
-        <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="">
+        <img src="{{asset('logotr.png')}}" alt="">
     </div>
 <h1>Welcome Back</h1>
 
