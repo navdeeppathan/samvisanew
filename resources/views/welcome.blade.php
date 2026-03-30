@@ -64,7 +64,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
  
- 
+  <!-- Font Awesome CDN (for WhatsApp icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
  
  
   {{-- ═══ JSON-LD — ORGANIZATION (Global — every page) ═══ --}}
@@ -812,6 +813,79 @@
   </div>
 </section>
 
+<a  href="javascript:void(0)" onclick="openWaPopup()" 
+   class="floatic-whatsapp-btn">
+   
+   <span class="floatic-whatsapp-icon">
+     <i class="fab fa-whatsapp"></i>
+   </span>
+
+</a>
+
+<style>
+  .floatic-whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+
+    text-decoration: none;
+    font-size: 28px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .floatic-whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #20b358;
+  }
+
+  .floatic-whatsapp-icon i {
+    line-height: 1;
+  }
+
+  /* Optional pulse animation */
+  .floatic-whatsapp-btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.5);
+    animation: floatic-whatsapp-pulse 1.8s infinite;
+    z-index: -1;
+  }
+
+  @keyframes floatic-whatsapp-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    70% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+
+
+
 <div id="waPopup" class="whatsapp-popup">
   <div class="whatsapp-popup-box">
 
@@ -854,169 +928,171 @@
   </div>
 </div>
 
+
+
 <style>
-.whatsapp-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  backdrop-filter: blur(4px);
-}
-
-.whatsapp-popup-box {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  animation: whatsappFadeIn 0.3s ease;
-}
-
-/* Header */
-.whatsapp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.whatsapp-header h3 {
-  font-size: 18px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.whatsapp-close {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #888;
-}
-
-/* Body */
-.whatsapp-body {
-  padding: 20px;
-}
-
-.whatsapp-text {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-.whatsapp-input-group {
-  margin-bottom: 15px;
-}
-
-.whatsapp-input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.whatsapp-input:focus {
-  border-color: #25D366;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
-}
-
-.whatsapp-warning {
-  font-size: 13px;
-  color: #b45309;
-  background: #fff7ed;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-/* Footer */
-.whatsapp-footer {
-  display: flex;
-  gap: 10px;
-  padding: 15px 20px;
-  border-top: 1px solid #eee;
-}
-
-.whatsapp-btn-primary {
-  flex: 1;
-  background: #25D366;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.whatsapp-btn-primary:hover {
-  background: #1ebe5d;
-}
-
-.whatsapp-btn-secondary {
-  flex: 1;
-  background: #f1f5f9;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* Animation */
-@keyframes whatsappFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
+  .whatsapp-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+
+  .whatsapp-popup-box {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: whatsappFadeIn 0.3s ease;
   }
-}
+
+  /* Header */
+  .whatsapp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .whatsapp-header h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .whatsapp-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+  }
+
+  /* Body */
+  .whatsapp-body {
+    padding: 20px;
+  }
+
+  .whatsapp-text {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .whatsapp-input-group {
+    margin-bottom: 15px;
+  }
+
+  .whatsapp-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .whatsapp-input:focus {
+    border-color: #25D366;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
+  }
+
+  .whatsapp-warning {
+    font-size: 13px;
+    color: #b45309;
+    background: #fff7ed;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  .whatsapp-footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .whatsapp-btn-primary {
+    flex: 1;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .whatsapp-btn-primary:hover {
+    background: #1ebe5d;
+  }
+
+  .whatsapp-btn-secondary {
+    flex: 1;
+    background: #f1f5f9;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  /* Animation */
+  @keyframes whatsappFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 </style>
 
 <script>
-function openWaPopup() {
-  document.getElementById("waPopup").style.display = "flex";
-}
-
-function closeWaPopup() {
-  document.getElementById("waPopup").style.display = "none";
-}
-
-function sendToWhatsApp() {
-  let txnId = document.getElementById("transactionId").value.trim();
-
-  if (!txnId) {
-    alert("Please enter Transaction ID");
-    return;
+  function openWaPopup() {
+    document.getElementById("waPopup").style.display = "flex";
   }
 
-  let message = `Hello, I want to proceed with my visa application.\nTransaction ID: ${txnId}`;
+  function closeWaPopup() {
+    document.getElementById("waPopup").style.display = "none";
+  }
 
-  let phone = "447912649410";
-  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  function sendToWhatsApp() {
+    let txnId = document.getElementById("transactionId").value.trim();
 
-  window.open(url, "_blank");
+    if (!txnId) {
+      alert("Please enter Transaction ID");
+      return;
+    }
 
-  closeWaPopup();
-}
+    let message = `Hello, I want to proceed with my visa application.\nTransaction ID: ${txnId}`;
+
+    let phone = "447912649410";
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+    closeWaPopup();
+  }
 </script>
 
 <!-- FOOTER -->

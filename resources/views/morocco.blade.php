@@ -862,7 +862,7 @@ button:disabled {
       </div>
       <div class="contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <a href="https://wa.me/447912649410" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="javascript:void(0)" onclick="openWaPopup()" class="btn-wa2">WhatsApp Us</a>
       </div>
       <div class="contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -883,6 +883,213 @@ button:disabled {
   </div><!-- /sidebar -->
 </div><!-- /form-wrap -->
 </form>
+
+<div id="waPopup" class="whatsapp-popup">
+  <div class="whatsapp-popup-box">
+
+    <div class="whatsapp-header">
+      <h3>Continue to WhatsApp</h3>
+      <button class="whatsapp-close" onclick="closeWaPopup()">×</button>
+    </div>
+
+    <div class="whatsapp-body">
+      <p class="whatsapp-text">
+        Please enter your <strong>Transaction ID</strong> to proceed with WhatsApp chat with our VISA Specialist.
+      </p>
+
+      <div class="whatsapp-input-group">
+        <input 
+          type="text" 
+          id="transactionId" 
+          placeholder="Enter Transaction ID"
+          class="whatsapp-input"
+        >
+      </div>
+
+      <div class="whatsapp-warning">
+        ⚠ If you need clarification or have doubts, you may opt for premium services (£250).
+      </div>
+    </div>
+
+    <div class="whatsapp-footer">
+      <button onclick="sendToWhatsApp()" class="whatsapp-btn-primary">
+       <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor">
+          <path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.892.754 5.606 2.064 7.97L0 32l7.824-2.052A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16.004C32 7.56 24.837.396 16 .396zm0 29.234a13.18 13.18 0 01-6.708-1.84l-.48-.285-4.644 1.218 1.24-4.53-.312-.465a13.167 13.167 0 01-2.05-7.032c0-7.3 5.934-13.234 13.254-13.234 7.3 0 13.234 5.934 13.234 13.234 0 7.3-5.934 13.234-13.234 13.234zm7.27-9.79c-.396-.198-2.342-1.157-2.706-1.288-.364-.132-.63-.198-.896.198-.264.396-1.028 1.288-1.26 1.552-.23.264-.462.297-.858.099-.396-.198-1.674-.617-3.19-1.967-1.18-1.053-1.977-2.353-2.207-2.749-.23-.396-.025-.61.173-.807.178-.177.396-.462.594-.693.198-.23.264-.396.396-.66.132-.264.066-.495-.033-.693-.099-.198-.896-2.157-1.227-2.954-.323-.776-.65-.67-.896-.682-.23-.01-.495-.012-.76-.012s-.693.099-1.056.495c-.364.396-1.386 1.354-1.386 3.3s1.42 3.827 1.617 4.091c.198.264 2.79 4.257 6.76 5.966.944.408 1.68.652 2.254.834.946.3 1.807.258 2.486.156.758-.113 2.342-.957 2.674-1.882.33-.924.33-1.717.23-1.882-.099-.165-.363-.264-.76-.462z"/>
+        </svg>
+         Continue
+      </button>
+      <button onclick="closeWaPopup()" class="whatsapp-btn-secondary">
+        Cancel
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .whatsapp-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+  }
+
+  .whatsapp-popup-box {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: whatsappFadeIn 0.3s ease;
+  }
+
+  /* Header */
+  .whatsapp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .whatsapp-header h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .whatsapp-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+  }
+
+  /* Body */
+  .whatsapp-body {
+    padding: 20px;
+  }
+
+  .whatsapp-text {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .whatsapp-input-group {
+    margin-bottom: 15px;
+  }
+
+  .whatsapp-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .whatsapp-input:focus {
+    border-color: #25D366;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
+  }
+
+  .whatsapp-warning {
+    font-size: 13px;
+    color: #b45309;
+    background: #fff7ed;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  .whatsapp-footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .whatsapp-btn-primary {
+    flex: 1;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .whatsapp-btn-primary:hover {
+    background: #1ebe5d;
+  }
+
+  .whatsapp-btn-secondary {
+    flex: 1;
+    background: #f1f5f9;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  /* Animation */
+  @keyframes whatsappFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  function openWaPopup() {
+    document.getElementById("waPopup").style.display = "flex";
+  }
+
+  function closeWaPopup() {
+    document.getElementById("waPopup").style.display = "none";
+  }
+
+  function sendToWhatsApp() {
+    let txnId = document.getElementById("transactionId").value.trim();
+
+    if (!txnId) {
+      alert("Please enter Transaction ID");
+      return;
+    }
+
+    let message = `Hello, I want to proceed with my visa application.\nTransaction ID: ${txnId}`;
+
+    let phone = "447912649410";
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+    closeWaPopup();
+  }
+</script>
 
 <script>
 function scrollSteps(value){
