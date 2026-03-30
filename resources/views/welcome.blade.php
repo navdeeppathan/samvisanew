@@ -545,9 +545,9 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-slider">
-  <img src="{{asset('b2.png')}}" class="slide active"/>
+  <img src="{{asset('b2.jpeg')}}" class="slide active"/>
   <img src="{{asset('b31.jpg')}}" class="slide"/>
-  <img src="{{asset('b1.png')}}" class="slide"/>
+  <img src="{{asset('b.jpeg')}}" class="slide"/>
 </div>
   <div class="h-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
   <div class="h-grid" aria-hidden="true"></div>
