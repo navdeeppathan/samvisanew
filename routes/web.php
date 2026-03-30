@@ -95,8 +95,8 @@ use Illuminate\Support\Facades\Mail;
 
 Route::post('/visa/dubai-submit',[DubaiVisaController::class,'submit'])->name('visa.dubai.submit');
 
-Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin.register');
-Route::post('/admin-register', [AuthController::class, 'register'])->name('admin.register.store');
+// Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin.register');
+// Route::post('/admin-register', [AuthController::class, 'register'])->name('admin.register.store');
 
 Route::get('/admin-login', [AuthController::class, 'showLogin'])->name('admin.login');
 

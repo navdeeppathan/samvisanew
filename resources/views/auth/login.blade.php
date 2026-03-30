@@ -217,6 +217,11 @@ box-shadow:0 12px 30px rgba(26,74,171,0.3);
     margin-top: 20px;
 }
 
+.login-logo img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
 /* RESPONSIVE */
 
 @media(max-width:768px){
