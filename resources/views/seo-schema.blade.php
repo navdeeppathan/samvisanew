@@ -181,7 +181,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
     <a href="/" class="nav-back">← Back to Home</a>
-    <a href="tel:+447912649410" class="nav-phone">📞 +44 7912 649410</a>
+    <a href="tel:+4407908268383" class="nav-phone">📞 +44 07908268383</a>
   </div>
 </nav>
 
@@ -436,7 +436,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   <span class="t-key">"sameAs"</span><span class="t-comma">:</span> <span class="t-bracket">[</span>
     <span class="t-str">"https://www.facebook.com/samvisauk"</span><span class="t-comma">,</span>
     <span class="t-str">"https://www.instagram.com/samvisauk"</span><span class="t-comma">,</span>
-    <span class="t-str">"https://wa.me/447912649410"</span>
+    <span class="t-str">"https://wa.me/4407908268383"</span>
   <span class="t-bracket">]</span><span class="t-comma">,</span>
   <span class="t-key">"aggregateRating"</span><span class="t-comma">:</span> <span class="t-bracket">{</span>
     <span class="t-key">"@type"</span><span class="t-comma">:</span> <span class="t-str">"AggregateRating"</span><span class="t-comma">,</span>

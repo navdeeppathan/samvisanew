@@ -291,15 +291,15 @@
                   <!-- PHONE -->
                   <td align="center" width="50%" style="padding:0 12px 0 0;border-right:1px solid #d4dce6;">
                     <p style="margin:0 0 4px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;color:#8a9aaa;text-transform:uppercase;">Call Us</p>
-                    <a href="tel:+447912649410"
+                    <a href="tel:+4407908268383"
                        style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;color:#1a4aab;text-decoration:none;">
-                      +44 7912 649410
+                      +44 07908268383
                     </a>
                   </td>
                   <!-- WHATSAPP -->
                   <td align="center" width="50%" style="padding:0 0 0 12px;">
                     <p style="margin:0 0 4px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;color:#8a9aaa;text-transform:uppercase;">WhatsApp</p>
-                    <a href="https://wa.me/447912649410"
+                    <a href="https://wa.me/4407908268383"
                        style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;color:#16a34a;text-decoration:none;">
                       Message Us
                     </a>

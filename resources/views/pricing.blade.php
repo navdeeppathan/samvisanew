@@ -347,7 +347,7 @@
       <li><a href="/#process">How It Works</a></li>
       <li><a href="/#countries">Apply by Country</a></li>
       
-      <li><a href="tel:+447912649410" style="color:var(--blue);font-weight:600;">📞 +44 7912 649410</a></li>
+      <li><a href="tel:+4407908268383" style="color:var(--blue);font-weight:600;">📞 +44 07908268383</a></li>
       <li><a href="/#countries" class="nav-cta">Apply Now</a></li>
     </ul>
     <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -358,7 +358,7 @@
     <a href="/#process">How It Works</a>
     <a href="/#countries">Apply by Countries</a>
     
-    <a href="tel:+447912649410">📞 +44 7912 649410</a>
+    <a href="tel:+4407908268383">📞 +44 07908268383</a>
   </div>
 </nav>
 
@@ -1108,7 +1108,7 @@
     <div style="display:flex;gap:20px;">
       <a href="/" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Home</a>
       <a href="/#countries" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Apply</a>
-      <a href="tel:+447912649410" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Contact</a>
+      <a href="tel:+4407908268383" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Contact</a>
     </div>
   </div>
 </footer>
