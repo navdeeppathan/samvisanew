@@ -138,6 +138,14 @@ class ChinaVisaController extends Controller
             $data['selfie_photo'] = 'uploads/selfie/'.$name;
         }
 
+
+        if($request->hasFile('oldVisaCopy')){
+            $file = $request->file('oldVisaCopy');
+            $name = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads/oldvisa'), $name);
+            $data['prev_visa'] = 'uploads/oldvisa/'.$name;
+        }
+
         /* BANK STATEMENTS */
         if ($request->hasFile('bank_statements')) {
             $file = $request->file('bank_statements');

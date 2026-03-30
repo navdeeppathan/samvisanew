@@ -476,7 +476,7 @@
               <th>Visa Type</th>
               <th>Processing</th>
               <th>Our Service Fee</th>
-              <th>Ambassy Fee</th>
+              <th>EMBASSY Fee</th>
               <th>Appointment Fee</th>
             </tr>
           </thead>
@@ -492,7 +492,7 @@
                 <span class="ot-price">£85</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£150</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
@@ -512,10 +512,10 @@
                 <span class="ot-price">£85</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£96</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£48</span></td>
               {{-- <td><a href="#" onclick="showCountry('europe');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
@@ -525,13 +525,13 @@
               <td><span class="ot-badge popular
                 {{-- standard --}}
                 ">Tourist</span></td>
-              <td style="color:var(--gray-mid)">8–12 working days</td>
+              <td style="color:var(--gray-mid)">1 month</td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£96</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
@@ -550,7 +550,7 @@
                 <span class="ot-price">£85</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£96</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
@@ -561,13 +561,13 @@
                   <img src="{{asset('turkeyflag.svg')}}" alt="">
               </span><span class="ot-country">Turkey</span><div class="ot-type">Tourist Visa / eVisa</div></td>
               <td><span class="ot-badge popular">Tourist</span></td>
-              <td style="color:var(--gray-mid)">3–5 working days</td>
+              <td style="color:var(--gray-mid)">1 month</td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£150</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>
@@ -578,13 +578,13 @@
                 <img src="{{asset('dubaiflag.svg')}}" alt="">
               </span><span class="ot-country">UAE / Dubai</span><div class="ot-type">Tourist Visa</div></td>
               <td><span class="ot-badge popular">Tourist</span></td>
-              <td style="color:var(--gray-mid)">3–5 working days</td>
+              <td style="color:var(--gray-mid)">10 days</td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£40</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">£120</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
                 <span class="ot-price">£85</span></td>

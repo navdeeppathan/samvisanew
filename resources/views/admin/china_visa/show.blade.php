@@ -185,6 +185,7 @@
 'passport_scan'=>'Passport',
 'empty_pages'=>'Empty Pages',
 'selfie_photo'=>'Selfie',
+'oldVisaCopy'=>'Old Visa',
 'bank_statements'=>'Bank',
 'payslips'=>'Payslip',
 'dbs_check'=>'DBS',

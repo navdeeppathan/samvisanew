@@ -587,6 +587,17 @@
             </div>
             <div id="prev-sp"></div>
           </div>
+
+          <div class="fl">
+            <label class="lbl">IF visited China before then China visa copy is mandatory</label>
+            <div class="file-zone" onclick="triggerFile('oldVisaCopy')">
+              <input type="file" id="oldVisaCopy" name="oldVisaCopy" accept=".pdf" onchange="showFile(this,'prev-oc')"/>
+              <div class="fz-icon">🇨🇳</div>
+              <p class="fz-title">Click to upload visa copy</p>
+              <p class="fz-sub">PDF only · <em>Mandatory</em></p>
+            </div>
+            <div id="prev-oc"></div>
+          </div>
         </div>
 
         <hr class="form-div"/>
@@ -1004,6 +1015,8 @@
         <li><span class="req-badge r">R</span><span>Passport scan (bio page) — JPEG/PDF</span></li>
         <li><span class="req-badge r">R</span><span>2 empty passport pages — JPEG/PDF</span></li>
         <li><span class="req-badge r">R</span><span>Selfie on white background — JPEG</span></li>
+        <li><span class="req-badge r">R</span><span>If visited China before then China visa copy is mandatory</span></li>
+
         {{-- <li><span class="req-badge g">O</span><span>3 months bank statements — PDF</span></li>
         <li><span class="req-badge g">O</span><span>3 months payslips — PDF</span></li>
         <li><span class="req-badge g">O</span><span>DBS check certificate — PDF</span></li> --}}

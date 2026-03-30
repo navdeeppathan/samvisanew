@@ -123,6 +123,7 @@ class ChinaVisaApplication extends Model
 
         'visited_past_year',
         'visited_countries',
+        'oldVisaCopy',
 
         // DECLARATIONS
         'china_refused',
