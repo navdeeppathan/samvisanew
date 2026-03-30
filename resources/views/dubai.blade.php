@@ -609,6 +609,11 @@
         <div class="fl"><label class="lbl">Accommodation / Host Address in UAE / Dubai <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in UAE / Dubai" required/></div>
       </div>
 
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Accommodation Phone Number <span class="req">*</span></label><input type="text" name="accommodation_phone" class="fi" placeholder="Enter accommodation's phone number" required/></div>
+      </div>
+
+
       <div class="form-nav">
         {{-- <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button> --}}
         <button type="button" class="btn-next" id="next-2" disabled onclick="nextStep(2)">Next Step →</button>
@@ -680,7 +685,7 @@
       </div>
 
       <hr class="form-div"/>
-      <p class="sec-heading">🟢 Optional — Strengthens Your Application</p>
+      {{-- <p class="sec-heading">🟢 Optional — Strengthens Your Application</p> --}}
 
       <div class="fl" style="margin-bottom:20px;">
         <label class="lbl">3 Months Bank Statements <span class="opt">Optional</span></label>
@@ -735,7 +740,7 @@
         <div class="fl">
           <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
           <div class="sharecode-wrap">
-            <span class="sharecode-prefix">S</span>
+            {{-- <span class="sharecode-prefix">S</span> --}}
             <input
               type="text"
               name="uk_sharecode"

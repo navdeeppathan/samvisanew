@@ -55,6 +55,8 @@ class IrelandVisa extends Model
         'destination_city',
         'visit_purpose',
         'accommodation',
+        'accommodation_phone',
+        
 
         'applied_before',
         'prev_application_date',

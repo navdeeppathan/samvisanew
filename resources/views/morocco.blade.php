@@ -604,6 +604,10 @@ button:disabled {
         <div class="fl"><label class="lbl">Accommodation / Host Address in Morocco <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in Morocco" required/></div>
       </div>
 
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Accommodation Phone Number <span class="req">*</span></label><input type="text" name="accommodation_phone" class="fi" placeholder="Enter accommodation's phone number" required/></div>
+      </div>
+
       {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
@@ -659,7 +663,9 @@ button:disabled {
 
       <!-- UK VISA COPY -->
       <div class="fl" style="margin-bottom:20px;">
-        <label class="lbl">3. UK Visa / BRP / Leave to Remain Copy <span class="req">*</span></label>
+        {{-- <label class="lbl">3. UK Visa / BRP / Leave to Remain Copy <span class="req">*</span></label> --}}
+        <label class="lbl">3. UK E-Visa sharecode and Expired BRP card front and back<span class="req">*</span></label>
+
         <p class="hint">A copy of your current valid UK visa, BRP card, or any UK immigration document</p>
         <div class="file-zone" onclick="triggerFile('uk_visa_copy')">
           <input type="file" id="uk_visa_copy" name="uk_visa_copy" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-ukv')" required/>
@@ -671,7 +677,7 @@ button:disabled {
       </div>
 
       <hr class="form-div"/>
-      <p class="sec-heading">🟢 Optional — Strengthens Your Application</p>
+      {{-- <p class="sec-heading">🟢 Optional — Strengthens Your Application</p> --}}
 
       <div class="fl" style="margin-bottom:20px;">
         <label class="lbl">3 Months Bank Statements <span class="opt">Optional</span></label>
@@ -730,7 +736,7 @@ button:disabled {
         <div class="fl">
           <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
           <div class="sharecode-wrap">
-            <span class="sharecode-prefix">S</span>
+            {{-- <span class="sharecode-prefix">S</span> --}}
             <input
               type="text"
               name="uk_sharecode"

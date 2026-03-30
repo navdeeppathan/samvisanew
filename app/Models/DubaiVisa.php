@@ -40,6 +40,7 @@ protected $fillable = [
 'destination_city',
 'visit_purpose',
 'accommodation',
+'accommodation_phone',
 
 'passport_scan',
 'passport_photo',

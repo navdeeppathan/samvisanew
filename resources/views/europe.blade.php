@@ -766,7 +766,7 @@ method="POST" enctype="multipart/form-data">
         <div class="fl">
           <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
           <div class="sharecode-wrap">
-            <span class="sharecode-prefix">S</span>
+            {{-- <span class="sharecode-prefix">S</span> --}}
             <input type="text" name="uk_sharecode" class="fi sharecode-input" placeholder="— Enter your sharecode (starts with S)" required
               oninput="this.value = this.value.toUpperCase().replace(/^S/,'');"
             />
@@ -887,7 +887,7 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <hr class="form-div"/>
-      <p class="sec-heading">🟢 Optional — Strengthens Your Application</p>
+      {{-- <p class="sec-heading">🟢 Optional — Strengthens Your Application</p> --}}
 
       <div class="fg fg-1">
         <div class="fl">

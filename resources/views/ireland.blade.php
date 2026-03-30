@@ -96,7 +96,7 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(22,155,98,0.85), rgba(0,104,55,0.75));
+  background: linear-gradient(135deg, rgba(22, 155, 97, 0.486), rgba(0, 104, 55, 0.194));
   z-index: 1;
 }
 
@@ -572,6 +572,9 @@ button:disabled {
       <div class="fg fg-1">
         <div class="fl"><label class="lbl">Accommodation / Host Address in Ireland <span class="req">*</span></label><input type="text" name="accommodation" class="fi" placeholder="Hotel name or host's full address in Ireland" required/></div>
       </div>
+      <div class="fg fg-1">
+        <div class="fl"><label class="lbl">Accommodation Phone Number <span class="req">*</span></label><input type="text" name="accommodation_phone" class="fi" placeholder="Enter accommodation's phone number" required/></div>
+      </div>
       {{-- <div class="form-nav">
         <button type="button" class="btn-prev" onclick="prevStep(4)">← Previous</button>
         <button type="button" class="btn-next" onclick="nextStep(4)">Next Step →</button>
@@ -727,7 +730,7 @@ button:disabled {
         <div class="fl">
           <label class="lbl">UK eVisa Sharecode <span class="req">*</span></label>
           <div class="sharecode-wrap">
-            <span class="sharecode-prefix">S</span>
+            {{-- <span class="sharecode-prefix">S</span> --}}
             <input type="text" name="uk_sharecode" class="fi sharecode-input" placeholder="Enter your sharecode (starts with S)" required oninput="this.value = this.value.toUpperCase();"/>
           </div>
           <p class="hint">Your full sharecode including the S prefix — e.g. S123-456-789</p>

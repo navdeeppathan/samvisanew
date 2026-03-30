@@ -62,6 +62,9 @@
             <p><strong>Destination:</strong> {{ $application->destination_city }}</p>
             <p><strong>Purpose:</strong> {{ $application->visit_purpose }}</p>
             <p><strong>Accommodation:</strong> {{ $application->accommodation }}</p>
+            <p><strong>Accommodation Phone:</strong> {{ $application->accommodation_phone }}</p>
+
+
         </div>
     </div>
 

@@ -340,7 +340,7 @@
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
+    <a href="/" class="nav-logo"><img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/></a>
     <ul class="nav-links">
       <li><a href="/#services">Services</a></li>
       <li><a href="/pricing" class="active">Pricing</a></li>
