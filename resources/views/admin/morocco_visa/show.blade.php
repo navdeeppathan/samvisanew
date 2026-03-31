@@ -56,7 +56,7 @@
 </div>
 
 <!-- DOCUMENTS -->
-<div class="card mb-4">
+{{-- <div class="card mb-4">
 <div class="card-header">Documents</div>
 <div class="card-body row">
 
@@ -78,6 +78,61 @@
 </div>
 @endif
 
+@endforeach
+
+</div>
+</div> --}}
+
+<!-- DOCUMENTS -->
+<div class="card mb-4">
+<div class="card-header">Documents</div>
+<div class="card-body row">
+
+@foreach([
+'passport_scan' => 'Passport Scan',
+'passport_photo' => 'Passport Photo',
+'uk_visa_copy' => 'UK Visa Copy',
+'bank_statements' => 'Bank Statement',
+'payslips' => 'Payslip'
+] as $field => $label)
+
+@if($application->$field)
+
+@php
+$file = $application->$field;
+$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+@endphp
+
+<div class="col-md-3 mb-3 text-center">
+
+<label>
+<input type="checkbox" name="fields[]" value="{{ $field }}">
+{{ $label }}
+</label>
+
+@if(in_array($ext, ['jpg','jpeg','png','webp']))
+    <!-- IMAGE -->
+    <img src="{{ asset($file) }}" class="img-fluid border rounded mt-2">
+
+@elseif($ext === 'pdf')
+    <!-- PDF -->
+    <div class="border rounded p-3 mt-2">
+        <p>📄 PDF Document</p>
+        <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">
+            View PDF
+        </a>
+    </div>
+
+@else
+    <!-- OTHER FILE -->
+    <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-secondary mt-2">
+        Download File
+    </a>
+@endif
+
+</div>
+
+@endif
 @endforeach
 
 </div>

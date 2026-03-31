@@ -181,7 +181,7 @@
 <div class="card-header">Documents</div>
 <div class="card-body row">
 
-@foreach([
+{{-- @foreach([
 'passport_scan'=>'Passport',
 'empty_pages'=>'Empty Pages',
 'selfie_photo'=>'Selfie',
@@ -199,6 +199,52 @@
 {{ $label }}
 </label>
 <img src="{{ asset($application->$field) }}" class="img-fluid border rounded mt-2">
+</div>
+@endif
+
+@endforeach --}}
+
+@foreach([
+'passport_scan'=>'Passport',
+'empty_pages'=>'Empty Pages',
+'selfie_photo'=>'Selfie',
+'oldVisaCopy'=>'Old Visa',
+'bank_statements'=>'Bank',
+'payslips'=>'Payslip',
+'dbs_check'=>'DBS',
+'prev_visa'=>'Old Visa'
+] as $field=>$label)
+
+@if($application->$field)
+@php
+$file = $application->$field;
+$ext = pathinfo($file, PATHINFO_EXTENSION);
+@endphp
+
+<div class="col-md-3 mb-3 text-center">
+    <label>
+        <input type="checkbox" name="fields[]" value="{{ $field }}">
+        {{ $label }}
+    </label>
+
+    @if(in_array(strtolower($ext), ['jpg','jpeg','png','webp']))
+        <!-- IMAGE -->
+        <img src="{{ asset($file) }}" class="img-fluid border rounded mt-2">
+
+    @elseif(strtolower($ext) === 'pdf')
+        <!-- PDF -->
+        <div class="border rounded p-3 mt-2">
+            <p>📄 PDF Document</p>
+            <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">
+                View PDF
+            </a>
+        </div>
+
+    @else
+        <!-- OTHER FILE -->
+        <a href="{{ asset($file) }}" target="_blank">Download File</a>
+    @endif
+
 </div>
 @endif
 

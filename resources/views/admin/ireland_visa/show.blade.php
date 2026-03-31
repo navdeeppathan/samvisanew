@@ -39,19 +39,40 @@
 <p><input type="checkbox" name="fields[]" value="passport_issue"> {{ $application->passport_issue }}</p>
 <p><input type="checkbox" name="fields[]" value="passport_expiry"> {{ $application->passport_expiry }}</p>
 
-@if($application->passport_scan)
+{{-- @if($application->passport_scan)
 <label>
 <input type="checkbox" name="fields[]" value="passport_scan">
 Passport Scan
 </label>
 <img src="{{ asset($application->passport_scan) }}" width="150">
+@endif --}}
+
+@php
+$file = $application->passport_scan;
+$ext = $file ? strtolower(pathinfo($file, PATHINFO_EXTENSION)) : null;
+@endphp
+
+@if($file)
+<label>
+<input type="checkbox" name="fields[]" value="passport_scan">
+Passport Scan
+</label>
+
+@if(in_array($ext, ['jpg','jpeg','png','webp']))
+    <img src="{{ asset($file) }}" width="150" class="mt-2">
+@elseif($ext === 'pdf')
+    <div class="mt-2">
+        <p>📄 PDF Document</p>
+        <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">View PDF</a>
+    </div>
+@endif
 @endif
 
 </div>
 </div>
 
 <!-- DOCUMENTS -->
-<div class="card mb-4">
+{{-- <div class="card mb-4">
 <div class="card-header">Documents</div>
 <div class="card-body">
 
@@ -84,6 +105,61 @@ Passport Scan
 <textarea name="message" class="form-control mb-3" required></textarea>
 
 <button class="btn btn-danger">Send Email</button>
+
+</div>
+</div> --}}
+
+<!-- DOCUMENTS -->
+<div class="card mb-4">
+<div class="card-header">Documents</div>
+<div class="card-body row">
+
+@foreach([
+'prev_passport_1'=>'Prev Passport 1',
+'prev_passport_2'=>'Prev Passport 2',
+'spouse_passport'=>'Spouse Passport',
+'bank_statements'=>'Bank',
+'payslips'=>'Payslip'
+] as $field=>$label)
+
+@if($application->$field)
+
+@php
+$file = $application->$field;
+$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+@endphp
+
+<div class="col-md-3 mb-3 text-center">
+
+<label>
+<input type="checkbox" name="fields[]" value="{{ $field }}">
+{{ $label }}
+</label>
+
+@if(in_array($ext, ['jpg','jpeg','png','webp']))
+    <!-- IMAGE -->
+    <img src="{{ asset($file) }}" class="img-fluid border rounded mt-2">
+
+@elseif($ext === 'pdf')
+    <!-- PDF -->
+    <div class="border rounded p-3 mt-2">
+        <p>📄 PDF Document</p>
+        <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">
+            View PDF
+        </a>
+    </div>
+
+@else
+    <!-- OTHER -->
+    <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-secondary mt-2">
+        Download File
+    </a>
+@endif
+
+</div>
+
+@endif
+@endforeach
 
 </div>
 </div>
