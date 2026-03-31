@@ -1006,7 +1006,7 @@ method="POST" enctype="multipart/form-data">
       </p>
     </div>
 
-     <div class="side-card">
+     {{-- <div class="side-card">
       <p class="side-title">📋 Document Submitted in Embassy</p>
       <ul class="req-list">
         <li><span class="req-badge r">R</span><span>Passport scan (bio data page) — JPEG / PDF</span></li>
@@ -1020,10 +1020,10 @@ method="POST" enctype="multipart/form-data">
         <span style="color:var(--red);font-weight:700;">R</span> = Required &nbsp;·&nbsp;
         <span style="color:var(--green);font-weight:700;">O</span> = Optional but recommended
       </p>
-    </div>
+    </div> --}}
 
     <!-- IMPORTANT NOTES -->
-    <div class="side-card">
+    {{-- <div class="side-card">
       <p class="side-title">⚠️ Important Notes</p>
       <ul class="req-list">
         <li><span style="font-size:16px">🇬🇧</span><span>UK eVisa sharecode <strong>always starts with S</strong> — find it at gov.uk/view-prove-immigration-status</span></li>
@@ -1031,7 +1031,7 @@ method="POST" enctype="multipart/form-data">
         <li><span style="font-size:16px">📄</span><span>We'll send you a personalised document checklist after reviewing your form</span></li>
         <li><span style="font-size:16px">🔒</span><span>All data handled securely under GDPR &amp; ICO registration</span></li>
       </ul>
-    </div>
+    </div> --}}
 
     <!-- CONTACT -->
     <div class="side-card">

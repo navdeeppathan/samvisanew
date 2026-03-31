@@ -1023,7 +1023,7 @@
       </ul>
       <p style="font-size:10px;color:var(--gray-light);margin-top:12px;"><span style="color:var(--red);font-weight:700;">R</span> = Required &nbsp;·&nbsp; <span style="color:var(--green);font-weight:700;">O</span> = Optional</p>
     </div>
-
+{{-- 
     <div class="side-card">
       <p class="side-title">📋 Document Submitted in Embassy</p>
       <ul class="req-list">
@@ -1035,9 +1035,9 @@
         <li><span class="req-badge r">R</span><span>DBS check certificate — PDF</span></li>
       </ul>
       <p style="font-size:10px;color:var(--gray-light);margin-top:12px;"><span style="color:var(--red);font-weight:700;">R</span> = Required &nbsp;·&nbsp; <span style="color:var(--green);font-weight:700;">O</span> = Optional</p>
-    </div>
+    </div> --}}
 
-    <div class="side-card">
+    {{-- <div class="side-card">
       <p class="side-title">⚠️ Important Notes</p>
       <ul class="req-list">
         <li><span style="font-size:16px">📅</span><span>Travel dates must be within the next 90 days</span></li>
@@ -1045,7 +1045,7 @@
         <li><span style="font-size:16px">⏱</span><span>We respond within 24 hours of submission</span></li>
         <li><span style="font-size:16px">🔒</span><span>All data is handled securely and never shared</span></li>
       </ul>
-    </div>
+    </div> --}}
 
     <div class="side-card">
       <p class="side-title">💬 Need Help?</p>

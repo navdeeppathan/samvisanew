@@ -495,7 +495,7 @@
                 <span class="ot-price">£150</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">-</span></td>
               {{-- <td><a href="#" onclick="showCountry('china');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
@@ -534,7 +534,7 @@
                 <span class="ot-price">£96</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">-</span></td>
               {{-- <td><a href="#" onclick="showCountry('ireland');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
@@ -553,7 +553,7 @@
                 <span class="ot-price">£96</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">-</span></td>
               {{-- <td><a href="#" onclick="showCountry('morocco');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
@@ -570,7 +570,7 @@
                 <span class="ot-price">£150</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">-</span></td>
               {{-- <td><a href="#" onclick="showCountry('turkey');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
             <tr>
@@ -587,7 +587,7 @@
                 <span class="ot-price">£120</span></td>
               <td>
                 {{-- <span class="ot-from">from</span> --}}
-                <span class="ot-price">£85</span></td>
+                <span class="ot-price">-</span></td>
               {{-- <td><a href="#" onclick="showCountry('dubai');return false;" class="ot-apply">View →</a></td> --}}
             </tr>
           </tbody>
