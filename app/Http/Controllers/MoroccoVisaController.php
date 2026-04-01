@@ -153,6 +153,10 @@ class MoroccoVisaController extends Controller
         // return redirect()->route('home')->with('success','Application submitted successfully');
         $application = MoroccoVisa::create($data);
 
-        return redirect()->route('payment.checkout', $application->id);
+        // return redirect()->route('payment.checkout', $application->id);
+        return redirect()->route('payment.checkout', [
+            'id' => $application->id,
+            'type' => 'morocco'
+        ]);
     }
 }

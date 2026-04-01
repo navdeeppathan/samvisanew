@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdminNewApplicationMail;
+use App\Mail\ApplicationSuccessMail;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use App\Models\Payment;
 use App\Models\ChinaVisaApplication;
-
-
+use App\Models\DubaiVisa;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Webhook;
 
 
@@ -16,9 +18,19 @@ class PaymentController extends Controller
 {
 
 
-    public function checkout($id)
+    public function checkout($id,$type)
     {
-        $application = ChinaVisaApplication::findOrFail($id);
+        // if($type == 'china') {
+        //     $application = ChinaVisaApplication::findOrFail($id);
+        // }
+
+        $model = $this->getApplicationModel($type);
+
+        if (!$model) {
+            return "Invalid application type";
+        }
+
+        $application = $model::findOrFail($id);
 
         Stripe::setApiKey(config('services.stripe.secret'));
 
@@ -33,7 +45,7 @@ class PaymentController extends Controller
                     'product_data' => [
                         'name' => 'China Visa Application Fee',
                     ],
-                    'unit_amount' => 5000, // £50 (in pence)
+                    'unit_amount' => 8500, // £85 (in pence)
                 ],
                 'quantity' => 1,
             ]],
@@ -42,7 +54,8 @@ class PaymentController extends Controller
             'cancel_url' => route('payment.cancel'),
 
             'metadata' => [
-                'application_id' => $application->id
+                'application_id' => $application->id,
+                'type' => $type,
             ]
         ]);
 
@@ -53,12 +66,26 @@ class PaymentController extends Controller
             'amount' => 85,
             'currency' => 'gbp',
             'status' => 'pending',
-            'customer_email' => $application->email
+            'customer_email' => $application->email,
+            'type' => $type
         ]);
 
         return redirect($session->url);
     }
 
+    private function getApplicationModel($type)
+    {
+        $map = [
+            'china' => \App\Models\ChinaVisaApplication::class,
+            'dubai' => \App\Models\DubaiVisa::class,
+            'europe' => \App\Models\EuropeVisaApplication::class,
+            'ireland' => \App\Models\IrelandVisa::class,
+            'morocco' => \App\Models\MoroccoVisa::class,
+            'turkey' => \App\Models\TurkeyVisa::class,
+        ];
+
+        return $map[$type] ?? null;
+    }
    
 
     public function success(Request $request)
@@ -86,6 +113,7 @@ class PaymentController extends Controller
                 return "Payment record not found.";
             }
 
+
             // Update payment
             $payment->update([
                 'status' => 'paid',
@@ -94,12 +122,30 @@ class PaymentController extends Controller
             ]);
 
             // Update application
-            $application = ChinaVisaApplication::find($payment->application_id);
+            // $application = ChinaVisaApplication::find($payment->application_id);
+            // 👇 GET TYPE
+            $type = $session->metadata->type;
+
+            $model = $this->getApplicationModel($type);
+
+            if (!$model) {
+                return "Invalid application type";
+            }
+
+            $application = $model::find($payment->application_id);
 
             if ($application) {
                 $application->update([
                     'payment_status' => 'paid'
                 ]);
+
+                // ✅ Send email to user
+                Mail::to($application->email)
+                    ->send(new ApplicationSuccessMail($application,$type));
+
+                // ✅ Send email to admin
+                Mail::to(env('ADMIN_EMAIL')) // set in .env
+                    ->send(new AdminNewApplicationMail($application,$type));
             }
 
             return view('payment.success'); // create blade if needed

@@ -15,6 +15,7 @@ class Payment extends Model
         'currency',
         'status',
         'customer_email',
-        'payment_method'
+        'payment_method',
+        'type'
     ];
 }

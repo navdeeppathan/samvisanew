@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title','Visa Requests')
+@section('title','Ireland Visa Details')
 
 @section('content')
 
@@ -39,31 +39,19 @@
 <p><input type="checkbox" name="fields[]" value="passport_issue"> {{ $application->passport_issue }}</p>
 <p><input type="checkbox" name="fields[]" value="passport_expiry"> {{ $application->passport_expiry }}</p>
 
-{{-- @if($application->passport_scan)
-<label>
-<input type="checkbox" name="fields[]" value="passport_scan">
-Passport Scan
-</label>
-<img src="{{ asset($application->passport_scan) }}" width="150">
-@endif --}}
-
 @php
 $file = $application->passport_scan;
 $ext = $file ? strtolower(pathinfo($file, PATHINFO_EXTENSION)) : null;
 @endphp
 
 @if($file)
-<label>
-<input type="checkbox" name="fields[]" value="passport_scan">
-Passport Scan
-</label>
+<label><input type="checkbox" name="fields[]" value="passport_scan"> Passport Scan</label>
 
 @if(in_array($ext, ['jpg','jpeg','png','webp']))
     <img src="{{ asset($file) }}" width="150" class="mt-2">
 @elseif($ext === 'pdf')
     <div class="mt-2">
-        <p>📄 PDF Document</p>
-        <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">View PDF</a>
+        <a href="{{ asset($file) }}" target="_blank" class="btn btn-primary btn-sm">View PDF</a>
     </div>
 @endif
 @endif
@@ -71,43 +59,101 @@ Passport Scan
 </div>
 </div>
 
-<!-- DOCUMENTS -->
-{{-- <div class="card mb-4">
-<div class="card-header">Documents</div>
-<div class="card-body">
-
-@foreach([
-'prev_passport_1'=>'Prev Passport 1',
-'prev_passport_2'=>'Prev Passport 2',
-'spouse_passport'=>'Spouse Passport',
-'bank_statements'=>'Bank',
-'payslips'=>'Payslip'
-] as $field=>$label)
-
-@if($application->$field)
-<label>
-<input type="checkbox" name="fields[]" value="{{ $field }}">
-{{ $label }}
-</label>
-<img src="{{ asset($application->$field) }}" width="120" class="m-2">
-@endif
-
-@endforeach
-
-</div>
-</div>
-
-<!-- MESSAGE -->
+<!-- ADDRESS -->
 <div class="card mb-4">
-<div class="card-header bg-danger text-white">Send Correction</div>
+<div class="card-header bg-secondary text-white">Address</div>
 <div class="card-body">
 
-<textarea name="message" class="form-control mb-3" required></textarea>
-
-<button class="btn btn-danger">Send Email</button>
+<p><input type="checkbox" name="fields[]" value="home_door"> {{ $application->home_door }}</p>
+<p><input type="checkbox" name="fields[]" value="home_street"> {{ $application->home_street }}</p>
+<p><input type="checkbox" name="fields[]" value="home_city"> {{ $application->home_city }}</p>
+<p><input type="checkbox" name="fields[]" value="home_postcode"> {{ $application->home_postcode }}</p>
+<p><input type="checkbox" name="fields[]" value="home_country"> {{ $application->home_country }}</p>
+<p><input type="checkbox" name="fields[]" value="uk_residency_since"> {{ $application->uk_residency_since }}</p>
 
 </div>
-</div> --}}
+</div>
+
+<!-- EMPLOYMENT -->
+<div class="card mb-4">
+<div class="card-header bg-info text-white">Employment</div>
+<div class="card-body">
+
+<p><input type="checkbox" name="fields[]" value="company_name"> {{ $application->company_name }}</p>
+<p><input type="checkbox" name="fields[]" value="occupation"> {{ $application->occupation }}</p>
+<p><input type="checkbox" name="fields[]" value="job_title"> {{ $application->job_title }}</p>
+
+<p><input type="checkbox" name="fields[]" value="employment_start"> {{ $application->employment_start }}</p>
+<p><input type="checkbox" name="fields[]" value="employment_end"> {{ $application->employment_end }}</p>
+
+</div>
+</div>
+
+<!-- TRAVEL -->
+<div class="card mb-4">
+<div class="card-header bg-warning text-dark">Travel</div>
+<div class="card-body">
+
+<p><input type="checkbox" name="fields[]" value="departure_date"> {{ $application->departure_date }}</p>
+<p><input type="checkbox" name="fields[]" value="return_date"> {{ $application->return_date }}</p>
+<p><input type="checkbox" name="fields[]" value="destination_city"> {{ $application->destination_city }}</p>
+<p><input type="checkbox" name="fields[]" value="visit_purpose"> {{ $application->visit_purpose }}</p>
+
+<p><input type="checkbox" name="fields[]" value="accommodation"> {{ $application->accommodation }}</p>
+<p><input type="checkbox" name="fields[]" value="accommodation_phone"> {{ $application->accommodation_phone }}</p>
+
+</div>
+</div>
+
+<!-- VISA HISTORY -->
+<div class="card mb-4">
+<div class="card-header bg-dark text-white">Visa History</div>
+<div class="card-body">
+
+<p><input type="checkbox" name="fields[]" value="applied_before">
+{{ $application->applied_before ? 'Yes' : 'No' }}</p>
+
+<p><input type="checkbox" name="fields[]" value="prev_application_date">
+{{ $application->prev_application_date }}</p>
+
+<p><input type="checkbox" name="fields[]" value="prev_application_country">
+{{ $application->prev_application_country }}</p>
+
+<hr>
+
+<p><input type="checkbox" name="fields[]" value="refused_before">
+{{ $application->refused_before ? 'Yes' : 'No' }}</p>
+
+<p><input type="checkbox" name="fields[]" value="refused_date">
+{{ $application->refused_date }}</p>
+
+<p><input type="checkbox" name="fields[]" value="refused_country">
+{{ $application->refused_country }}</p>
+
+<p><input type="checkbox" name="fields[]" value="refused_reason">
+{{ $application->refused_reason }}</p>
+
+</div>
+</div>
+
+<!-- FAMILY -->
+<div class="card mb-4">
+<div class="card-header bg-primary text-white">Family</div>
+<div class="card-body">
+
+<p><input type="checkbox" name="fields[]" value="is_married">
+{{ $application->is_married ? 'Yes' : 'No' }}</p>
+
+<p><input type="checkbox" name="fields[]" value="spouse_name"> {{ $application->spouse_name }}</p>
+<p><input type="checkbox" name="fields[]" value="spouse_dob"> {{ $application->spouse_dob }}</p>
+
+<p><input type="checkbox" name="fields[]" value="has_children">
+{{ $application->has_children ? 'Yes' : 'No' }}</p>
+
+<p><input type="checkbox" name="fields[]" value="num_children"> {{ $application->num_children }}</p>
+
+</div>
+</div>
 
 <!-- DOCUMENTS -->
 <div class="card mb-4">
@@ -129,7 +175,7 @@ $file = $application->$field;
 $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 @endphp
 
-<div class="col-md-3 mb-3 text-center">
+<div class="col-md-3 text-center mb-3">
 
 <label>
 <input type="checkbox" name="fields[]" value="{{ $field }}">
@@ -137,29 +183,54 @@ $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 </label>
 
 @if(in_array($ext, ['jpg','jpeg','png','webp']))
-    <!-- IMAGE -->
     <img src="{{ asset($file) }}" class="img-fluid border rounded mt-2">
-
 @elseif($ext === 'pdf')
-    <!-- PDF -->
-    <div class="border rounded p-3 mt-2">
-        <p>📄 PDF Document</p>
-        <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-primary">
-            View PDF
-        </a>
-    </div>
-
-@else
-    <!-- OTHER -->
-    <a href="{{ asset($file) }}" target="_blank" class="btn btn-sm btn-secondary mt-2">
-        Download File
-    </a>
+    <a href="{{ asset($file) }}" target="_blank" class="btn btn-primary btn-sm mt-2">View PDF</a>
 @endif
 
 </div>
 
 @endif
 @endforeach
+
+</div>
+</div>
+
+<!-- CHILDREN PASSPORTS -->
+@if($application->children_passports)
+@php $children = json_decode($application->children_passports, true); @endphp
+
+<div class="card mb-4">
+<div class="card-header">Children Passports</div>
+<div class="card-body row">
+
+@foreach($children as $file)
+@php $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION)); @endphp
+
+<div class="col-md-3 text-center mb-3">
+
+@if(in_array($ext, ['jpg','jpeg','png','webp']))
+    <img src="{{ asset($file) }}" class="img-fluid border rounded">
+@elseif($ext === 'pdf')
+    <a href="{{ asset($file) }}" target="_blank" class="btn btn-primary btn-sm">View PDF</a>
+@endif
+
+</div>
+
+@endforeach
+
+</div>
+</div>
+@endif
+
+<!-- MESSAGE -->
+<div class="card mb-4">
+<div class="card-header bg-danger text-white">Send Correction</div>
+<div class="card-body">
+
+<textarea name="message" class="form-control mb-3" required></textarea>
+
+<button class="btn btn-danger">Send Email</button>
 
 </div>
 </div>

@@ -154,6 +154,10 @@ class DubaiVisaController extends Controller
         // return redirect()->route('home')->with('success','Dubai visa application submitted successfully');
         $application = DubaiVisa::create($data);
 
-        return redirect()->route('payment.checkout', $application->id);
+        // return redirect()->route('payment.checkout', $application->id);
+        return redirect()->route('payment.checkout', [
+            'id' => $application->id,
+            'type' => 'dubai',
+        ]);
     }
 }

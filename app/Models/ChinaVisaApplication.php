@@ -150,6 +150,7 @@ class ChinaVisaApplication extends Model
 
         'correction_fields',
         'correction_message',
+        'payment_status',
     ];
 
 

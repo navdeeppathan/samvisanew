@@ -152,6 +152,10 @@ class TurkeyVisaController extends Controller
         // return redirect()->route('home')->with('success','Turkey visa application submitted successfully');
         $application = TurkeyVisa::create($data);
 
-        return redirect()->route('payment.checkout', $application->id);
+        // return redirect()->route('payment.checkout', $application->id);
+        return redirect()->route('payment.checkout', [
+            'id' => $application->id,
+            'type' => 'turkey',
+        ]);
     }
 }

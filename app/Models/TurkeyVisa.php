@@ -52,6 +52,7 @@ protected $fillable = [
 'uk_sharecode',
 
 'message',
+'payment_status',
 
  'correction_fields',
     'correction_message',

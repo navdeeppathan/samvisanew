@@ -191,6 +191,10 @@ class ChinaVisaController extends Controller
         // return redirect()->route('home')->with('success','Application submitted');
         $application = ChinaVisaApplication::create($data);
 
-        return redirect()->route('payment.checkout', $application->id);
+        // return redirect()->route('payment.checkout', $application->id);
+        return redirect()->route('payment.checkout', [
+            'id' => $application->id,
+            'type' => 'china'
+        ]);
     }
 }

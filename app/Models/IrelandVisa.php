@@ -83,6 +83,7 @@ class IrelandVisa extends Model
         'message',
         'correction_fields',
         'correction_message',
+        'payment_status',
     ];
 
     protected $casts = [

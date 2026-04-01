@@ -52,6 +52,8 @@ protected $fillable = [
 
 'message',
 
+'payment_status',
+
 'correction_fields',
     'correction_message',
 ];

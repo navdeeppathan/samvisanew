@@ -157,6 +157,10 @@ class EuropeVisaController extends Controller
 
         $application = EuropeVisaApplication::create($data);
 
-        return redirect()->route('payment.checkout', $application->id);
+        // return redirect()->route('payment.checkout', $application->id);
+        return redirect()->route('payment.checkout', [
+            'id' => $application->id,
+            'type' => 'europe',
+        ]);
     }
 }

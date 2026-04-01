@@ -406,7 +406,7 @@
   <div class="card-body">
 
     <div class="logo-wrap">
-    <img src="https://samvisauk.com/wp-content/uploads/2023/11/fulllogo_transparent_nobuffer-removebg-preview_200x100px.png" alt="SAM Visa Services"/>
+    <img src="{{asset('logotr.png')}}" alt="SAM Visa Services"/>
     </div>
 
     <!-- ICON -->
