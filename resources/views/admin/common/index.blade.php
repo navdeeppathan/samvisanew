@@ -52,22 +52,22 @@
                 <!-- ACTION -->
                 <td>
                     @if($app->country == 'china')
-                        <a href="{{ route('admin.china.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.china.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
 
                     @elseif($app->country == 'dubai')
-                        <a href="{{ route('admin.dubai.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.dubai.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
 
                     @elseif($app->country == 'europe')
-                        <a href="{{ route('admin.europe.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.europe.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
 
                     @elseif($app->country == 'ireland')
-                        <a href="{{ route('admin.ireland.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.ireland.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
 
                     @elseif($app->country == 'morocco')
-                        <a href="{{ route('admin.morocco.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.morocco.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
 
                     @elseif($app->country == 'turkey')
-                        <a href="{{ route('admin.turkey.visa.show', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ route('admin.turkey.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
                     @endif
                 </td>
             </tr>

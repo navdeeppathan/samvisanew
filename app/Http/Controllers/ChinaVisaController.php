@@ -105,11 +105,19 @@ class ChinaVisaController extends Controller
         return view('admin.china_visa.index', compact('applications'));
     }
 
+
     public function show($id)
     {
         $application = ChinaVisaApplication::findOrFail($id);
         return view('admin.china_visa.show', compact('application'));
     }
+
+    public function show2($id)
+    {
+        $application = ChinaVisaApplication::findOrFail($id);
+        return view('admin.china_visa.show2', compact('application'));
+    }
+
     public function store(Request $request)
     {
         $data = $request->all();

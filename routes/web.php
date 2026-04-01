@@ -231,28 +231,36 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
    
     Route::get('/china-visa', [ChinaVisaController::class, 'index'])->name('china.visa.index');
     Route::get('/china-visa/{id}', [ChinaVisaController::class, 'show'])->name('china.visa.show');
+    Route::get('/china-visa/show/{id}', [ChinaVisaController::class, 'show2'])->name('china.visa.show2');
+
 
 
     Route::get('/europe-visa', [EuropeVisaController::class, 'index'])->name('europe.visa.index');
     Route::get('/europe-visa/{id}', [EuropeVisaController::class, 'show'])->name('europe.visa.show');
+    Route::get('/europe-visa/show/{id}', [EuropeVisaController::class, 'show2'])->name('europe.visa.show2');
 
 
     Route::get('/ireland-visa', [IrelandVisaController::class, 'index'])->name('ireland.visa.index');
     Route::get('/ireland-visa/{id}', [IrelandVisaController::class, 'show'])->name('ireland.visa.show');
+    Route::get('/ireland-visa/show/{id}', [IrelandVisaController::class, 'show2'])->name('ireland.visa.show2');
 
    
 
     Route::get('/morocco-visa', [MoroccoVisaController::class, 'index'])->name('morocco.visa.index');
     Route::get('/morocco-visa/{id}', [MoroccoVisaController::class, 'show'])->name('morocco.visa.show');
+    Route::get('/morocco-visa/show/{id}', [MoroccoVisaController::class, 'show2'])->name('morocco.visa.show2');
 
 
     Route::get('/turkey-visa', [TurkeyVisaController::class, 'index'])->name('turkey.visa.index');
     Route::get('/turkey-visa/{id}', [TurkeyVisaController::class, 'show'])->name('turkey.visa.show');
+    Route::get('/turkey-visa/show/{id}', [TurkeyVisaController::class, 'show2'])->name('turkey.visa.show2');
 
     
 
     Route::get('/dubai-visa', [DubaiVisaController::class, 'index'])->name('dubai.visa.index');
     Route::get('/dubai-visa/{id}', [DubaiVisaController::class, 'show'])->name('dubai.visa.show');
+    Route::get('/dubai-visa/show/{id}', [DubaiVisaController::class, 'show2'])->name('dubai.visa.show2');
+
 
     Route::post('/visa-requests/bulk-mail', [AdminVisaController::class,'bulkMail'])
     ->name('visa.bulk.mail');

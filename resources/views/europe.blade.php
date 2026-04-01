@@ -1343,7 +1343,14 @@ function goToStep(n) {
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('progress-text').textContent = 'Step ' + n + ' of ' + totalSteps;
 
+  // updateNextButton(n);
   updateNextButton(n);
+
+  // ✅ Scroll to top of form (smooth)
+  window.scrollTo({
+    top: document.querySelector('.form-wrap').offsetTop - 100,
+    behavior: 'smooth'
+  });
 }
 
 

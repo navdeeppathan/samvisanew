@@ -22,6 +22,12 @@ class EuropeVisaController extends Controller
         return view('admin.europe_visa.show', compact('application'));
     }
 
+     public function show2($id)
+    {
+        $application = EuropeVisaApplication::findOrFail($id);
+        return view('admin.europe_visa.show2', compact('application'));
+    }
+
     public function sendCorrection(Request $request, $id)
     {
         $application = EuropeVisaApplication::findOrFail($id);

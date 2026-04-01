@@ -22,6 +22,12 @@ class MoroccoVisaController extends Controller
         return view('admin.morocco_visa.show', compact('application'));
     }
 
+    public function show2($id)
+    {
+        $application = MoroccoVisa::findOrFail($id);
+        return view('admin.morocco_visa.show2', compact('application'));
+    }
+
     public function edit($id)
     {
         $application = MoroccoVisa::findOrFail($id);

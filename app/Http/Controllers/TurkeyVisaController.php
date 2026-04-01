@@ -21,6 +21,11 @@ class TurkeyVisaController extends Controller
         $application = TurkeyVisa::findOrFail($id);
         return view('admin.turkey_visa.show', compact('application'));
     }
+    public function show2($id)
+    {
+        $application = TurkeyVisa::findOrFail($id);
+        return view('admin.turkey_visa.show2', compact('application'));
+    }
 
     public function edit($id)
     {

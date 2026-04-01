@@ -23,6 +23,12 @@ class DubaiVisaController extends Controller
         return view('admin.dubai_visa.show', compact('application'));
     }
 
+    public function show2($id)
+    {
+        $application = DubaiVisa::findOrFail($id);
+        return view('admin.dubai_visa.show2', compact('application'));
+    }
+
     public function edit($id)
     {
         $application = DubaiVisa::findOrFail($id);

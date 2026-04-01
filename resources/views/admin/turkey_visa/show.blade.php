@@ -6,7 +6,7 @@
 
 <div class="container mt-5">
 
-<a href="{{ route('admin.turkey.visa.index') }}" class="btn btn-secondary mb-4">← Back</a>
+<a href="{{ route('admin.visa.show.all') }}" class="btn btn-secondary mb-4">← Back</a>
 
 <h2 class="mb-4">Turkey Visa Application Details</h2>
 

@@ -21,6 +21,11 @@ class IrelandVisaController extends Controller
         $application = IrelandVisa::findOrFail($id);
         return view('admin.ireland_visa.show', compact('application'));
     }
+    public function show2($id)
+    {
+        $application = IrelandVisa::findOrFail($id);
+        return view('admin.ireland_visa.show2', compact('application'));
+    }
 
     public function edit($id)
     {
