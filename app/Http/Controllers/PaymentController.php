@@ -30,6 +30,36 @@ class PaymentController extends Controller
             return "Invalid application type";
         }
 
+        // ✅ All fees config here
+        $fees = [
+            'china' => [
+                'amount' => 85,
+                'currency' => 'gbp',
+            ],
+            'dubai' => [
+                'amount' => 160,
+                'currency' => 'gbp',
+            ],
+            'europe' => [
+                'amount' => 133,
+                'currency' => 'gbp',
+            ],
+            'ireland' => [
+                'amount' => 85,
+                'currency' => 'gbp',
+            ],
+            'morocco' => [
+                'amount' => 85,
+                'currency' => 'gbp',
+            ],
+            'turkey' => [
+                'amount' => 85,
+                'currency' => 'gbp',
+            ],
+        ];
+
+        $fee = $fees[$type];
+
         $application = $model::findOrFail($id);
 
         Stripe::setApiKey(config('services.stripe.secret'));
@@ -41,11 +71,11 @@ class PaymentController extends Controller
 
             'line_items' => [[
                 'price_data' => [
-                    'currency' => 'gbp',
+                    'currency' => $fee['currency'],
                     'product_data' => [
-                        'name' => 'China Visa Application Fee',
+                        'name' => ucfirst($type) . ' Visa Application Fee',
                     ],
-                    'unit_amount' => 8500, // £85 (in pence)
+                    'unit_amount' => $fee['amount'] * 100, // convert to smallest unit
                 ],
                 'quantity' => 1,
             ]],
@@ -64,8 +94,8 @@ class PaymentController extends Controller
         Payment::create([
             'application_id' => $application->id,
             'stripe_session_id' => $session->id,
-            'amount' => 85,
-            'currency' => 'gbp',
+            'amount' => $fee['amount'],
+            'currency' => $fee['currency'],
             'status' => 'pending',
             'customer_email' => $application->email,
             'type' => $type

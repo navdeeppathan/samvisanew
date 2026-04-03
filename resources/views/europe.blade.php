@@ -768,7 +768,7 @@ method="POST" enctype="multipart/form-data">
           <div class="sharecode-wrap">
             {{-- <span class="sharecode-prefix">S</span> --}}
             <input type="text" name="uk_sharecode" class="fi sharecode-input" placeholder="— Enter your sharecode (starts with S)" required
-              oninput="this.value = this.value.toUpperCase().replace(/^S/,'');"
+              oninput="this.value = this.value.toUpperCase();"
             />
           </div>
           <p style="font-size:10px;color:var(--gray-light);margin-top:4px;font-style:italic;">Your sharecode begins with the letter S. You can find it in your UKVI account at gov.uk/view-prove-immigration-status</p>
