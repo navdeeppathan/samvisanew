@@ -50,6 +50,7 @@ class PaymentController extends Controller
                 'quantity' => 1,
             ]],
 
+
             'success_url' => route('payment.success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('payment.cancel'),
 
@@ -157,7 +158,7 @@ class PaymentController extends Controller
 
     public function cancel()
     {
-        return "Payment cancelled.";
+        return view('payment.cancel');
     }
 
 
