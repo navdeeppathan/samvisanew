@@ -145,7 +145,11 @@ $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
 <textarea name="message" class="form-control mb-3" required></textarea>
 
-<button class="btn btn-danger">Send Email</button>
+<button id="submitBtn" class="btn btn-danger" disabled>Send Email</button>
+
+<small class="text-muted d-block mt-2">
+   <i class="fas fa-info-circle"></i> Select the fields that need correction. At least one field must be selected to enable sending.
+</small>
 
 </div>
 </div>
@@ -155,6 +159,22 @@ $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('input[name="fields[]"]');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function toggleButton() {
+        const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+        submitBtn.disabled = !anyChecked;
+    }
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', toggleButton);
+    });
+});
+</script>
 
 @if(session('success'))
 <script>
