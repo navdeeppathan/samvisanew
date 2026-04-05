@@ -923,7 +923,7 @@
       </div>
 
       <div class="whatsapp-warning">
-        ⚠ If you need clarification or have doubts, you may opt for premium services (£250).
+        ⚠ If you need in detail further clarifications of how visa processing works, you may opt for our premium visa service fee of GBP250.00
       </div>
     </div>
 

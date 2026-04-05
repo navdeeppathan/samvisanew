@@ -756,7 +756,7 @@
           <div class="fg fg-3">
             <div class="fl"><label class="lbl">Previous Visa Fingerprint Date <span class="req">*</span></label><input type="date" name="prev_fingerprint_date" class="fi date-fi"/></div>
             <div class="fl"><label class="lbl">Country Where Last Applied <span class="req">*</span></label><input type="text" name="prev_visa_country" class="fi" placeholder="e.g. United Kingdom"/></div>
-            <div class="fl"><label class="lbl">Upload Previous Visa Copy <span class="opt">Optional</span></label>
+            <div class="fl"><label class="lbl">Upload Previous Visa Copy <span class="req">*</span></label>
               <div class="file-zone" onclick="triggerFile('prev_visa')">
                 <input type="file" id="prev_visa" name="prev_visa" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pv')"/>
                 <p class="fz-sub">Upload last issued visa <em>JPEG / PDF</em></p>
@@ -1082,7 +1082,7 @@
       </div>
 
       <div class="whatsapp-warning">
-        ⚠ If you need clarification or have doubts, you may opt for premium services (£250).
+        ⚠ If you need in detail further clarifications of how visa processing works, you may opt for our premium visa service fee of GBP250.00
       </div>
     </div>
 

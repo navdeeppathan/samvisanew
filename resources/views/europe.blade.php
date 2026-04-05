@@ -381,7 +381,7 @@
     <p class="ph-country">Visit Visa Application</p>
     <h1 class="ph-title">Europe (Schengen)</h1>
     <p class="ph-sub">
-      Complete all sections below. Our team will contact you within 24 hours with a personalised document checklist and next steps.
+      For Europe Schengen visa appointment, please consult us on whatsapp with chat code SAM172003 for appointment date before making the payment.
     </p>
   </div>
 
@@ -1088,7 +1088,7 @@ method="POST" enctype="multipart/form-data">
       </div>
 
       <div class="whatsapp-warning">
-        ⚠ If you need clarification or have doubts, you may opt for premium services (£250).
+        ⚠ If you need in detail further clarifications of how visa processing works, you may opt for our premium visa service fee of GBP250.00
       </div>
     </div>
 
