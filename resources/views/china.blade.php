@@ -564,9 +564,15 @@
               <div class="fz-icon">🛂</div>
               <p class="fz-title">Click to upload passport scan</p>
               <p class="fz-sub">JPEG or PDF · <em>Mandatory</em></p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-ps"></div>
           </div>
+          
           <div class="fl">
             <label class="lbl">2 Empty Passport Pages <span class="req">*</span></label>
             <div class="file-zone" onclick="triggerFile('empty_pages')">
@@ -574,6 +580,11 @@
               <div class="fz-icon">📄</div>
               <p class="fz-title">Click to upload 2 empty pages</p>
               <p class="fz-sub">JPEG or PDF · <em>Mandatory</em></p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-ep"></div>
           </div>
@@ -584,6 +595,11 @@
               <div class="fz-icon">🤳</div>
               <p class="fz-title">Click to upload selfie photo</p>
               <p class="fz-sub">JPEG only · White background · <em>Mandatory</em></p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-sp"></div>
           </div>
@@ -595,6 +611,11 @@
               <div class="fz-icon">🇨🇳</div>
               <p class="fz-title">Click to upload visa copy</p>
               <p class="fz-sub">PDF only · <em>Mandatory</em></p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-oc"></div>
           </div>
@@ -610,6 +631,11 @@
               <div class="fz-icon">🏦</div>
               <p class="fz-title">Click to upload bank statements</p>
               <p class="fz-sub">PDF only · 3 months required</p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-bs"></div>
           </div>
@@ -620,6 +646,11 @@
               <div class="fz-icon">💷</div>
               <p class="fz-title">Click to upload payslips</p>
               <p class="fz-sub">PDF only · 3 months</p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-py"></div>
           </div>
@@ -630,6 +661,11 @@
               <div class="fz-icon">🔍</div>
               <p class="fz-title">Click to upload DBS certificate</p>
               <p class="fz-sub">PDF only</p>
+              <div class="info-box fz-sub" style="margin-top:10px;">
+                <strong>📩 Having trouble uploading?</strong><br>
+                If you are unable to upload documents on the website, please message us on WhatsApp using 
+                <strong>Transaction ID: A11</strong>.
+              </div>
             </div>
             <div id="prev-dbs"></div>
           </div>
@@ -981,15 +1017,55 @@
           </label>
         </div>
 
-        <div class="form-nav">
-          {{-- <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button> --}}
+        {{-- <div class="form-nav">
           <button type="submit" class="btn-submit">✓ Submit Application</button>
+        </div> --}}
+        <div class="form-nav">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            
+            <span class="btn-text">
+              ✓ Submit Application
+            </span>
+
+            <span class="btn-loader" style="display:none;">
+              <svg width="18" height="18" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"></circle>
+              </svg>
+            </span>
+
+          </button>
         </div>
       </div>
-    
+    {{-- <button type="button" class="btn-prev" onclick="prevStep(3)">← Previous</button> --}}
   </div>
 
-  
+  <style>
+    .btn-loader svg {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+    <script>
+      document.getElementById("visaForm").addEventListener("submit", function () {
+          const btn = document.getElementById("submitBtn");
+
+          // disable button
+          btn.disabled = true;
+          btn.innerHTML = "Submitting...";
+
+          // hide text
+          btn.querySelector(".btn-text").style.display = "none";
+
+          // show loader
+          btn.querySelector(".btn-loader").style.display = "inline-flex";
+      });
+    </script>
 
   <!-- SUCCESS (shown via JS or redirect) -->
   <div class="success-wrap" id="success-section">

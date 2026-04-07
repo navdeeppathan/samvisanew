@@ -436,6 +436,11 @@ button:disabled {
         <div class="file-zone" onclick="triggerFile('passport_scan')">
           <input type="file" id="passport_scan" name="passport_scan" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-ps')" required/>
           <div class="fz-icon">🛂</div><p class="fz-title">Click to upload current passport scan</p><p class="fz-sub">JPEG or PDF · <em>Mandatory — must be attached</em></p>
+          <div class="info-box fz-sub" style="margin-top:10px;">
+            <strong>📩 Having trouble uploading?</strong><br>
+            If you are unable to upload documents on the website, please message us on WhatsApp using 
+            <strong>Transaction ID: A11</strong>.
+          </div>
         </div>
         <div id="prev-ps"></div>
       </div>
@@ -452,6 +457,11 @@ button:disabled {
         <div class="file-zone" onclick="triggerFile('prev_passport_1')">
           <input type="file" id="prev_passport_1" name="prev_passport_1" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp1')"/>
           <div class="fz-icon">📘</div><p class="fz-title">Upload 1st expired passport</p><p class="fz-sub">JPEG or PDF</p>
+          <div class="info-box fz-sub" style="margin-top:10px;">
+            <strong>📩 Having trouble uploading?</strong><br>
+            If you are unable to upload documents on the website, please message us on WhatsApp using 
+            <strong>Transaction ID: A11</strong>.
+          </div>
         </div><div id="prev-pp1"></div>
       </div>
       <div class="fl" style="margin-top:16px;">
@@ -459,6 +469,11 @@ button:disabled {
         <div class="file-zone" onclick="triggerFile('prev_passport_2')">
           <input type="file" id="prev_passport_2" name="prev_passport_2" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-pp2')"/>
           <div class="fz-icon">📗</div><p class="fz-title">Upload 2nd expired passport</p><p class="fz-sub">JPEG or PDF</p>
+          <div class="info-box fz-sub" style="margin-top:10px;">
+            <strong>📩 Having trouble uploading?</strong><br>
+            If you are unable to upload documents on the website, please message us on WhatsApp using 
+            <strong>Transaction ID: A11</strong>.
+          </div>
         </div><div id="prev-pp2"></div>
       </div>
 
@@ -654,6 +669,11 @@ button:disabled {
               <div class="file-zone" onclick="triggerFile('spouse_passport')">
                 <input type="file" id="spouse_passport" name="spouse_passport" accept=".jpg,.jpeg,.pdf" onchange="showFile(this,'prev-spp')"/>
                 <div class="fz-icon">💑</div><p class="fz-title">Upload spouse's passport scan</p><p class="fz-sub">JPEG or PDF · Bio data page · <em>Required if married</em></p>
+                <div class="info-box fz-sub" style="margin-top:10px;">
+                  <strong>📩 Having trouble uploading?</strong><br>
+                  If you are unable to upload documents on the website, please message us on WhatsApp using 
+                  <strong>Transaction ID: A11</strong>.
+                </div>
               </div><div id="prev-spp"></div>
             </div>
           </div>
@@ -680,6 +700,11 @@ button:disabled {
               <div class="file-zone" onclick="triggerFile('children_passports')">
                 <input type="file" id="children_passports" name="children_passports[]" accept=".jpg,.jpeg,.pdf" multiple onchange="showFile(this,'prev-chp')"/>
                 <div class="fz-icon">👦</div><p class="fz-title">Upload children's passports</p><p class="fz-sub">JPEG or PDF · Select multiple files if needed · <em>Required if Yes</em></p>
+                <div class="info-box fz-sub" style="margin-top:10px;">
+                  <strong>📩 Having trouble uploading?</strong><br>
+                  If you are unable to upload documents on the website, please message us on WhatsApp using 
+                  <strong>Transaction ID: A11</strong>.
+                </div>
               </div><div id="prev-chp"></div>
             </div>
           </div>
@@ -694,6 +719,11 @@ button:disabled {
         <div class="file-zone" onclick="triggerFile('bank_statements')">
           <input type="file" id="bank_statements" name="bank_statements" accept=".pdf" onchange="showFile(this,'prev-bs')"/>
           <div class="fz-icon">🏦</div><p class="fz-title">Upload bank statements</p><p class="fz-sub">PDF only · Last 3 months</p>
+          <div class="info-box fz-sub" style="margin-top:10px;">
+            <strong>📩 Having trouble uploading?</strong><br>
+            If you are unable to upload documents on the website, please message us on WhatsApp using 
+            <strong>Transaction ID: A11</strong>.
+          </div>
         </div><div id="prev-bs"></div>
       </div>
       <div class="fl" style="margin-top:16px;">
@@ -701,6 +731,11 @@ button:disabled {
         <div class="file-zone" onclick="triggerFile('payslips')">
           <input type="file" id="payslips" name="payslips" accept=".pdf" onchange="showFile(this,'prev-py')"/>
           <div class="fz-icon">💷</div><p class="fz-title">Upload payslips</p><p class="fz-sub">PDF only · Last 3 months</p>
+          <div class="info-box fz-sub" style="margin-top:10px;">
+            <strong>📩 Having trouble uploading?</strong><br>
+            If you are unable to upload documents on the website, please message us on WhatsApp using 
+            <strong>Transaction ID: A11</strong>.
+          </div>
         </div><div id="prev-py"></div>
       </div>
 
@@ -765,13 +800,64 @@ button:disabled {
       <div class="info-box amber" style="margin-top:16px;"><strong>🔒 Data Privacy:</strong> Your information is handled securely in accordance with GDPR and our ICO registration. We will never share your personal data with third parties without your explicit consent.</div>
       <div class="form-nav">
         {{-- <button type="button" class="btn-prev" onclick="prevStep(8)">← Previous</button> --}}
-        <button type="submit" class="btn-submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Submit Application</button>
+        {{-- <button type="submit" class="btn-submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Submit Application</button> --}}
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Submit Application
+          </span>
+
+          <span class="btn-loader" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"
+                stroke-dasharray="31.4 31.4">
+                <animateTransform attributeName="transform" type="rotate"
+                  repeatCount="indefinite" dur="1s"
+                  values="0 25 25;360 25 25"/>
+              </circle>
+            </svg>
+            Submitting...
+          </span>
+        </button>
       </div>
     </div>
   {{-- </div> --}}
 
 </div>
 
+<style>
+  .btn-loader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-submit.loading {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .btn-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
+
+<script>
+  document.getElementById("visaForm").addEventListener("submit", function () {
+      const btn = document.getElementById("submitBtn");
+
+      // disable button
+      btn.classList.add("loading");
+      btn.disabled = true;
+
+      // toggle text & loader
+      btn.querySelector(".btn-text").style.display = "none";
+      btn.querySelector(".btn-loader").style.display = "flex";
+  });
+</script>
 
 </div><!-- /main column -->
 
@@ -826,7 +912,7 @@ button:disabled {
     <div class="contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><a href="javascript:void(0)" onclick="openWaPopup()" class="btn-wa2">WhatsApp Us</a></div>
     <div class="contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 9am – 7pm</span></div>
   </div>
-  <div class="side-card">
+  {{-- <div class="side-card">
     <p class="side-title">🌍 Other Countries</p>
     <a href="visa-china.html" class="country-link">🇨🇳 China</a>
     <a href="visa-europe.html" class="country-link">🇪🇺 Europe (Schengen)</a>
@@ -834,7 +920,7 @@ button:disabled {
     <a href="visa-morocco.html" class="country-link">🇲🇦 Morocco</a>
     <a href="visa-turkey.html" class="country-link">🇹🇷 Turkey</a>
     <a href="visa-dubai.html" class="country-link">🇦🇪 UAE / Dubai</a>
-  </div>
+  </div> --}}
 </div>
 </div>
 </form>

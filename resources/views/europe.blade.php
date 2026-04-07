@@ -721,6 +721,11 @@ method="POST" enctype="multipart/form-data">
                 <div class="fz-icon">🗂️</div>
                 <p class="fz-title">Upload previous EU visa</p>
                 <p class="fz-sub">JPEG or PDF · <em>Required if answered Yes</em></p>
+                <div class="info-box fz-sub" style="margin-top:10px;">
+                  <strong>📩 Having trouble uploading?</strong><br>
+                  If you are unable to upload documents on the website, please message us on WhatsApp using 
+                  <strong>Transaction ID: A11</strong>.
+                </div>
               </div>
               <div id="prev-euv"></div>
             </div>
@@ -805,6 +810,11 @@ method="POST" enctype="multipart/form-data">
                 <div class="fz-icon">🛂</div>
                 <p class="fz-title">Upload EU passport copy</p>
                 <p class="fz-sub">JPEG or PDF · <em>Required if answered Yes</em></p>
+                <div class="info-box fz-sub" style="margin-top:10px;">
+                  <strong>📩 Having trouble uploading?</strong><br>
+                  If you are unable to upload documents on the website, please message us on WhatsApp using 
+                  <strong>Transaction ID: A11</strong>.
+                </div>
               </div>
               <div id="prev-eurp"></div>
             </div>
@@ -881,6 +891,11 @@ method="POST" enctype="multipart/form-data">
             <div class="fz-icon">🛂</div>
             <p class="fz-title">Click to upload passport scan</p>
             <p class="fz-sub">JPEG or PDF · Max 10MB · <em>Mandatory</em></p>
+            <div class="info-box fz-sub" style="margin-top:10px;">
+              <strong>📩 Having trouble uploading?</strong><br>
+              If you are unable to upload documents on the website, please message us on WhatsApp using 
+              <strong>Transaction ID: A11</strong>.
+            </div>
           </div>
           <div id="prev-ps"></div>
         </div>
@@ -897,6 +912,11 @@ method="POST" enctype="multipart/form-data">
             <div class="fz-icon">🏦</div>
             <p class="fz-title">Upload bank statements</p>
             <p class="fz-sub">PDF only · Last 3 months</p>
+            <div class="info-box fz-sub" style="margin-top:10px;">
+              <strong>📩 Having trouble uploading?</strong><br>
+              If you are unable to upload documents on the website, please message us on WhatsApp using 
+              <strong>Transaction ID: A11</strong>.
+            </div>
           </div>
           <div id="prev-bs"></div>
         </div>
@@ -908,6 +928,11 @@ method="POST" enctype="multipart/form-data">
             <div class="fz-icon">💷</div>
             <p class="fz-title">Upload payslips</p>
             <p class="fz-sub">PDF only · Last 3 months</p>
+            <div class="info-box fz-sub" style="margin-top:10px;">
+              <strong>📩 Having trouble uploading?</strong><br>
+              If you are unable to upload documents on the website, please message us on WhatsApp using 
+              <strong>Transaction ID: A11</strong>.
+            </div>
           </div>
           <div id="prev-py"></div>
         </div>
@@ -965,15 +990,67 @@ method="POST" enctype="multipart/form-data">
 
       <div class="form-nav">
         {{-- <button type="button" class="btn-prev" onclick="prevStep(7)">← Previous</button> --}}
-        <button type="submit" class="btn-submit">
+        {{-- <button type="submit" class="btn-submit">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           Submit Application
+        </button> --}}
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Submit Application
+          </span>
+
+          <span class="btn-loader" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"
+                stroke-dasharray="31.4 31.4">
+                <animateTransform attributeName="transform" type="rotate"
+                  repeatCount="indefinite" dur="1s"
+                  values="0 25 25;360 25 25"/>
+              </circle>
+            </svg>
+            Submitting...
+          </span>
         </button>
       </div>
     </div>
   {{-- </div> --}}
 
 </div>  
+
+<style>
+  .btn-loader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-submit.loading {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .btn-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
+
+<script>
+  document.getElementById("visaForm").addEventListener("submit", function () {
+      const btn = document.getElementById("submitBtn");
+
+      // disable button
+      btn.classList.add("loading");
+      btn.disabled = true;
+
+      // toggle text & loader
+      btn.querySelector(".btn-text").style.display = "none";
+      btn.querySelector(".btn-loader").style.display = "flex";
+  });
+</script>
 
   </div><!-- /main form column -->
 
@@ -1051,7 +1128,7 @@ method="POST" enctype="multipart/form-data">
     </div>
 
     <!-- OTHER COUNTRIES -->
-    <div class="side-card">
+    {{-- <div class="side-card">
       <p class="side-title">🌍 Other Countries</p>
       <a href="visa-china.html" class="country-link">🇨🇳 China</a>
       <a href="visa-europe.html" class="country-link" style="border-color:var(--blue);color:var(--blue);background:var(--blue-faint);">🇪🇺 Europe (Schengen) — Current</a>
@@ -1059,7 +1136,7 @@ method="POST" enctype="multipart/form-data">
       <a href="visa-morocco.html" class="country-link">🇲🇦 Morocco</a>
       <a href="visa-turkey.html" class="country-link">🇹🇷 Turkey</a>
       <a href="visa-dubai.html" class="country-link">🇦🇪 UAE / Dubai</a>
-    </div>
+    </div> --}}
 
   </div><!-- /sidebar -->
 </div><!-- /form-wrap -->

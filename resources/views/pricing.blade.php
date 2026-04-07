@@ -93,11 +93,11 @@
 
 /* GLOBAL TRAVEL IMAGES */
 .hero-slide:nth-child(1) {
-  background-image: url('/3.png'); /* airport */
+  background-image: url('/3.jpeg'); /* airport */
   animation-delay: 0s;
 }
 .hero-slide:nth-child(2) {
-  background-image: url('/4.png'); /* travel city */
+  background-image: url('/4.jpeg'); /* travel city */
   animation-delay: 5s;
 }
 .hero-slide:nth-child(3) {

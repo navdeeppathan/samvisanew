@@ -751,11 +751,16 @@
           </div>
           <div class="why-feat reveal reveal-d2">
             <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-            <div><p class="why-ft">Document Support</p><p class="why-fd">We guide you through every document required by the embassy or visa centre of your destination country.</p></div>
+            <div><p class="why-ft">Document Support</p>
+              <p class="why-fd">
+              We guide you through every document required by the embassy or visa centre of your destination country.
+            </p></div>
           </div>
           <div class="why-feat reveal reveal-d3">
             <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.157 3.07A2 2 0 012 .82h3a2 2 0 012 1.72c.059.498.162.99.305 1.47"/></svg></div>
-            <div><p class="why-ft">24/7 WhatsApp Support</p><p class="why-fd">Our team is available anytime on WhatsApp to answer queries and provide real-time updates on your application.</p></div>
+            <div><p class="why-ft">WhatsApp Support</p><p class="why-fd">
+              Our team is available on working hours on WhatsApp to answer queries and provide real-time updates on your application.
+            </p></div>
           </div>
         </div>
       </div>
