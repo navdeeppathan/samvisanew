@@ -73,7 +73,7 @@ class PaymentController extends Controller
                 'price_data' => [
                     'currency' => $fee['currency'],
                     'product_data' => [
-                        'name' => ucfirst($type) . ' Visa Application Fee',
+                        'name' => ucfirst($type) . ' Visa Application Fee Visa grant, refusal, or delay in processing your application is all Embassy decisions.All fees paid are non-refundable.',
                     ],
                     'unit_amount' => $fee['amount'] * 100, // convert to smallest unit
                 ],
