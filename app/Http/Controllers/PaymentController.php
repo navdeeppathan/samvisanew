@@ -49,7 +49,7 @@ class PaymentController extends Controller
                 'currency' => 'gbp',
             ],
             'morocco' => [
-                'amount' => 85,
+                'amount' => 181,
                 'currency' => 'gbp',
             ],
             'turkey' => [
