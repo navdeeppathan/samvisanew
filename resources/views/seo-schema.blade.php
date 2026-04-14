@@ -176,6 +176,10 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
 </head>
 <body>
 
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRQWJTDV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -320,16 +324,16 @@ body{font-family:var(--font-b);background:var(--gray-bg);color:var(--gray-dark);
             <button class="copy-btn" onclick="copyCode('og-code',this)">Copy</button>
           </div>
           <pre class="code-block" id="og-code"><span class="t-comment">&lt;!-- ═══ OPEN GRAPH — SAM VISA SERVICES ═══ --&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:type"</span> <span class="t-attr">content</span>=<span class="t-val">"website"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:url"</span> <span class="t-attr">content</span>=<span class="t-val">"https://samvisauk.com/"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:title"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services — Expert UK Visit Visa Services from London"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:description"</span> <span class="t-attr">content</span>=<span class="t-val">"Trusted visit visa services since 2010. Fast, reliable expert guidance for China, Europe, Ireland, Morocco, Turkey and UAE from London. 98% success rate. ICO Registered."</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image"</span> <span class="t-attr">content</span>=<span class="t-val">"https://samvisauk.com/og-image.jpg"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:width"</span> <span class="t-attr">content</span>=<span class="t-val">"1200"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:height"</span> <span class="t-attr">content</span>=<span class="t-val">"630"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:alt"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services — UK Visit Visa Experts, London"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:site_name"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services"</span><span class="t-tag">/&gt;</span>
-<span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:locale"</span> <span class="t-attr">content</span>=<span class="t-val">"en_GB"</span><span class="t-tag">/&gt;</span></pre>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:type"</span> <span class="t-attr">content</span>=<span class="t-val">"website"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:url"</span> <span class="t-attr">content</span>=<span class="t-val">"https://samvisauk.com/"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:title"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services — Expert UK Visit Visa Services from London"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:description"</span> <span class="t-attr">content</span>=<span class="t-val">"Trusted visit visa services since 2010. Fast, reliable expert guidance for China, Europe, Ireland, Morocco, Turkey and UAE from London. 98% success rate. ICO Registered."</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image"</span> <span class="t-attr">content</span>=<span class="t-val">"https://samvisauk.com/og-image.jpg"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:width"</span> <span class="t-attr">content</span>=<span class="t-val">"1200"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:height"</span> <span class="t-attr">content</span>=<span class="t-val">"630"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:image:alt"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services — UK Visit Visa Experts, London"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:site_name"</span> <span class="t-attr">content</span>=<span class="t-val">"SAM Visa Services"</span><span class="t-tag">/&gt;</span>
+          <span class="t-tag">&lt;meta</span> <span class="t-attr">property</span>=<span class="t-val">"og:locale"</span> <span class="t-attr">content</span>=<span class="t-val">"en_GB"</span><span class="t-tag">/&gt;</span></pre>
         </div>
       </div>
     </div>
