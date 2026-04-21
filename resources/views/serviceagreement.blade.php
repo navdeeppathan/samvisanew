@@ -479,7 +479,7 @@
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <a href="/privacy-policy" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0d9488,#064e3b);color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;padding:12px 18px;border-radius:10px;text-decoration:none;">Privacy Policy →</a>
-        <a href="/disclaimer" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a4aab,#0f2f7a);color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;padding:12px 18px;border-radius:10px;text-decoration:none;">Disclaimer &amp; Refund →</a>
+        <a href="/disclaimer" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a4aab,#0f2f7a);color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;padding:12px 18px;border-radius:10px;text-decoration:none;">Disclaimer →</a>
       </div>
     </div>
 
