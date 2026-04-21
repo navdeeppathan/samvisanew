@@ -128,13 +128,19 @@
     .footer-disclaimer{max-width:1200px;margin:0 auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);margin-top:20px;}
     .footer-disclaimer p{font-size:11px;color:rgba(255,255,255,.3);text-align:center;line-height:1.7;}
 
+    
     @media(max-width:1000px){.content-wrap{grid-template-columns:1fr;}.toc-card{position:static;}}
     @media(max-width:640px){.content-wrap{padding:24px 20px 60px;}.page-hero{padding:56px 20px 44px;}.disclaimer-banner{padding:14px 20px;}.legal-section{padding:24px 20px;}.legal-section::before{margin:-24px -20px 20px;}footer{padding:24px 20px;}}
     aside {
-    position: sticky;
-    top: 88px; /* same as navbar height */
-    align-self: start;
-    height: fit-content;
+      position: sticky;
+      top: 88px; /* same as navbar height */
+      align-self: start;
+      height: fit-content;
+    }
+    @media(max-width:1000px){
+      aside{
+        display: none;
+      }
     }
 </style>
 </head>

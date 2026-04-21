@@ -157,10 +157,15 @@
     @media(max-width:1000px){.content-wrap{grid-template-columns:1fr;}.toc-card{position:static;}.data-grid{grid-template-columns:1fr 1fr;}.rights-grid{grid-template-columns:1fr;}}
     @media(max-width:640px){.content-wrap{padding:24px 20px 60px;}.page-hero{padding:56px 20px 44px;}.gdpr-banner{padding:14px 20px;}.legal-section{padding:24px 20px;}.legal-section::before{margin:-24px -20px 20px;}.data-grid{grid-template-columns:1fr;}footer{padding:24px 20px;}}
     aside {
-    position: sticky;
-    top: 88px; /* adjust based on navbar height */
-    align-self: start;
-    height: fit-content;
+      position: sticky;
+      top: 88px; /* adjust based on navbar height */
+      align-self: start;
+      height: fit-content;
+    }
+    @media(max-width:1000px){
+      aside{
+        display: none;
+      }
     }
 </style>
 </head>

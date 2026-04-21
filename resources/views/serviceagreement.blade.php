@@ -151,6 +151,11 @@
 
     aside{position:sticky;top:88px;align-self:start;height:fit-content;}
 
+    @media(max-width:1000px){
+      aside{
+        display: none;
+      }
+    }
     @media(max-width:1000px){.content-wrap{grid-template-columns:1fr;}.toc-card{position:static;}.scope-grid{grid-template-columns:1fr 1fr;}.accept-grid{grid-template-columns:1fr;}}
     @media(max-width:640px){.content-wrap{padding:24px 20px 60px;}.page-hero{padding:56px 20px 44px;}.agree-banner{padding:14px 20px;}.legal-section{padding:24px 20px;}.legal-section::before{margin:-24px -20px 20px;}.scope-grid{grid-template-columns:1fr;}footer{padding:24px 20px;}}
 </style>
