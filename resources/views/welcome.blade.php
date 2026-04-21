@@ -1144,13 +1144,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#services">Expert Consultation</a></li>
         <li><a href="#services">24/7 Support</a></li>
         <li><a href="#process">How It Works</a></li>
+        <li><a href="/service-agreement">Service / Client Agreement</a></li>
       </ul></div>
       <div class="foot-col reveal reveal-d3"><h4>Quick Links</h4><ul>
         <li><a href="#why">About Us</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="https://wa.me/4407908268383">WhatsApp</a></li>
-        {{-- <li><a href="#">Privacy Policy</a></li> --}}
-        {{-- <li><a href="#">Terms &amp; Conditions</a></li> --}}
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+        <li><a href="/disclaimer">Desclaimer</a></li>
+
       </ul></div>
     </div>
     <div class="foot-bot">

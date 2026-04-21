@@ -35,6 +35,23 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/terms-and-conditions', function () {
+    return view('termsandconditions');
+})->name('termsandconditions');
+
+
+Route::get('/privacy-policy', function () {
+    return view('privacypolicy');
+})->name('privacypolicy');
+
+Route::get('/disclaimer', function () {
+    return view('desclaimer');
+})->name('disclaimer');
+
+Route::get('/service-agreement', function () {
+    return view('serviceagreement');
+})->name('serviceagreement');
+
 Route::get('/pricing', function () {
     return view('pricing');
 })->name('pricing');

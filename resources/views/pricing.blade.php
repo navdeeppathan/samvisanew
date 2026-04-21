@@ -1123,6 +1123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="display:flex;gap:20px;">
       <a href="/" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Home</a>
       <a href="/#countries" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Apply</a>
+      <a href="/terms-and-conditions" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Terms</a>
+      <a href="/privacy-policy" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Privacy</a>
+      <a href="/service-agreement" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Agreement</a>
+
+      <a href="/disclaimer" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Disclaimer</a>
       <a href="tel:+4407908268383" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Contact</a>
     </div>
   </div>
