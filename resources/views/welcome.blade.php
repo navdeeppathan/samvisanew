@@ -1153,6 +1153,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="/privacy-policy">Privacy Policy</a></li>
         <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
         <li><a href="/disclaimer">Desclaimer</a></li>
+        <li><a href="/refund-policy">Refund Policy</a></li>
+
 
       </ul></div>
     </div>

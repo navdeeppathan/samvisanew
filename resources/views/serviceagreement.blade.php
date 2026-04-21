@@ -493,9 +493,10 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/privacy-policy">Privacy</a>
-      <a href="/disclaimer">Disclaimer</a>
-      <a href="/service-agreement" style="color:rgba(255,255,255,.65);">Agreement</a>
       <a href="/terms-and-conditions">Terms</a>
+      <a href="/service-agreement" style="color:rgba(255,255,255,.65);">Agreement</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/refund-policy">Refund Policy</a>
       <a href="mailto:info@samvisauk.com">Contact</a>
     </div>
     <p class="footer-copy">© 2025 SAM Visa Services</p>

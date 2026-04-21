@@ -48,6 +48,10 @@ Route::get('/disclaimer', function () {
     return view('desclaimer');
 })->name('disclaimer');
 
+Route::get('/refund-policy', function () {
+    return view('refundPolicy');
+})->name('refundpolicy');
+
 Route::get('/service-agreement', function () {
     return view('serviceagreement');
 })->name('serviceagreement');

@@ -513,10 +513,12 @@
     <img src="{{asset('logotr.png')}}" alt="SAM Visa Services" style="height:40px;filter:brightness(0) invert(1);opacity:.5;"/>
     <div class="footer-links">
       <a href="/">Home</a>
-      <a href="/terms-and-conditions">Terms</a>
       <a href="/privacy-policy" style="color:rgba(255,255,255,.65);">Privacy</a>
-      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms-and-conditions">Terms</a>
       <a href="/service-agreement">Agreement</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/refund-policy">Refund Policy</a>
+      
       <a href="mailto:info@samvisauk.com">Contact</a>
     </div>
     <p class="footer-copy">© {{ date('Y') }} SAM Visa Services</p>
