@@ -352,7 +352,7 @@
         <li><div class="li-dot"></div>Comply with legal, accounting, and regulatory requirements</li>
         <li><div class="li-dot"></div>Resolve any disputes or queries arising from the service</li>
       </ul>
-      <div class="highlight-box"><p>In general, application data is retained for a minimum of 6 years to comply with UK legal requirements. After this period, data is securely deleted or anonymised. You may request earlier deletion subject to legal constraints.</p></div>
+      {{-- <div class="highlight-box"><p>In general, application data is retained for a minimum of 6 years to comply with UK legal requirements. After this period, data is securely deleted or anonymised. You may request earlier deletion subject to legal constraints.</p></div> --}}
     </div>
 
     <!-- P7 -->
