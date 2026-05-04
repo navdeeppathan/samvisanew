@@ -4,80 +4,86 @@
 
 @section('content')
 
-<div class="container mt-5">
+<div class="container-fluid mt-4">
 
-    <h2 class="mb-4">Visa Request Applications</h2>
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
 
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped align-middle">
-            <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Payment Status</th>
-                <th>Country</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            @forelse($applications as $key => $app)
-            <tr>
-                <td>{{ $key + 1 }}</td>
+            <h4 class="mb-4 fw-bold">Visa Request Applications</h4>
 
-                <td>
-                    {{ $app->surname ?? '' }}
-                    {{ $app->first_name ?? '' }}
-                    {{ $app->middle_name ?? '' }}
-                </td>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle bg-white text-dark">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Payment Status</th>
+                            <th>Country</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
-                <td>{{ $app->email ?? '-' }}</td>
-                <td>{{ $app->mobile_phone ?? '-' }}</td>
+                    <tbody>
+                    @forelse($applications as $key => $app)
+                        <tr>
+                            <td>{{ $applications->firstItem() + $key }}</td>
 
-                <!-- PAYMENT BADGE -->
-                <td>
-                    <span class="badge bg-info text-dark text-uppercase">
-                        {{ $app->payment_status }}
-                    </span>
-                </td>
+                            <td>
+                                {{ $app->surname ?? '' }}
+                                {{ $app->first_name ?? '' }}
+                                {{ $app->middle_name ?? '' }}
+                            </td>
 
-                <!-- COUNTRY BADGE -->
-                <td>
-                    <span class="badge bg-info text-dark text-uppercase">
-                        {{ $app->country }}
-                    </span>
-                </td>
+                            <td>{{ $app->email ?? '-' }}</td>
+                            <td>{{ $app->mobile_phone ?? '-' }}</td>
 
-                <!-- ACTION -->
-                <td>
-                    @if($app->country == 'china')
-                        <a href="{{ route('admin.china.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                            <!-- PAYMENT -->
+                            <td>
+                                <span class="badge 
+                                    @if($app->payment_status == 'paid') bg-success
+                                    @elseif($app->payment_status == 'pending') bg-warning text-dark
+                                    @else bg-secondary
+                                    @endif">
+                                    {{ strtoupper($app->payment_status) }}
+                                </span>
+                            </td>
 
-                    @elseif($app->country == 'dubai')
-                        <a href="{{ route('admin.dubai.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                            <!-- COUNTRY -->
+                            <td>
+                                <span class="badge bg-primary">
+                                    {{ strtoupper($app->country) }}
+                                </span>
+                            </td>
 
-                    @elseif($app->country == 'europe')
-                        <a href="{{ route('admin.europe.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                            <!-- ACTION -->
+                            <td>
+                                <a href="{{ route('admin.' . $app->country . '.visa.show2', $app->id) }}"
+                                   class="btn btn-sm btn-primary">
+                                   View
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">No Applications Found</td>
+                        </tr>
+                    @endforelse
+                    </tbody>
+                </table>
+                <!-- Pagination -->
+            
 
-                    @elseif($app->country == 'ireland')
-                        <a href="{{ route('admin.ireland.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+                <div>
+                    {{ $applications->links('pagination::bootstrap-5') }}
+                </div>
+           
+            </div>
 
-                    @elseif($app->country == 'morocco')
-                        <a href="{{ route('admin.morocco.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
+            
 
-                    @elseif($app->country == 'turkey')
-                        <a href="{{ route('admin.turkey.visa.show2', $app->id) }}" class="btn btn-primary btn-sm">View</a>
-                    @endif
-                </td>
-            </tr>
-            @empty
-            <tr>
-                <td colspan="6" class="text-center">No Applications Found</td>
-            </tr>
-            @endforelse
-            </tbody>
-        </table>
+        </div>
     </div>
 
 </div>

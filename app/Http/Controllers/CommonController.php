@@ -11,58 +11,152 @@ use App\Models\IrelandVisa;
 use App\Models\MoroccoVisa;
 use App\Models\TurkeyVisa;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class CommonController extends Controller
 {
-   public function index()
+//    public function index()
+//     {
+//         $applications = collect();
+
+//         // China
+//         $china = ChinaVisaApplication::latest()->get()->map(function ($item) {
+//             $item->country = 'china';
+//             return $item;
+//         });
+
+//         // Dubai
+//         $dubai = DubaiVisa::latest()->get()->map(function ($item) {
+//             $item->country = 'dubai';
+//             return $item;
+//         });
+
+//         // Europe
+//         $europe = EuropeVisaApplication::latest()->get()->map(function ($item) {
+//             $item->country = 'europe';
+//             return $item;
+//         });
+
+//         // Ireland
+//         $ireland = IrelandVisa::latest()->get()->map(function ($item) {
+//             $item->country = 'ireland';
+//             return $item;
+//         });
+
+//         // Morocco
+//         $morocco = MoroccoVisa::latest()->get()->map(function ($item) {
+//             $item->country = 'morocco';
+//             return $item;
+//         });
+
+//         // Turkey
+//         $turkey = TurkeyVisa::latest()->get()->map(function ($item) {
+//             $item->country = 'turkey';
+//             return $item;
+//         });
+
+//         // Merge all
+//         $applications = $applications
+//             ->merge($china)
+//             ->merge($dubai)
+//             ->merge($europe)
+//             ->merge($ireland)
+//             ->merge($morocco)
+//             ->merge($turkey)
+//             ->sortByDesc('created_at');
+
+//         return view('admin.common.index', compact('applications'));
+//     }
+
+
+
+    public function index()
     {
-        $applications = collect();
+        $china = ChinaVisaApplication::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'china' as country"),
+            'created_at'
+        );
 
-        // China
-        $china = ChinaVisaApplication::latest()->get()->map(function ($item) {
-            $item->country = 'china';
-            return $item;
-        });
+        $dubai = DubaiVisa::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'dubai' as country"),
+            'created_at'
+        );
 
-        // Dubai
-        $dubai = DubaiVisa::latest()->get()->map(function ($item) {
-            $item->country = 'dubai';
-            return $item;
-        });
+        $europe = EuropeVisaApplication::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'europe' as country"),
+            'created_at'
+        );
 
-        // Europe
-        $europe = EuropeVisaApplication::latest()->get()->map(function ($item) {
-            $item->country = 'europe';
-            return $item;
-        });
+        $ireland = IrelandVisa::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'ireland' as country"),
+            'created_at'
+        );
 
-        // Ireland
-        $ireland = IrelandVisa::latest()->get()->map(function ($item) {
-            $item->country = 'ireland';
-            return $item;
-        });
+        $morocco = MoroccoVisa::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'morocco' as country"),
+            'created_at'
+        );
 
-        // Morocco
-        $morocco = MoroccoVisa::latest()->get()->map(function ($item) {
-            $item->country = 'morocco';
-            return $item;
-        });
+        $turkey = TurkeyVisa::select(
+            'id',
+            'surname',
+            'first_name',
+            'middle_name',
+            'email',
+            'mobile_phone',
+            'payment_status',
+            DB::raw("'turkey' as country"),
+            'created_at'
+        );
 
-        // Turkey
-        $turkey = TurkeyVisa::latest()->get()->map(function ($item) {
-            $item->country = 'turkey';
-            return $item;
-        });
+        // Merge using UNION
+        $applications = $china
+            ->unionAll($dubai)
+            ->unionAll($europe)
+            ->unionAll($ireland)
+            ->unionAll($morocco)
+            ->unionAll($turkey);
 
-        // Merge all
-        $applications = $applications
-            ->merge($china)
-            ->merge($dubai)
-            ->merge($europe)
-            ->merge($ireland)
-            ->merge($morocco)
-            ->merge($turkey)
-            ->sortByDesc('created_at');
+        // Wrap for ordering + pagination
+        $applications = DB::query()
+            ->fromSub($applications, 'visa_apps')
+            ->orderByDesc('created_at') // latest on top
+            ->paginate(10);
 
         return view('admin.common.index', compact('applications'));
     }
